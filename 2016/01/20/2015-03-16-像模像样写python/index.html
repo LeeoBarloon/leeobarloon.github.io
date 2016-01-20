@@ -1,0 +1,818 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leeo‘s Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这篇blog摘录和翻译了自经典的文章Code Like a Pythonista,有兴趣的同学可以到上述网站查看原文，强烈建议读读看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像模像样写python（1）">
+<meta property="og:url" content="http://yoursite.com/2016/01/20/2015-03-16-像模像样写python/index.html">
+<meta property="og:site_name" content="Leeo‘s Blog">
+<meta property="og:description" content="这篇blog摘录和翻译了自经典的文章Code Like a Pythonista,有兴趣的同学可以到上述网站查看原文，强烈建议读读看">
+<meta property="og:updated_time" content="2016-01-13T05:36:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="像模像样写python（1）">
+<meta name="twitter:description" content="这篇blog摘录和翻译了自经典的文章Code Like a Pythonista,有兴趣的同学可以到上述网站查看原文，强烈建议读读看">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 像模像样写python（1） | Leeo‘s Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leeo‘s Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                像模像样写python（1）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-20T19:22:04+08:00" content="2016-01-20">
+              2016-01-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python积累/" itemprop="url" rel="index">
+                    <span itemprop="name">python积累</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files" target="_blank" rel="external">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>
+<a id="more"></a>
+<p>我首先就被文章中的这首“诗”所吸引了：</p>
+<pre><code>The Zen of python
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&apos;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+</code></pre><p>作者很装B的起了个名字，称之为python之禅，我斗胆用很烂的英文水平翻译一下：</p>
+<pre><code>python之禅
+
+优美总好过丑陋
+说明白点总强于含糊其辞
+复杂不如简单明了
+但总好过晦涩难言
+平展开来，别套来套去
+清清爽爽而不是浓妆艳抹
+提高你的可读性吧
+总还没有特殊到要打破这些规则
+当然事实总跨越理论
+不要让错误悄悄溜走
+除非明说要溜走...
+</code></pre><p><em>我觉得还需要修改，先这么着吧</em></p>
+<p>这首诗还有后半部分，我就不翻译了，大家看看</p>
+<pre><code>In the face of ambiguity, refuse the temptation to guess.
+There should be one—and preferably only one—obvious way to do it.
+Although that way may not be obvious at first unless you&apos;re Dutch.
+Now is better than never.
+Although never is often better than right now.
+If the implementation is hard to explain, it&apos;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea—let&apos;s do more of those!
+</code></pre><p>很有意思的是，当你在python的命令行里输入：</p>
+<pre><code>&gt;&gt;&gt;import this
+</code></pre><p>的时候，就会出现这首诗~，python果然符合我的尿性，哈哈哈</p>
+<p>为了强调可读性的重要性，文章还应用了一句很有B格德话：</p>
+<blockquote>
+<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+</blockquote>
+<p>—Abelson &amp; Sussman, Structure and Interpretation of Computer Programs</p>
+<p>然后作者建议我们先去读读<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="external">PEP 8</a><br>其中，PEP的解释是Python Enhancement Proposal，就是Python改进建议，就是建议python应该如何去写的一个说明文档</p>
+<p>python的社区有他自己的标准，这些标准主要就备注在PEP8中</p>
+<p>由于缩进和空格在python中格外重要，所以这里要着重强调几点：</p>
+<p><strong>whitespace1</strong></p>
+<ol>
+<li>每一个缩进用四个空格表示</li>
+<li>不要用tab</li>
+<li>永远不要将tab和空格混用（）</li>
+<li>函数之间留一行空格</li>
+<li>累之间留两行空格</li>
+</ol>
+<p><strong>whitespace2</strong></p>
+<ol>
+<li>在dict，list和元祖以及&amp;参数列表的“,”后面加上一个空格，注意，在dict中，不要在“：”后面留空格</li>
+<li>在赋值或比较符间加上空格</li>
+<li>在括号之前或参数之前不添加空格</li>
+<li>在docstrings中不要立即空格</li>
+</ol>
+<p><strong>naming</strong></p>
+<ol>
+<li>joined_lower 可以是 函数名, 方法名, 属性名</li>
+<li>joined_lower or ALL_CAPS 是常量</li>
+<li>StudlyCaps 类名</li>
+<li>camelCase 只有在预先制定好的命名规范使用</li>
+<li>属性: interface, _internal, __private</li>
+<li>但尽量避免__private形式。下面两个链接解释了 为什么python中没有 private声明?</li>
+</ol>
+<p><strong>Long lines &amp; Continuations</strong></p>
+<p>一行不要超过80个字符</p>
+<p>在括号里的换行使用隐含换行，但要注意对齐</p>
+<pre><code>def __init__(self, first, second, third,
+             fourth, fifth, sixth):
+    output = (first + second + third
+              + fourth + fifth + sixth)
+</code></pre><p>其它换行要使用“\”，注意后面千万不要有空格</p>
+<pre><code>VeryLong.left_hand_side \
+    = even_longer.right_hand_side()
+</code></pre><p><strong>Long Strings</strong></p>
+<p>相邻的文本字符会被编译器自动合并到一起</p>
+<pre><code>&gt;&gt;&gt;print &apos;o&apos; &apos;n&apos; &apos;e&apos;
+one
+</code></pre><p>文本之间的空格不是必须的，但为了更可读，建议加上。任何类型的引用都可以</p>
+<pre><code>&gt;&gt;&gt;print &apos;o&apos; r&apos;\/\/&apos; &quot;&quot;&quot;o&quot;&quot;&quot;
+o\/\/o
+</code></pre><p>注意，在string前面加上r表示raw字符串，该字符串中的“\”将不被转义。可用于正则表达式和windows系统中的文件路径<br>需要注意的时，被赋值的字符串对象不能被自动拼接</p>
+<pre><code>&gt;&gt;&gt;a = &apos;one&apos;
+&gt;&gt;&gt;b = &apos;two&apos;
+&gt;&gt;&gt;a b
+File &quot;&lt;stdin&gt;&quot;, line 1
+a b
+  ^
+SyntaxError: invalid syntax
+</code></pre><p>这是因为自动拼接是编译器的特性，而不是解释器的。必须在字符串对象中添加“+”保证运行时可以正常拼接。</p>
+<pre><code>text = （&apos;Long strings can be made up &apos;
+        &apos;of several shorter strings&apos;）
+</code></pre><p>注意，括号中允许隐式的换行</p>
+<p>多行字符用“”“ “”“来表明：</p>
+<pre><code>&quot;&quot;&quot;
+Triple
+double
+quotes
+&quot;&quot;&quot;
+</code></pre><p><strong>Compound Statements</strong></p>
+<pre><code>if foo == &apos;blah&apos;:
+    do_something()
+do_one()
+do_two()
+do_three()
+</code></pre><p>类似上面的格式是推荐的，而不推荐下面这种：</p>
+<pre><code>if foo == &apos;blah&apos;: do_something()
+do_one(); do_two(); do_three()
+</code></pre><p>上述的第一个带缩进格式的代码更容易表现程序的流程，而且第二个缩进更容易表示在if中会有一些其他的功能代码，当然，这样写最大的一个优点就是：<strong>增加可读性</strong>    </p>
+<p><strong>Docstrings &amp; Comments</strong></p>
+<blockquote>
+<p>Docstrings = How to use code</p>
+<p>Comments = Why(rationable) &amp; how code works</p>
+</blockquote>
+<p>Docstring 解释了如何调用该代码，主要针对的对象是该代码的用户，docstring应该包含如下内容：</p>
+<ul>
+<li>解释这个方法的目的，经管你自己一清二楚，但并不表示别人能很容易的明白其目的</li>
+<li>描述期待的参数、返回值、和可能抛出的异常</li>
+<li>如果这个方法只能被唯一的调用者配合使用，那么就需要提及这个调用者</li>
+</ul>
+<p>Comments 表示了你的代码为何如此，主要针对的对象是该代码的维护者，例子：</p>
+<pre><code># !!! BUG：...
+# !!! FIX: This is a hack
+# !!! Why is this here?
+</code></pre><p>Docstrings 和 Comments 都是写给你自己的，所以建议你写的好一点~！</p>
+<p>错误的Docstrings 和 Comments 比没有还可怕，所以最好能够随着代码的变化而对其加以更新和维护。<br><a href="http://www.python.org/dev/peps/pep-0257/" target="_blank" rel="external">PEP 257</a> 专门介绍了docstrings</p>
+<p><strong>Practicality Beats Purity</strong><br>凡事都有例外，在一些特殊情况下，也不一定要遵守上述规则</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/20/2015-04-18-IOS Development/" rel="next" title="github上的ios代码">
+                <i class="fa fa-chevron-left"></i> github上的ios代码
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/20/2015-03-11-第一个Blog/" rel="prev" title="开始写Blog喽">
+                开始写Blog喽 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<!--div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div-->
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

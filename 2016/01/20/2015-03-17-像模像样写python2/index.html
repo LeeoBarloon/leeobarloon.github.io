@@ -1,0 +1,768 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leeo‘s Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="下面我们会介绍一下python中的一些习惯用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像模像样写python（2）">
+<meta property="og:url" content="http://yoursite.com/2016/01/20/2015-03-17-像模像样写python2/index.html">
+<meta property="og:site_name" content="Leeo‘s Blog">
+<meta property="og:description" content="下面我们会介绍一下python中的一些习惯用法">
+<meta property="og:updated_time" content="2016-01-13T05:36:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="像模像样写python（2）">
+<meta name="twitter:description" content="下面我们会介绍一下python中的一些习惯用法">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 像模像样写python（2） | Leeo‘s Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leeo‘s Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                像模像样写python（2）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-20T19:22:04+08:00" content="2016-01-20">
+              2016-01-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python积累/" itemprop="url" rel="index">
+                    <span itemprop="name">python积累</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下面我们会介绍一下python中的一些习惯用法</p>
+<a id="more"></a>
+<p>##Swap Values<br>在其他的语言中，交换对象值一般这样写：</p>
+<pre><code>temp = a
+a = b
+b = temp
+</code></pre><p>而在python中，则可以这样:</p>
+<pre><code>b,a = a,b
+</code></pre><p>为什么呢？</p>
+<ul>
+<li>逗号”,”是元祖构造语法</li>
+<li>在等号的右边构造了一个元组（元组打包）</li>
+<li>在等号的左边也够早了一个元组（元组解包）</li>
+</ul>
+<p>也就是说，上述语句表示右边的元组解包到左边的元组，为了更好的解释元组解包的情况，请看如下代码：</p>
+<pre><code>&gt;&gt;&gt; l =[&apos;David&apos;, &apos;Pythonista&apos;, &apos;+1-514-555-1234&apos;]
+&gt;&gt;&gt; name, title, phone = l
+&gt;&gt;&gt; name
+&apos;David&apos;
+&gt;&gt;&gt; title
+&apos;Pythonista&apos;
+&gt;&gt;&gt; phone
+&apos;+1-514-555-1234&apos;
+</code></pre><p>元组的解包常用于结构数据的遍历上，我们继续上面那个例子：</p>
+<pre><code>&gt;&gt;&gt;people = [l, [&apos;Guido&apos;,&apos;BDFL&apos;,&apos;unlisted&apos;]]
+&gt;&gt;&gt;for (name, title, phone) in people:
+...    print name, phone
+...
+David +1-514-555-1234
+Guido unlisted
+</code></pre><p>##More About Tuples<br>我们要注意<strong>逗号</strong>是元组构造器，而不是括号：</p>
+<pre><code>&gt;&gt;&gt;1,
+&gt;&gt;&gt;(1,)
+</code></pre><p>当然，为了提高可读性，最好还是加上（）</p>
+<pre><code>&gt;&gt;&gt;(1,)
+&gt;&gt;&gt;(1,)
+</code></pre><p>o个元素的元组，可以通过（）表现：</p>
+<pre><code>&gt;&gt;&gt;()
+&gt;&gt;&gt;()
+</code></pre><p>注意，遗漏的逗号，有可能会对你的代码产生影响，在你不需要元组的时候，给你生成了一个元组，比如：</p>
+<pre><code>&gt;&gt;&gt; value = 1,
+&gt;&gt;&gt; value
+(1,)
+</code></pre><p>所以，有些时候，莫名奇妙的出现了一些元组，那么请你注意一下，是否有多余的逗号~</p>
+<p>##Interactive “_”</p>
+<p>Python中“<em>”的一个特性，可能很少有人知道~<br>在交互解释器中，你调用一个方法或者描述了一个表达式，其结果都绑定在了一个 “</em>” 变量上面</p>
+<pre><code>&gt;&gt;&gt; 1 + 1
+2
+&gt;&gt;&gt; -
+2
+</code></pre><p>要注意，<em>存储了最后一个被打印的表达式，当结果是None的时候，不会打印任何东西，那么”</em>“不会被改变~，而且这个只是在交互解释其中才有效，而在模块中无效~</p>
+<p>##Building Strings from substrings<br>首先从一个字符串列表开始：</p>
+<pre><code>colors = [&apos;red&apos;,&apos;green&apos;,&apos;yellow&apos;]
+</code></pre><p>我们先把这些字符串拼接成一个大的串，特别是当这些字符串列表的数量特别多的时候…千万不要这样做：</p>
+<pre><code>result = &apos;&apos;
+for s in colors:
+    result += s
+</code></pre><p>这样做是很没有效率的~</p>
+<p>最好这样做：</p>
+<pre><code>result = &apos;&apos;.join(colors)
+</code></pre><p>当拼接的数量特别多的时候，就更会显示出第二种算法的优势了</p>
+<p>一些例子:</p>
+<pre><code>colors = [&apos;red&apos;,&apos;blue&apos;,&apos;green&apos;,&apos;yellow&apos;]
+print &apos;choose&apos;, &apos;, &apos;.join(colors[:-1]),\
+      &apos;or&apos;,colors[-1]
+</code></pre><p>##Use in where possible(1)</p>
+<p>可以这样遍历列表（lists），元组（tuples）或者集合（sets）</p>
+<pre><code>for key in d:
+    print key
+</code></pre><p>也可以这样子遍历字典（dictionary）<br>    for key in d.keys():<br>        print d[key]</p>
+<p>当然，有些时候，你可能在遍历字典的时候，遇到这个异常：”RuntimeError: dictionary changed size during iteration.”</p>
+<p>那么，我们可以这样做来保持一致性：<br>if key in d:<br>    …do something with d[key]</p>
+<p>##Dictionary get Method</p>
+<pre><code>dict.get(key, default) 
+</code></pre><p>如果字典中找不到key，则返回default值</p>
+<h2 id="Dictioany_setdefault_Method"><a href="#Dictioany_setdefault_Method" class="headerlink" title="Dictioany setdefault Method"></a>Dictioany setdefault Method</h2><pre><code>dict.setdefault(key, default)
+</code></pre><p>##building &amp; Splitting Dictionaries</p>
+<p>可以将两个列表组合成一个字典：</p>
+<pre><code>given = [&apos;John&apos;, &apos;Eric&apos;, &apos;Terry&apos;, &apos;Michael&apos;]
+family = [&apos;Cleese&apos;, &apos;Idle&apos;, &apos;Gilliam&apos;, &apos;Palin&apos;]
+
+pythons = dict(zip(given, family))
+</code></pre><p>当然，相反的，把字典拆成两个列表也是可以的</p>
+<pre><code>&gt;&gt;&gt; pythons.keys()
+[&apos;John&apos;, &apos;Eric&apos;, &apos;Terry&apos;, &apos;Michael&apos;]
+&gt;&gt;&gt; pythons.values()
+[&apos;Cleese&apos;, &apos;Palin&apos;, &apos;Idle&apos;, &apos;Gilliam&apos;]
+</code></pre><p>要注意，分离出来的values的值和最初的列表值不一样</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/20/2015-03-17-jekyll 模板/" rel="next" title="Jekyll模板">
+                <i class="fa fa-chevron-left"></i> Jekyll模板
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/20/2015-03-18-在linux上配置网站/" rel="prev" title="linux下面的简单页面配置">
+                linux下面的简单页面配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dictioany_setdefault_Method"><span class="nav-number">1.</span> <span class="nav-text">Dictioany setdefault Method</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<!--div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div-->
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

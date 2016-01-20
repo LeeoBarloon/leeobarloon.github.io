@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Leeo‘s Blog]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-01-13T05:36:03.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[John Doe]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[git step by step 6 - git的恢复流程]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-23-git%20step%20by%20step%2006/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-23-git step by step 06/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>接上文 <a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/23/git%20step%20by%20step%2005/" target="_blank" rel="external">git step by step 05</a></p>
+<a id="more"></a>
+<h3 id="u7B2C_u4E00_u79CD_u60C5_u51B5_uFF0C_u6211_u4EEC_u4FEE_u6539_u4E86_u5DE5_u4F5C_u533A"><a href="#u7B2C_u4E00_u79CD_u60C5_u51B5_uFF0C_u6211_u4EEC_u4FEE_u6539_u4E86_u5DE5_u4F5C_u533A" class="headerlink" title="第一种情况，我们修改了工作区"></a>第一种情况，我们修改了工作区</h3><hr>
+<p>当我们修改了工作区的文件内容，比如我们修改了例子中的<code>readme.md</code>文件内容：</p>
+<pre><code>#This is a test
+Hello GitHub
+git is a great tool for coder...
+</code></pre><p>修改为：</p>
+<pre><code>#This is a test
+Hello GitHub
+git is a great tool for coder...
+what hell！
+</code></pre><p>后来我们发现最后一行写错了，那么我们怎么恢复呢？当然，你可以手动删掉最后一行，但是如果你的改动比较多，你也不知道改动了什么的时候，你就要借助git的力量</p>
+<pre><code>git checkout -- filename
+</code></pre><h3 id="u7B2C_u4E8C_u79CD_u60C5_u51B5_uFF0C_u6211_u4EEC_u5C06_u5DE5_u4F5C_u533A_u7684_u5185_u5BB9_u63D0_u4EA4_u5230_u4E86_u6682_u5B58_u533A"><a href="#u7B2C_u4E8C_u79CD_u60C5_u51B5_uFF0C_u6211_u4EEC_u5C06_u5DE5_u4F5C_u533A_u7684_u5185_u5BB9_u63D0_u4EA4_u5230_u4E86_u6682_u5B58_u533A" class="headerlink" title="第二种情况，我们将工作区的内容提交到了暂存区"></a>第二种情况，我们将工作区的内容提交到了暂存区</h3><hr>
+<p>比如我们不小心还是将上述的文件修改成了带<code>what hell!</code>的文本，而且还用<code>git add</code> 命令将其提交到了暂存区，我们希望能够将这次修改恢复，如何处理呢？</p>
+<p>没关系，你可以通过<code>git status</code>查看一下，git会有提示:</p>
+<pre><code>On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+modified:   readme.md
+</code></pre><p>你可以用reset HEAD <file>来unstage</file></p>
+<p>你可以用 git reset HEAD readme.md，那么现在的状态就回到了第一种，即你的修改已经到了工作区了，那么，你就可以按照第一种情况所说的，使用<code>git checkout --readme.md</code>来恢复工作区即可</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>接上文 <a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/23/git%20step%20by%20step%2005/">git step by step 05</a></p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[开始写Blog喽]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-11-%E7%AC%AC%E4%B8%80%E4%B8%AABlog/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-11-第一个Blog/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>终于搭建了一个自己的Blog，当然，还是借助了github的pages功能，并且拷贝了一个Jekyll的Template</p>
+<a id="more"></a>
+<p>多谢<a href="http://simpleyyt.github.io/" target="_blank" rel="external">simpleyyt Jekyll Template</a>,否则可能这个blog还要搭建很久，前端无能的我还是很害怕写css，哎~</p>
+<p>争取以后可以多写一些Blog，技术的也好，绘画相关的也好，其他文章的也好，都记录在这里</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>终于搭建了一个自己的Blog，当然，还是借助了github的pages功能，并且拷贝了一个Jekyll的Template</p>]]>
+    
+    </summary>
+    
+      <category term="Normal" scheme="http://yoursite.com/tags/Normal/"/>
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[像模像样写python（1）]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-16-%E5%83%8F%E6%A8%A1%E5%83%8F%E6%A0%B7%E5%86%99python/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-16-像模像样写python/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files" target="_blank" rel="external">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>
+<a id="more"></a>
+<p>我首先就被文章中的这首“诗”所吸引了：</p>
+<pre><code>The Zen of python
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&apos;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+</code></pre><p>作者很装B的起了个名字，称之为python之禅，我斗胆用很烂的英文水平翻译一下：</p>
+<pre><code>python之禅
+
+优美总好过丑陋
+说明白点总强于含糊其辞
+复杂不如简单明了
+但总好过晦涩难言
+平展开来，别套来套去
+清清爽爽而不是浓妆艳抹
+提高你的可读性吧
+总还没有特殊到要打破这些规则
+当然事实总跨越理论
+不要让错误悄悄溜走
+除非明说要溜走...
+</code></pre><p><em>我觉得还需要修改，先这么着吧</em></p>
+<p>这首诗还有后半部分，我就不翻译了，大家看看</p>
+<pre><code>In the face of ambiguity, refuse the temptation to guess.
+There should be one—and preferably only one—obvious way to do it.
+Although that way may not be obvious at first unless you&apos;re Dutch.
+Now is better than never.
+Although never is often better than right now.
+If the implementation is hard to explain, it&apos;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea—let&apos;s do more of those!
+</code></pre><p>很有意思的是，当你在python的命令行里输入：</p>
+<pre><code>&gt;&gt;&gt;import this
+</code></pre><p>的时候，就会出现这首诗~，python果然符合我的尿性，哈哈哈</p>
+<p>为了强调可读性的重要性，文章还应用了一句很有B格德话：</p>
+<blockquote>
+<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+</blockquote>
+<p>—Abelson &amp; Sussman, Structure and Interpretation of Computer Programs</p>
+<p>然后作者建议我们先去读读<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="external">PEP 8</a><br>其中，PEP的解释是Python Enhancement Proposal，就是Python改进建议，就是建议python应该如何去写的一个说明文档</p>
+<p>python的社区有他自己的标准，这些标准主要就备注在PEP8中</p>
+<p>由于缩进和空格在python中格外重要，所以这里要着重强调几点：</p>
+<p><strong>whitespace1</strong></p>
+<ol>
+<li>每一个缩进用四个空格表示</li>
+<li>不要用tab</li>
+<li>永远不要将tab和空格混用（）</li>
+<li>函数之间留一行空格</li>
+<li>累之间留两行空格</li>
+</ol>
+<p><strong>whitespace2</strong></p>
+<ol>
+<li>在dict，list和元祖以及&amp;参数列表的“,”后面加上一个空格，注意，在dict中，不要在“：”后面留空格</li>
+<li>在赋值或比较符间加上空格</li>
+<li>在括号之前或参数之前不添加空格</li>
+<li>在docstrings中不要立即空格</li>
+</ol>
+<p><strong>naming</strong></p>
+<ol>
+<li>joined_lower 可以是 函数名, 方法名, 属性名</li>
+<li>joined_lower or ALL_CAPS 是常量</li>
+<li>StudlyCaps 类名</li>
+<li>camelCase 只有在预先制定好的命名规范使用</li>
+<li>属性: interface, _internal, __private</li>
+<li>但尽量避免__private形式。下面两个链接解释了 为什么python中没有 private声明?</li>
+</ol>
+<p><strong>Long lines &amp; Continuations</strong></p>
+<p>一行不要超过80个字符</p>
+<p>在括号里的换行使用隐含换行，但要注意对齐</p>
+<pre><code>def __init__(self, first, second, third,
+             fourth, fifth, sixth):
+    output = (first + second + third
+              + fourth + fifth + sixth)
+</code></pre><p>其它换行要使用“\”，注意后面千万不要有空格</p>
+<pre><code>VeryLong.left_hand_side \
+    = even_longer.right_hand_side()
+</code></pre><p><strong>Long Strings</strong></p>
+<p>相邻的文本字符会被编译器自动合并到一起</p>
+<pre><code>&gt;&gt;&gt;print &apos;o&apos; &apos;n&apos; &apos;e&apos;
+one
+</code></pre><p>文本之间的空格不是必须的，但为了更可读，建议加上。任何类型的引用都可以</p>
+<pre><code>&gt;&gt;&gt;print &apos;o&apos; r&apos;\/\/&apos; &quot;&quot;&quot;o&quot;&quot;&quot;
+o\/\/o
+</code></pre><p>注意，在string前面加上r表示raw字符串，该字符串中的“\”将不被转义。可用于正则表达式和windows系统中的文件路径<br>需要注意的时，被赋值的字符串对象不能被自动拼接</p>
+<pre><code>&gt;&gt;&gt;a = &apos;one&apos;
+&gt;&gt;&gt;b = &apos;two&apos;
+&gt;&gt;&gt;a b
+File &quot;&lt;stdin&gt;&quot;, line 1
+a b
+  ^
+SyntaxError: invalid syntax
+</code></pre><p>这是因为自动拼接是编译器的特性，而不是解释器的。必须在字符串对象中添加“+”保证运行时可以正常拼接。</p>
+<pre><code>text = （&apos;Long strings can be made up &apos;
+        &apos;of several shorter strings&apos;）
+</code></pre><p>注意，括号中允许隐式的换行</p>
+<p>多行字符用“”“ “”“来表明：</p>
+<pre><code>&quot;&quot;&quot;
+Triple
+double
+quotes
+&quot;&quot;&quot;
+</code></pre><p><strong>Compound Statements</strong></p>
+<pre><code>if foo == &apos;blah&apos;:
+    do_something()
+do_one()
+do_two()
+do_three()
+</code></pre><p>类似上面的格式是推荐的，而不推荐下面这种：</p>
+<pre><code>if foo == &apos;blah&apos;: do_something()
+do_one(); do_two(); do_three()
+</code></pre><p>上述的第一个带缩进格式的代码更容易表现程序的流程，而且第二个缩进更容易表示在if中会有一些其他的功能代码，当然，这样写最大的一个优点就是：<strong>增加可读性</strong>    </p>
+<p><strong>Docstrings &amp; Comments</strong></p>
+<blockquote>
+<p>Docstrings = How to use code</p>
+<p>Comments = Why(rationable) &amp; how code works</p>
+</blockquote>
+<p>Docstring 解释了如何调用该代码，主要针对的对象是该代码的用户，docstring应该包含如下内容：</p>
+<ul>
+<li>解释这个方法的目的，经管你自己一清二楚，但并不表示别人能很容易的明白其目的</li>
+<li>描述期待的参数、返回值、和可能抛出的异常</li>
+<li>如果这个方法只能被唯一的调用者配合使用，那么就需要提及这个调用者</li>
+</ul>
+<p>Comments 表示了你的代码为何如此，主要针对的对象是该代码的维护者，例子：</p>
+<pre><code># !!! BUG：...
+# !!! FIX: This is a hack
+# !!! Why is this here?
+</code></pre><p>Docstrings 和 Comments 都是写给你自己的，所以建议你写的好一点~！</p>
+<p>错误的Docstrings 和 Comments 比没有还可怕，所以最好能够随着代码的变化而对其加以更新和维护。<br><a href="http://www.python.org/dev/peps/pep-0257/" target="_blank" rel="external">PEP 257</a> 专门介绍了docstrings</p>
+<p><strong>Practicality Beats Purity</strong><br>凡事都有例外，在一些特殊情况下，也不一定要遵守上述规则</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>]]>
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="python积累" scheme="http://yoursite.com/categories/python%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[github上的ios代码]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-04-18-IOS%20Development/"/>
+    <id>http://yoursite.com/2016/01/20/2015-04-18-IOS Development/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>现在的IOS开发，有很多可以借鉴的轮子，我们不用再像之前一样，自己还需要写很多比较高级一些的控件，目前在很多的社区，已经有大量的高级控件以及可以借鉴的代码；对于产品初期，快速搭建一个demo效果的APP应用来说，最好的方法就是从其中挑选比较适合你么产品的开源代码，加以借鉴和使用<br><a id="more"></a></p>
+<p>在我们目前的产品开发中，分别使用了如下几个开源控件和框架</p>
+<ol>
+<li><p>AFNetworking<br> 负责HTTP通讯，用户可以很方便的基于自己的协议，实现一套通讯框架</p>
+</li>
+<li><p>FMDB<br> SQLite数据库框架</p>
+</li>
+<li><p>PXAlertview<br> 对话框</p>
+</li>
+<li><p>MBProgressHUD<br> 进度显示框</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>现在的IOS开发，有很多可以借鉴的轮子，我们不用再像之前一样，自己还需要写很多比较高级一些的控件，目前在很多的社区，已经有大量的高级控件以及可以借鉴的代码；对于产品初期，快速搭建一个demo效果的APP应用来说，最好的方法就是从其中挑选比较适合你么产品的开源代码，加以借鉴和使用<br>]]>
+    
+    </summary>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="IOS代码库" scheme="http://yoursite.com/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[利用纯代码构建IOS项目-03]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-04-01-CreateIOSViaPureCode03/"/>
+    <id>http://yoursite.com/2016/01/20/2015-04-01-CreateIOSViaPureCode03/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>我们</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我们</p>
+]]>
+    </summary>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="Objc" scheme="http://yoursite.com/tags/Objc/"/>
+    
+      <category term="IOS开发" scheme="http://yoursite.com/categories/IOS%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[github上的ios代码]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-30-IOS%20Github%20Repos/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-30-IOS Github Repos/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
+]]>
+    </summary>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="IOS代码库" scheme="http://yoursite.com/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[利用纯代码构建IOS项目-02]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-30-CreateIOSViaPureCode02/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-30-CreateIOSViaPureCode02/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>
+<a id="more"></a>
+<p>下文就是AFNetworking在自己的github上的介绍：</p>
+<blockquote>
+<p>AFNetworking is a delightful networking library for iOS and Mac OS X. It’s built on top of the Foundation URL Loading System, extending the powerful high-level networking abstractions built into Cocoa. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use.</p>
+</blockquote>
+<p>下面，我们就来试着使用以下这个大名鼎鼎的框架吧~</p>
+<p>首先安装<a href="http://cocoapods.org/" target="_blank" rel="external">CocoaPods</a>，CoCoaPods是一个Obj-c的依赖管理工具，就类似于Maven之与Java一样。<br>我们可以通过命令行来安装：</p>
+<pre><code>$ sudo gem install cocoapods
+$ pod setup 
+</code></pre><p>然后，移动到我们的项目目录，然后输入如下命令：</p>
+<pre><code>$ touch Podfile
+$ open -a Xcode Podfile
+</code></pre><p>上述两个命令的功能就是，先创建了一个Podfile文件，然后用xcode打开了，下面，我们就在podfile中添加一些内容：</p>
+<pre><code>source &apos;https://github.com/CocoaPods/Specs.git&apos;
+platform :ios, &apos;7.0&apos;
+pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
+</code></pre><p>跟AFNetworking相关的依赖信息就写好了，下面我们就来安装上述依赖库：</p>
+<pre><code>$ pod install
+</code></pre><p>如果上述安装很慢的话，可以考虑下述命令，因为有可能pod会更新一下gem库，你知道，伟大的墙会搞死你</p>
+<pre><code>$ pod install --no-repo-update
+</code></pre><p>注意，以后就要用xcworkspace来打开项目了！</p>
+<pre><code>$ open &lt;your Application name&gt;.xcworkspace
+</code></pre><p>好了，接下来就可以使用NFNetworking了~，只需要在用到的地方<code>include</code>需要的库即可~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="Objc" scheme="http://yoursite.com/tags/Objc/"/>
+    
+      <category term="IOS开发" scheme="http://yoursite.com/categories/IOS%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[利用纯代码构建IOS项目-01]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-30-CreateIOSViaPureCode/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-30-CreateIOSViaPureCode/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>
+<a id="more"></a>
+<ol>
+<li><p>选择File-&gt;New Project-&gt;Single View Application,填写必要信息，创建一个工程</p>
+</li>
+<li><p>打开Supporting Files-&gt;info.plist<br>删掉有关StoryBoard的配置</p>
+</li>
+<li><p>删掉Main.storyboard</p>
+</li>
+</ol>
+<p>修改AppDelegate.m 中的方法：</p>
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:    (NSDictionary *)launchOptions 
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(10/* x */, 10/* y */, 200/* width */, 200/* height */)];
+
+    myView.backgroundColor = [UIColor redColor];
+
+    [self.window addSubview:myView];
+    [myView setFrame:CGRectMake(10, 30, 200, 200)];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+</code></pre><p>然后运行，就可以看到一个由纯代码运行成功的ios的简单例子了…</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="Objc" scheme="http://yoursite.com/tags/Objc/"/>
+    
+      <category term="IOS开发" scheme="http://yoursite.com/categories/IOS%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Swift first try - Swift 初探]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-27-Swift%20First%20Try/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-27-Swift First Try/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>
+<a id="more"></a>
+<p>初看，swift和一些脚本语言有点类似，也可以不用明确的声明变量的类型，比如你可以这样:</p>
+<pre><code>var testString = &quot;a string&quot;
+</code></pre><p>也可以这样</p>
+<pre><code>var testInt = 10
+</code></pre><p>当然，你也可以明确的申明变量的类型：</p>
+<pre><code>var testDouble : Double = 10.32
+</code></pre><p>swift有很多类型，其实也无非就是<code>Int</code>,<code>Float</code>,<code>Double</code>,<code>String</code>,<code>Bool</code>等，要注意的是，当你这样申明一个变量的时候：<code>var test = 1230.3</code>,编译器会自动的认为这是一个Double</p>
+<p>另外，Swift也可以申明常量：</p>
+<pre><code>let constantValue = 10
+</code></pre><p>并且，还建议开发者应该优先使用<code>let</code>而不是<code>var</code>,因为这样，编译器可以做一些优化，那咱就<code>let it go</code>吧。</p>
+<p>在Swift中还有这样的写法：</p>
+<pre><code>let testName = “ComiCoder”
+let testStr = “\(testName) is a good man!”
+println(testStr) 
+
+-----output----
+ComiCoder is a good man!
+</code></pre><p>你会发现，我们可以用: <code>\(your expression)</code> 这样的语法来在字符串中内嵌其他变量</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="SWIFT" scheme="http://yoursite.com/tags/SWIFT/"/>
+    
+      <category term="Swift入门" scheme="http://yoursite.com/categories/Swift%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Swift first try - Swift 的class]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-27-Swift%20First%20Try%2002/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-27-Swift First Try 02/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>下面我们来看看swift中，如何定义和使用一个类<br><a id="more"></a></p>
+<p>其实很简单：</p>
+<pre><code>class MyTestClass {
+
+}
+</code></pre><p>这样子，一个名字为 <code>MyTestClass</code> 的类就被定义出来了</p>
+<p>下面，我们可以在这个类中添加一个构造方法，并且在构造方法中传入两个参数first和second</p>
+<pre><code>class MyTestClass {
+    init(first:Int, second:Double){
+    }
+}
+</code></pre><p>然后我们可以给这个类添加3个成员变量elem01，elem02和elem03，并且在构造方法中加入赋值的功能，你可以看到，构造方法就是以<code>init()</code>命名的方法，</p>
+<pre><code>class MyTestClass {
+
+    var elem01:Double
+    var elem02:Double
+    var elem03:Double
+    init(first: Double, second: Double){
+        elem01 = first
+        elem02 = second
+        elem03 = first / second
+    }
+}
+</code></pre><p>然后，我们可以在这个类中再添加一些成员方法，我们发现，首先，方法是以<code>func</code>开头的，另外，第一个方法<code>getElemDescription</code>没有返回值，而第二个方法有返回值，它用<code>-&gt;Double</code>表示其返回一个Double值。（<em>下面的代码，请放到上面那个类的大括号中间</em>）</p>
+<pre><code>func getElemDescription(){
+
+    println( &quot;Elem01=\(elem01) Elem02=\(elem02) Elem03=\(elem03)&quot;)
+
+}
+
+func getElem03()-&gt; Double{
+    return elem03
+}
+</code></pre><p>这样，我们就可以使用这个类了，我们先创建一个对象，然后调用它的两个方法：</p>
+<pre><code>let testObj = MyTestClass(first: 10.2, second: 123.2)
+
+testObj.getElemDescription()
+testObj.getElem03()
+</code></pre><p>这样，我们就初步了解了Swift类的一个创建和对象的使用情况~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>下面我们来看看swift中，如何定义和使用一个类<br>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+    
+      <category term="SWIFT" scheme="http://yoursite.com/tags/SWIFT/"/>
+    
+      <category term="Swift入门" scheme="http://yoursite.com/categories/Swift%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git step by step 2 - git安装]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-17-git%20step%20by%20step%2002/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-17-git step by step 02/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-mac" target="_blank" rel="external">mac</a></p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-windows" target="_blank" rel="external">windows</a></p>
+<a id="more"></a>
+<p>安装成功之后，打开终端(windows下面，需要打开git shell)，输入git –version查看版本信息，如果显示出来，表明安装成功啦</p>
+<pre><code>$ git --version
+git version 1.9.3 (Apple Git-50)
+</code></pre><p>在使用前，先配置一下本地用户：</p>
+<pre><code>git config --global user.name &apos;USER NAME&apos;
+git config --global user.email &apos;USER EMAIl&apos;
+</code></pre><p>然后就可以创建版本库（repo）了，可以将repo理解为一个目录，在该目录下面的所有文件都会托管到git上，用户可以通过git的命令来进行创建，删除，修改文件等操作。</p>
+<p>下面我们就现在本地创建一个版本库：</p>
+<pre><code>$ mkdir GitRepo
+$ cd GitRepo
+$ git init
+Initialized empty Git repository in /Users/liulong/Documents/GitRepo/.git/
+</code></pre><p>这样，git的版本库就创建好了，当然，目前还是一个空的git版本库</p>
+<pre><code>$ ls -al
+</code></pre><p>可以看到目录下面有一个 “.git” 的目录,感兴趣的朋友可以进到这个目录里面先看看其中有哪些东西，下面，我们就给我们的repo添一些料</p>
+<pre><code>$ vim readme.md
+</code></pre><p>然后随便编辑一些文字：</p>
+<pre><code>#This is a test
+
+Hello Git hub!
+</code></pre><p>当这个文件创建之后，它并没有被git察觉到，我们还是需要一个命令，将它放置到git的版本库里面</p>
+<p>第一步：用<code>git add</code> 告诉git：</p>
+<pre><code>$ git add readme.md
+</code></pre><p>第二部：用<code>git commit -m</code>将文件提交到仓库中：</p>
+<pre><code>$ git commit -m &quot;add a new file named readme.md&quot; 
+1 file changed, 3 insertions(+)
+create mode 100644 readme.md 
+</code></pre><p>这里的-m 后的“xxx”表示对本次提交的一个描述信息，强烈建议每次提交都写好一些针对本次提交的说明。</p>
+<p>最后，当一切都完成之后，你可以用<code>git status</code>查看一下版本控制情况</p>
+<pre><code>$ git status
+On branch master
+nothing to commit, working directory clean
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-mac">mac</a></p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-windows">windows</a></p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git step by step 5 - git的工作流]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-23-git%20step%20by%20step%2005/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-23-git step by step 05/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2004/" target="_blank" rel="external">git step by step4</a></p>
+<a id="more"></a>
+<p>git的工作主要分布在三个部分</p>
+<p><img src="http://7xi7tu.com1.z0.glb.clouddn.com/cc0001.png?imageView2/2/w/203/h/203&amp;e=1427166456&amp;token=ejngiHmFYkCZWtp3_oR-Fs0_7dWymovRY36aPOVb:dLI9AmUIrQBDh4jUmzNzh7Z61NA" alt="git three part"></p>
+<p>第一部分就是“工作目录”，比如我们例子中GitRepo就是，你可以编辑的实际文档都在这里</p>
+<p>第二部分就是“Index”区，或者也叫“Stage”区，也可以称之为“暂存区”，你可以将你的改动临时保存在这里</p>
+<p>第三部分就是“HEAD”，当你提交之后，暂存区里头的内容就被提交到这里，git会在这里为你默认建立一个master分支，并让HEAD指向最后的一次提交</p>
+<p>所以，之前我们提到的 git add 和 git commit 这两个常用命令，就是将这三部分串联起来的关键命令</p>
+<p>git add 将你工作区的内容，添加到“暂存区”<br>git commit 就是将你“暂存区”的内容，再提交到当前分支上去</p>
+<p>通常情况下，我们还会将代码再次提交到远端服务器上，这样可以让代码更加的安全，并且可以和团队中的其他人更好的进行协作，那么我们就需要用<code>git push</code>将代码从HEAD上再次推送到远端服务器上：<br>比如：</p>
+<pre><code>git push origin master
+</code></pre><p>我们可以将master换成是你需要的任何一个分支名</p>
+<p>如果远端服务器上没有你的这个代码库，那么你可以通过：</p>
+<pre><code>git remote add origin &lt;server&gt;
+</code></pre><p>这个命令来在远端服务器上也建一个repo</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2004/">git step by step4</a></p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git step by step 4 - git reset 的命令介绍]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-19-git%20step%20by%20step%2004/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-19-git step by step 04/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2003/" target="_blank" rel="external">git step by step3</a></p>
+<a id="more"></a>
+<p>我们日常的工作中，对一个文件可能会有多次的修改和提交，很显然，我们肯定不能记住每一次的提交情况，git也提供了这个功能：</p>
+<pre><code>git log
+</code></pre><p>用这个命令，我们就可以看到每一次的提交情况：</p>
+<pre><code>commit 905fe1cf74f9925abb548c5bf3f17ed62f0b4bfd
+Author: ComiCoder &lt;glutinit@gmail.com&gt;
+Date:   Thu Mar 19 17:57:03 2015 +0800
+
+    add
+
+commit 8790026bbc7687561c5065112f18a726ba313c38
+Author: ComiCoder &lt;glutinit@gmail.com&gt;
+Date:   Tue Mar 17 15:42:45 2015 +0800
+
+    add a new file named readme.md
+</code></pre><p>你也可以给<code>git log</code>加一个参数<code>--pretty=oneline</code>,这样，可以看到更简洁的log记录：</p>
+<pre><code>905fe1cf74f9925abb548c5bf3f17ed62f0b4bfd add
+8790026bbc7687561c5065112f18a726ba313c38 add a new file named readme.md
+</code></pre><p>可以看到每一句话最开头的那长段id，就是每次的 <code>commit id</code></p>
+<p>那么接下来，如果我们企图将上文中的 3月19日 的那个提交回退的话，我们应该如何做呢？很简单</p>
+<pre><code>git reset --hard HEAD^
+</code></pre><p>这样就行了，其中HEAD表示当前版本，那么HEAD^就表示上一个版本，HEAD^^自然就表示上上一个版本，<br>那么，往前回退N各版本，就输入<code>git reset --hard HEAD~N</code>即可</p>
+<p>输入完<code>git reset --hard HEAD^</code>,我们再用 <code>git log</code>查看一下，发现，最近的一次提交没有了，我们已经会推到了上一个版本。</p>
+<p>我们回退了之后后悔了咋办，也是有办法的，如果你的shell界面没有关闭，那么你还可以通过输入git reset –hard commitID的方法回复到你想要的版本，其中commitID不需要输全，你只需要输入前几个即可，git会帮你搜到，那么按照上面的git log的信息，我们就可以输入；</p>
+<pre><code>git reset --hard 905fe1c
+</code></pre><p>然后再用git log查看一下,哎，一切都恢复原状啦，你会发现git的回复速度很快，因为它只是将HEAD指向了你想要的那个版本上，并没有做删除的工作</p>
+<p>另外，你还可以通过输入：<code>git reflog</code>来查看一下每一次的git 命令</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2003/">git step by step3</a></p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git step by step 3 - git简单操作]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-19-git%20step%20by%20step%2003/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-19-git step by step 03/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>接上文<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/17/git%20step%20by%20step%2002/" target="_blank" rel="external">git step by step2</a></p>
+<a id="more"></a>
+<p>我们已经在我们的版本控制库中添加了readme.md文件，我们现在就来编辑一下它，将其修改为：</p>
+<pre><code>#This is a test
+Hello GitHub
+git is a great tool for coder...
+</code></pre><p>然后我们用<code>git status</code>命令查看一下</p>
+<pre><code>$ git status
+
+# On branch master
+# Changes not staged for commit:
+# ( use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+# (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+# modified:   readme.md
+
+# no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre><p>从提示可以看出，该文档的内容已近被修改，git给我们两个选择，一个就是用git add 将此次修改提交到版本库，第二个就是用checkout – 恢复此次修改，我们可以试一下第二种</p>
+<pre><code>git checkout -- readme.md
+</code></pre><p>然后打开 readme.md，我们发现内容已近变成了之前的了…好把，那我们再重复一下上面的动作，修改文件，进行查看，然后我们可以用 <code>git diff</code>查看一下文件发生了什么变化.</p>
+<pre><code>diff --git a/readme.md b/readme.md
+index 76d2bc6..45e0d75 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1,3 +1,3 @@
+ #This is a test
+-
+-Hello Git Hub!
++Hello GitHub
++git is a great tool for coder...
+</code></pre><p>可以看出，我们修改了 Hello Git Hub！这一行，并添加了 git is a …这一行</p>
+<p>下面，我们就用<code>git add</code>将该文件提交到仓库吧</p>
+<pre><code>git add readme.md
+</code></pre><p>在commit之前，我们再用git status查看一下吧（注意git status是一个经常会用到的命令）</p>
+<pre><code>On branch master
+Changes to be committed:
+    (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+modified:   readme.md
+</code></pre><p>下面，就用git commit -m “xxxxx”</p>
+<p>OK啦，这样就算最简单的git的使用喽</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>接上文<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/17/git%20step%20by%20step%2002/">git step by step2</a></p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[python网络爬虫01]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-19-Python%20Web%20Robot/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-19-Python Web Robot/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>
+<a id="more"></a>
+<p>在开始之前，我们先制定一个爬虫工具的目的，我们究竟要爬什么呢？我最近常去的网站就是<a href="http://huaban.com" target="_blank" rel="external">huaban.com</a>，我们就从花瓣上爬一些美女图片吧，哈哈</p>
+<p>在写爬虫之前，我们必须了解一下python爬虫的基本知识，显而易见，首先你必须要会用python，第二，你必须对HTTP协议有一定的了解，在python中，和HTTP相关的两个库就是urllib和urllib2，也可以稍微走一些了解</p>
+<p>##PYTHON<br>Python是一门很不错的语言，你既可以把它作为主要的开发语言，也可以作为辅助性的工具，走一些日常的批处理工作，对于我来说，目前我主要用python写了一个APP的服务端(基于Django框架)，我觉得比起java和java社区的Spring3框架，python更适合我个人，那么首先，介绍几各适合python入门的网站吧：</p>
+<ol>
+<li><a href="http://www.2cto.com/shouce/Pythonbbf/" target="_blank" rel="external">笨办法学python</a></li>
+<li><a href="http://learnpythonthehardway.org/" target="_blank" rel="external">learn python the hard way 笨办法学python英文版</a></li>
+<li><a href="/[A byte of Python](http://itlab.idcquan.com/linux/manual/python_chinese/">简明python教程</a></li>
+<li><a href="http://www.swaroopch.com/notes/python/" target="_blank" rel="external">A Byte of Python</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000" target="_blank" rel="external">廖雪峰python教程</a></li>
+</ol>
+<p>看看上面几个基本上就没什么太大问题了，当然，python的内容还是很深入的，需要更进一步了解，就需要阅读更多的内容，多逛逛几个知名论坛等等</p>
+<h2 id="urlib__u548C_urllib2"><a href="#urlib__u548C_urllib2" class="headerlink" title="urlib 和 urllib2"></a>urlib 和 urllib2</h2><p>这两个库是学习python 爬虫的最基本的两个库，最好也能够对它们有一定的了解和掌握</p>
+<p>urllib：比较简单，功能相对也比较弱，可以从指定的URL下载文件，或是对一些字符串进行编码解码以使他们成为特定的 URL串。</p>
+<p>urllib2：它有各种各样的Handler啊，Processor啊可以处理更复杂的问 题，比如网络认证，使用代理服务器，使用cookie等等。</p>
+<h2 id="python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F"><a href="#python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F" class="headerlink" title="python的正则表达式"></a>python的正则表达式</h2><p>有了正则表达式，就可以更有效率地从抓取的网页信息中提炼你需要的内容，这个可以看看下面这篇文章：<br><a href="http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="external">Python正则表达式</a></p>
+<p>##Scrapy<br>是一个python爬虫框架，最好在我们实现了最简单的python爬虫功能之后，再加以了解~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>]]>
+    
+    </summary>
+    
+      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+    
+      <category term="WebCrawler" scheme="http://yoursite.com/tags/WebCrawler/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="python爬虫" scheme="http://yoursite.com/categories/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[linux下面的简单页面配置]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-18-%E5%9C%A8linux%E4%B8%8A%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-18-在linux上配置网站/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了</p>
+<a id="more"></a>
+<p>但是，由于我忘了linxu上apache的 httpd.config文件放哪里了，所以就先用这个命令找一下：</p>
+<pre><code>find / -name httpd.config -print
+</code></pre><p>一下子就找到了，在我的系统上，这个配置文件在：<code>/etc/httpd/conf/</code> 下面:</p>
+<p>然后我们找到下面有一个文件 httpd.config, 用vim打开，找到 <code>VirtualHost</code>:<br>可以看到类似的配置：</p>
+<pre><code>&lt;VirtualBox ip:port&gt;
+    ...
+    DocumentRoot /xxx/xxx/xxx
+    ...
+&lt;/VirtualBox&gt;
+</code></pre><p>将DocumentRoot修改成你自己网站所在的路径</p>
+<p>然后重启apache：</p>
+<pre><code>service httpd restart
+</code></pre><p>然后就可以试试看喽</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了</p>]]>
+    
+    </summary>
+    
+      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="linux下的技术积累" scheme="http://yoursite.com/categories/linux%E4%B8%8B%E7%9A%84%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[像模像样写python（2）]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-17-%E5%83%8F%E6%A8%A1%E5%83%8F%E6%A0%B7%E5%86%99python2/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-17-像模像样写python2/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>下面我们会介绍一下python中的一些习惯用法</p>
+<a id="more"></a>
+<p>##Swap Values<br>在其他的语言中，交换对象值一般这样写：</p>
+<pre><code>temp = a
+a = b
+b = temp
+</code></pre><p>而在python中，则可以这样:</p>
+<pre><code>b,a = a,b
+</code></pre><p>为什么呢？</p>
+<ul>
+<li>逗号”,”是元祖构造语法</li>
+<li>在等号的右边构造了一个元组（元组打包）</li>
+<li>在等号的左边也够早了一个元组（元组解包）</li>
+</ul>
+<p>也就是说，上述语句表示右边的元组解包到左边的元组，为了更好的解释元组解包的情况，请看如下代码：</p>
+<pre><code>&gt;&gt;&gt; l =[&apos;David&apos;, &apos;Pythonista&apos;, &apos;+1-514-555-1234&apos;]
+&gt;&gt;&gt; name, title, phone = l
+&gt;&gt;&gt; name
+&apos;David&apos;
+&gt;&gt;&gt; title
+&apos;Pythonista&apos;
+&gt;&gt;&gt; phone
+&apos;+1-514-555-1234&apos;
+</code></pre><p>元组的解包常用于结构数据的遍历上，我们继续上面那个例子：</p>
+<pre><code>&gt;&gt;&gt;people = [l, [&apos;Guido&apos;,&apos;BDFL&apos;,&apos;unlisted&apos;]]
+&gt;&gt;&gt;for (name, title, phone) in people:
+...    print name, phone
+...
+David +1-514-555-1234
+Guido unlisted
+</code></pre><p>##More About Tuples<br>我们要注意<strong>逗号</strong>是元组构造器，而不是括号：</p>
+<pre><code>&gt;&gt;&gt;1,
+&gt;&gt;&gt;(1,)
+</code></pre><p>当然，为了提高可读性，最好还是加上（）</p>
+<pre><code>&gt;&gt;&gt;(1,)
+&gt;&gt;&gt;(1,)
+</code></pre><p>o个元素的元组，可以通过（）表现：</p>
+<pre><code>&gt;&gt;&gt;()
+&gt;&gt;&gt;()
+</code></pre><p>注意，遗漏的逗号，有可能会对你的代码产生影响，在你不需要元组的时候，给你生成了一个元组，比如：</p>
+<pre><code>&gt;&gt;&gt; value = 1,
+&gt;&gt;&gt; value
+(1,)
+</code></pre><p>所以，有些时候，莫名奇妙的出现了一些元组，那么请你注意一下，是否有多余的逗号~</p>
+<p>##Interactive “_”</p>
+<p>Python中“<em>”的一个特性，可能很少有人知道~<br>在交互解释器中，你调用一个方法或者描述了一个表达式，其结果都绑定在了一个 “</em>” 变量上面</p>
+<pre><code>&gt;&gt;&gt; 1 + 1
+2
+&gt;&gt;&gt; -
+2
+</code></pre><p>要注意，<em>存储了最后一个被打印的表达式，当结果是None的时候，不会打印任何东西，那么”</em>“不会被改变~，而且这个只是在交互解释其中才有效，而在模块中无效~</p>
+<p>##Building Strings from substrings<br>首先从一个字符串列表开始：</p>
+<pre><code>colors = [&apos;red&apos;,&apos;green&apos;,&apos;yellow&apos;]
+</code></pre><p>我们先把这些字符串拼接成一个大的串，特别是当这些字符串列表的数量特别多的时候…千万不要这样做：</p>
+<pre><code>result = &apos;&apos;
+for s in colors:
+    result += s
+</code></pre><p>这样做是很没有效率的~</p>
+<p>最好这样做：</p>
+<pre><code>result = &apos;&apos;.join(colors)
+</code></pre><p>当拼接的数量特别多的时候，就更会显示出第二种算法的优势了</p>
+<p>一些例子:</p>
+<pre><code>colors = [&apos;red&apos;,&apos;blue&apos;,&apos;green&apos;,&apos;yellow&apos;]
+print &apos;choose&apos;, &apos;, &apos;.join(colors[:-1]),\
+      &apos;or&apos;,colors[-1]
+</code></pre><p>##Use in where possible(1)</p>
+<p>可以这样遍历列表（lists），元组（tuples）或者集合（sets）</p>
+<pre><code>for key in d:
+    print key
+</code></pre><p>也可以这样子遍历字典（dictionary）<br>    for key in d.keys():<br>        print d[key]</p>
+<p>当然，有些时候，你可能在遍历字典的时候，遇到这个异常：”RuntimeError: dictionary changed size during iteration.”</p>
+<p>那么，我们可以这样做来保持一致性：<br>if key in d:<br>    …do something with d[key]</p>
+<p>##Dictionary get Method</p>
+<pre><code>dict.get(key, default) 
+</code></pre><p>如果字典中找不到key，则返回default值</p>
+<h2 id="Dictioany_setdefault_Method"><a href="#Dictioany_setdefault_Method" class="headerlink" title="Dictioany setdefault Method"></a>Dictioany setdefault Method</h2><pre><code>dict.setdefault(key, default)
+</code></pre><p>##building &amp; Splitting Dictionaries</p>
+<p>可以将两个列表组合成一个字典：</p>
+<pre><code>given = [&apos;John&apos;, &apos;Eric&apos;, &apos;Terry&apos;, &apos;Michael&apos;]
+family = [&apos;Cleese&apos;, &apos;Idle&apos;, &apos;Gilliam&apos;, &apos;Palin&apos;]
+
+pythons = dict(zip(given, family))
+</code></pre><p>当然，相反的，把字典拆成两个列表也是可以的</p>
+<pre><code>&gt;&gt;&gt; pythons.keys()
+[&apos;John&apos;, &apos;Eric&apos;, &apos;Terry&apos;, &apos;Michael&apos;]
+&gt;&gt;&gt; pythons.values()
+[&apos;Cleese&apos;, &apos;Palin&apos;, &apos;Idle&apos;, &apos;Gilliam&apos;]
+</code></pre><p>要注意，分离出来的values的值和最初的列表值不一样</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>下面我们会介绍一下python中的一些习惯用法</p>]]>
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="python积累" scheme="http://yoursite.com/categories/python%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Jekyll模板]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-17-jekyll%20%E6%A8%A1%E6%9D%BF/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-17-jekyll 模板/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>在jekyll的官网上，有很多jekyll的模板，等以后有空再去比自己的空间弄一弄，最好可以更多的了解一下jekyll的使用</p>
+<p><a href="https://github.com/jekyll/jekyll/wiki/sites" target="_blank" rel="external">jekyll模板</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在jekyll的官网上，有很多jekyll的模板，等以后有空再去比自己的空间弄一弄，最好可以更多的了解一下jekyll的使用</p>
+<p><a href="https://github.com/jekyll/jekyll/wiki/sites" target="_blan]]>
+    </summary>
+    
+      <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
+    
+      <category term="Jekyll" scheme="http://yoursite.com/tags/Jekyll/"/>
+    
+      <category term="杂文" scheme="http://yoursite.com/categories/%E6%9D%82%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[first hexo]]></title>
+    <link href="http://yoursite.com/2016/01/20/first-hexo/"/>
+    <id>http://yoursite.com/2016/01/20/first-hexo/</id>
+    <published>2016-01-20T07:58:55.000Z</published>
+    <updated>2016-01-20T11:26:25.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>]]>
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2016/01/20/hello-world/"/>
+    <id>http://yoursite.com/2016/01/20/hello-world/</id>
+    <published>2016-01-20T07:48:33.000Z</published>
+    <updated>2016-01-20T07:48:33.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
