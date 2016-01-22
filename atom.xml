@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-13T05:36:03.000Z</updated>
+  <updated>2016-01-22T03:18:22.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[CreateHexo]]></title>
+    <link href="http://yoursite.com/2016/01/22/CreateHexo/"/>
+    <id>http://yoursite.com/2016/01/22/CreateHexo/</id>
+    <published>2016-01-22T03:18:01.000Z</published>
+    <updated>2016-01-22T03:18:22.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="HEXO__u521B_u5EFABlog"><a href="#HEXO__u521B_u5EFABlog" class="headerlink" title="HEXO 创建Blog"></a>HEXO 创建Blog</h1><p>决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架</p>
+<p>##HEXO介绍<br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">hexo</a>是一个目前比较流行的博客框架<br>主要有如下几个优点：</p>
+<ul>
+<li>生成快速</li>
+<li>支持 Markdown</li>
+<li>一键部署</li>
+<li>插件丰富</li>
+</ul>
+<p>##安装前提<br>安装HEXO前，必须保证您的机器上已经有：<br><a href="http://git-scm.com/" target="_blank" rel="external">git</a><br><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></p>
+<h2 id="u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9"><a href="#u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9" class="headerlink" title="安装Hexo与建站"></a>安装Hexo与建站</h2><h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &#60;fold&#62;&#10;$ cd &#60;fold&#62;&#10;$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="start"><a href="#start" class="headerlink" title="start"></a>start</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server&#10;or&#10;$ hexo s</span><br></pre></td></tr></table></figure>
+<p>就可以看到如下结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>说明启动成功</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="HEXO__u521B_u5EFABlog"><a href="#HEXO__u521B_u5EFABlog" class="headerlink" title="HEXO 创建Blog"></a>HEXO 创建Blog</h1><p>决定又重新开始写blog，以]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[git step by step 6 - git的恢复流程]]></title>
@@ -53,28 +81,6 @@ modified:   readme.md
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
       <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[开始写Blog喽]]></title>
-    <link href="http://yoursite.com/2016/01/20/2015-03-11-%E7%AC%AC%E4%B8%80%E4%B8%AABlog/"/>
-    <id>http://yoursite.com/2016/01/20/2015-03-11-第一个Blog/</id>
-    <published>2016-01-20T11:22:04.000Z</published>
-    <updated>2016-01-13T05:36:03.000Z</updated>
-    <content type="html"><![CDATA[<p>终于搭建了一个自己的Blog，当然，还是借助了github的pages功能，并且拷贝了一个Jekyll的Template</p>
-<a id="more"></a>
-<p>多谢<a href="http://simpleyyt.github.io/" target="_blank" rel="external">simpleyyt Jekyll Template</a>,否则可能这个blog还要搭建很久，前端无能的我还是很害怕写css，哎~</p>
-<p>争取以后可以多写一些Blog，技术的也好，绘画相关的也好，其他文章的也好，都记录在这里</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>终于搭建了一个自己的Blog，当然，还是借助了github的pages功能，并且拷贝了一个Jekyll的Template</p>]]>
-    
-    </summary>
-    
-      <category term="Normal" scheme="http://yoursite.com/tags/Normal/"/>
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
@@ -231,6 +237,28 @@ do_one(); do_two(); do_three()
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
       <category term="python积累" scheme="http://yoursite.com/categories/python%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[开始写Blog喽]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-11-%E7%AC%AC%E4%B8%80%E4%B8%AABlog/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-11-第一个Blog/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>终于搭建了一个自己的Blog，当然，还是借助了github的pages功能，并且拷贝了一个Jekyll的Template</p>
+<a id="more"></a>
+<p>多谢<a href="http://simpleyyt.github.io/" target="_blank" rel="external">simpleyyt Jekyll Template</a>,否则可能这个blog还要搭建很久，前端无能的我还是很害怕写css，哎~</p>
+<p>争取以后可以多写一些Blog，技术的也好，绘画相关的也好，其他文章的也好，都记录在这里</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>终于搭建了一个自己的Blog，当然，还是借助了github的pages功能，并且拷贝了一个Jekyll的Template</p>]]>
+    
+    </summary>
+    
+      <category term="Normal" scheme="http://yoursite.com/tags/Normal/"/>
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
@@ -906,28 +934,6 @@ pythons = dict(zip(given, family))
     </summary>
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2016/01/20/hello-world/"/>
-    <id>http://yoursite.com/2016/01/20/hello-world/</id>
-    <published>2016-01-20T07:48:33.000Z</published>
-    <updated>2016-01-20T07:48:33.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
     
   </entry>
   

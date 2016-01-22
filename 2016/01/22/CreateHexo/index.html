@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,16 +59,43 @@
 
 
 
-<meta name="description" content="接上文：git step by step3">
+<meta name="description" content="HEXO 创建Blog决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架
+##HEXO介绍hexo是一个目前比较流行的博客框架主要有如下几个优点：
+
+生成快速
+支持 Markdown
+一键部署
+插件丰富
+
+##安装前提安装HEXO前，必须保证您的机器上已经有：gitnode.js
+安装Hexo与建站install1$ npm install">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git step by step 4 - git reset 的命令介绍">
-<meta property="og:url" content="http://yoursite.com/2016/01/20/2015-03-19-git step by step 04/index.html">
+<meta property="og:title" content="CreateHexo">
+<meta property="og:url" content="http://yoursite.com/2016/01/22/CreateHexo/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="接上文：git step by step3">
-<meta property="og:updated_time" content="2016-01-13T05:36:03.000Z">
+<meta property="og:description" content="HEXO 创建Blog决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架
+##HEXO介绍hexo是一个目前比较流行的博客框架主要有如下几个优点：
+
+生成快速
+支持 Markdown
+一键部署
+插件丰富
+
+##安装前提安装HEXO前，必须保证您的机器上已经有：gitnode.js
+安装Hexo与建站install1$ npm install">
+<meta property="og:updated_time" content="2016-01-22T03:18:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git step by step 4 - git reset 的命令介绍">
-<meta name="twitter:description" content="接上文：git step by step3">
+<meta name="twitter:title" content="CreateHexo">
+<meta name="twitter:description" content="HEXO 创建Blog决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架
+##HEXO介绍hexo是一个目前比较流行的博客框架主要有如下几个优点：
+
+生成快速
+支持 Markdown
+一键部署
+插件丰富
+
+##安装前提安装HEXO前，必须保证您的机器上已经有：gitnode.js
+安装Hexo与建站install1$ npm install">
 
 
 
@@ -86,7 +113,7 @@
   };
 </script>
 
-  <title> git step by step 4 - git reset 的命令介绍 | Leeo‘s Blog </title>
+  <title> CreateHexo | Leeo‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -206,7 +233,7 @@
             
             
               
-                git step by step 4 - git reset 的命令介绍
+                CreateHexo
               
             
           </h1>
@@ -218,38 +245,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-20T19:22:04+08:00" content="2016-01-20">
-              2016-01-20
+            <time itemprop="dateCreated" datetime="2016-01-22T11:18:01+08:00" content="2016-01-22">
+              2016-01-22
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git-step-by-step/" itemprop="url" rel="index">
-                    <span itemprop="name">git step by step</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/20/2015-03-19-git step by step 04/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/20/2015-03-19-git step by step 04/" itemprop="commentsCount"></span>
+                <a href="/2016/01/22/CreateHexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/CreateHexo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -270,62 +278,39 @@
       
 
       
-        <p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2003/" target="_blank" rel="external">git step by step3</a></p>
-<a id="more"></a>
-<p>我们日常的工作中，对一个文件可能会有多次的修改和提交，很显然，我们肯定不能记住每一次的提交情况，git也提供了这个功能：</p>
-<pre><code>git log
-</code></pre><p>用这个命令，我们就可以看到每一次的提交情况：</p>
-<pre><code>commit 905fe1cf74f9925abb548c5bf3f17ed62f0b4bfd
-Author: ComiCoder &lt;glutinit@gmail.com&gt;
-Date:   Thu Mar 19 17:57:03 2015 +0800
-
-    add
-
-commit 8790026bbc7687561c5065112f18a726ba313c38
-Author: ComiCoder &lt;glutinit@gmail.com&gt;
-Date:   Tue Mar 17 15:42:45 2015 +0800
-
-    add a new file named readme.md
-</code></pre><p>你也可以给<code>git log</code>加一个参数<code>--pretty=oneline</code>,这样，可以看到更简洁的log记录：</p>
-<pre><code>905fe1cf74f9925abb548c5bf3f17ed62f0b4bfd add
-8790026bbc7687561c5065112f18a726ba313c38 add a new file named readme.md
-</code></pre><p>可以看到每一句话最开头的那长段id，就是每次的 <code>commit id</code></p>
-<p>那么接下来，如果我们企图将上文中的 3月19日 的那个提交回退的话，我们应该如何做呢？很简单</p>
-<pre><code>git reset --hard HEAD^
-</code></pre><p>这样就行了，其中HEAD表示当前版本，那么HEAD^就表示上一个版本，HEAD^^自然就表示上上一个版本，<br>那么，往前回退N各版本，就输入<code>git reset --hard HEAD~N</code>即可</p>
-<p>输入完<code>git reset --hard HEAD^</code>,我们再用 <code>git log</code>查看一下，发现，最近的一次提交没有了，我们已经会推到了上一个版本。</p>
-<p>我们回退了之后后悔了咋办，也是有办法的，如果你的shell界面没有关闭，那么你还可以通过输入git reset –hard commitID的方法回复到你想要的版本，其中commitID不需要输全，你只需要输入前几个即可，git会帮你搜到，那么按照上面的git log的信息，我们就可以输入；</p>
-<pre><code>git reset --hard 905fe1c
-</code></pre><p>然后再用git log查看一下,哎，一切都恢复原状啦，你会发现git的回复速度很快，因为它只是将HEAD指向了你想要的那个版本上，并没有做删除的工作</p>
-<p>另外，你还可以通过输入：<code>git reflog</code>来查看一下每一次的git 命令</p>
+        <h1 id="HEXO__u521B_u5EFABlog"><a href="#HEXO__u521B_u5EFABlog" class="headerlink" title="HEXO 创建Blog"></a>HEXO 创建Blog</h1><p>决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架</p>
+<p>##HEXO介绍<br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">hexo</a>是一个目前比较流行的博客框架<br>主要有如下几个优点：</p>
+<ul>
+<li>生成快速</li>
+<li>支持 Markdown</li>
+<li>一键部署</li>
+<li>插件丰富</li>
+</ul>
+<p>##安装前提<br>安装HEXO前，必须保证您的机器上已经有：<br><a href="http://git-scm.com/" target="_blank" rel="external">git</a><br><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></p>
+<h2 id="u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9"><a href="#u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9" class="headerlink" title="安装Hexo与建站"></a>安装Hexo与建站</h2><h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &#60;fold&#62;&#10;$ cd &#60;fold&#62;&#10;$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="start"><a href="#start" class="headerlink" title="start"></a>start</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server&#10;or&#10;$ hexo s</span><br></pre></td></tr></table></figure>
+<p>就可以看到如下结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>说明启动成功</p>
 
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag">#git</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/20/2015-03-19-git step by step 03/" rel="next" title="git step by step 3 - git简单操作">
-                <i class="fa fa-chevron-left"></i> git step by step 3 - git简单操作
+              <a href="/2016/01/20/2015-03-23-git step by step 06/" rel="next" title="git step by step 6 - git的恢复流程">
+                <i class="fa fa-chevron-left"></i> git step by step 6 - git的恢复流程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/20/2015-03-23-git step by step 05/" rel="prev" title="git step by step 5 - git的工作流">
-                git step by step 5 - git的工作流 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -351,8 +336,8 @@ Date:   Tue Mar 17 15:42:45 2015 +0800
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/20/2015-03-19-git step by step 04/"
-           data-title="git step by step 4 - git reset 的命令介绍" data-url="http://yoursite.com/2016/01/20/2015-03-19-git step by step 04/">
+      <div class="ds-thread" data-thread-key="2016/01/22/CreateHexo/"
+           data-title="CreateHexo" data-url="http://yoursite.com/2016/01/22/CreateHexo/">
       </div>
     
   </div>
@@ -450,7 +435,7 @@ Date:   Tue Mar 17 15:42:45 2015 +0800
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HEXO__u521B_u5EFABlog"><span class="nav-number">1.</span> <span class="nav-text">HEXO 创建Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9"><span class="nav-number">1.1.</span> <span class="nav-text">安装Hexo与建站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install"><span class="nav-number">1.1.1.</span> <span class="nav-text">install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setup"><span class="nav-number">1.1.2.</span> <span class="nav-text">setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#start"><span class="nav-number">1.1.3.</span> <span class="nav-text">start</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
