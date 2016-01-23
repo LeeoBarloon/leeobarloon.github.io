@@ -1,0 +1,806 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="机器学习,读书笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leeo‘s Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="##机器学习 读书笔记01最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的斯坦福大学公开课 ：机器学习课程，公开课的老师是一个华人，最后一查，发现他是一个大牛，哦不，是巨牛，请看他的相关介绍：Andrew Ng，后来发现他是著名的公开课网站Course的co-fonder，然后在这个网站上也发现了有关机器学习的课程公开课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习实战-学习笔记01">
+<meta property="og:url" content="http://yoursite.com/2016/01/23/机器学习实战-学习笔记01/index.html">
+<meta property="og:site_name" content="Leeo‘s Blog">
+<meta property="og:description" content="##机器学习 读书笔记01最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的斯坦福大学公开课 ：机器学习课程，公开课的老师是一个华人，最后一查，发现他是一个大牛，哦不，是巨牛，请看他的相关介绍：Andrew Ng，后来发现他是著名的公开课网站Course的co-fonder，然后在这个网站上也发现了有关机器学习的课程公开课">
+<meta property="og:image" content="http://img2.ph.126.net/nT1jFeB01R7PJiGoD4BFrg==/6631445997703530932.jpg">
+<meta property="og:updated_time" content="2016-01-23T15:05:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习实战-学习笔记01">
+<meta name="twitter:description" content="##机器学习 读书笔记01最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的斯坦福大学公开课 ：机器学习课程，公开课的老师是一个华人，最后一查，发现他是一个大牛，哦不，是巨牛，请看他的相关介绍：Andrew Ng，后来发现他是著名的公开课网站Course的co-fonder，然后在这个网站上也发现了有关机器学习的课程公开课">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 机器学习实战-学习笔记01 | Leeo‘s Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leeo‘s Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                机器学习实战-学习笔记01
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-23T21:54:01+08:00" content="2016-01-23">
+              2016-01-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/23/机器学习实战-学习笔记01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/23/机器学习实战-学习笔记01/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>##机器学习 读书笔记01<br>最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的<a href="http://open.163.com/special/opencourse/machinelearning.html" target="_blank" rel="external">斯坦福大学公开课 ：机器学习课程</a>，公开课的老师是一个华人，最后一查，发现他是一个大牛，哦不，是巨牛，请看他的相关介绍：<a href="http://baike.baidu.com/link?url=82UgpsKu2N8pN-9XWsJLQkeGVArb5GRdDthrAjGfwtuHEXNhWcTA7PQI9eZGGmxz9sogbViWV0annPGr0XGOMrF7Via3PdjXliQo0_umzuz6Q9EWE-g6y5NN1L_gdX1zlpV17EsqVchsQ9AlPw61w_" target="_blank" rel="external">Andrew Ng</a>，后来发现他是著名的公开课网站<a href="https://www.coursera.org/" target="_blank" rel="external">Course</a>的co-fonder，然后在这个网站上也发现了有关机器学习的课程<a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">公开课</a></p>
+<p>网上有学习过他的课程的网友说，网易云课堂上的课程比较老了，还是Coursera上的比较新，所以我就抱着试一试看的态度，报了他的公开课，刚好过两天就要开一期了，但愿我可以按时完成。</p>
+<p>首先来看一下有关机器学习的一些概念，我在另外一篇blog里头已经整理过了，请刚兴趣的同学移步<a href="http://leeobarloon.github.io/2016/01/23/ComputerLearningConcept/" target="_blank" rel="external">此处</a></p>
+<p>后来，回家本来想翻看一下之前大学时候数学相关的书籍，然后竟然被我找到了这本书<a href="http://book.douban.com/subject/24703171/" target="_blank" rel="external">《机器学习实战》</a>，原来我去年就买过这本书，但后来发现看不大懂，看来上帝早有安排啊，哈哈~</p>
+<hr>
+<p>言归正传，下面我们就开始学习这本书吧~</p>
+<p>在书的第一章，作者提到了机器学习常常会提到的两个概念，或者说是种类：</p>
+<pre><code>1. 监督学习
+2. 非监督学习
+</code></pre><p>所谓监督学习，大概的意思就是这类算法知道预测什么，即目标变量的分类信息；<br>而非监督学习，则表示数据没有分类信息，也没有目标值，需要机器通过学习自己去聚合整理出有规律的信息；</p>
+<p>这张表会比较好的表达出上述两种机器学习所涉及到的算法</p>
+<table>
+<thead>
+<tr>
+<th>监督学习的用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k-近邻算法</td>
+<td></td>
+</tr>
+<tr>
+<td>线性回归</td>
+<td></td>
+</tr>
+<tr>
+<td>朴素贝叶斯算法</td>
+<td></td>
+</tr>
+<tr>
+<td>局部加权线性回归</td>
+<td></td>
+</tr>
+<tr>
+<td>支持向量机</td>
+<td></td>
+</tr>
+<tr>
+<td>Ridge回归</td>
+<td></td>
+</tr>
+<tr>
+<td>决策树</td>
+<td></td>
+</tr>
+<tr>
+<td>Lasso最小回归系数估计</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>非监督学习的用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k-均值</td>
+<td></td>
+</tr>
+<tr>
+<td>最大期望算法</td>
+<td></td>
+</tr>
+<tr>
+<td>KBSCAN</td>
+<td></td>
+</tr>
+<tr>
+<td>Parzen窗设计</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>如果看不懂，不要着急，因为我也看不懂 😢</p>
+<h2 id="u5982_u4F55_u9009_u62E9_u7B97_u6CD5"><a href="#u5982_u4F55_u9009_u62E9_u7B97_u6CD5" class="headerlink" title="如何选择算法"></a>如何选择算法</h2><p>那么，面对所要解决的问题，我们如何选择合适的算法呢？</p>
+<p>首先，我么要考虑算法的目的，然后根据目的选择对应的算法，下图只能说是一个大概，具体的策略还需要进一步学习</p>
+<p><img src="http://img2.ph.126.net/nT1jFeB01R7PJiGoD4BFrg==/6631445997703530932.jpg" alt="flow-image"></p>
+<p>其次，我们要考虑数据，对数据了解的越充分，越容易做出正确的算法决策，主要考虑下面几个方面；</p>
+<ol>
+<li>特征值是离散型变量还是连续型变量</li>
+<li>特征值中是否有缺失的值</li>
+<li>何种原因造成缺失</li>
+<li>数据中是否存在异常值</li>
+<li>某个值发生的频率如何</li>
+<li>…</li>
+</ol>
+<h2 id="u673A_u5668_u5B66_u4E60_u5F00_u53D1_u6B65_u9AA4"><a href="#u673A_u5668_u5B66_u4E60_u5F00_u53D1_u6B65_u9AA4" class="headerlink" title="机器学习开发步骤"></a>机器学习开发步骤</h2><p>同其他的开发步骤差不多，机器学习也有如下几个步骤：</p>
+<ol>
+<li>收集数据</li>
+<li>准备输入数据</li>
+<li>分析输入数据</li>
+<li>训练算法</li>
+<li>测试算法</li>
+<li>使用算法</li>
+</ol>
+<p>其中，第4和第5步骤，是机器学习的核心</p>
+<p>本书主要用到的语言是<code>python</code>，并且会频繁的用到<code>python</code>中的<code>Numpy</code>类库</p>
+<p>具体如何使用，请大家自行查考资料，这里就不在啰嗦了</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/23/ComputerLearningConcept/" rel="next" title="Computer Learning Concept">
+                <i class="fa fa-chevron-left"></i> Computer Learning Concept
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/23/IOS Development/" rel="prev" title="github上的ios代码">
+                github上的ios代码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/23/机器学习实战-学习笔记01/"
+           data-title="机器学习实战-学习笔记01" data-url="http://yoursite.com/2016/01/23/机器学习实战-学习笔记01/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/16793574?v=3&s=460"
+               alt="LeeoBarloon" />
+          <p class="site-author-name" itemprop="name">LeeoBarloon</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5982_u4F55_u9009_u62E9_u7B97_u6CD5"><span class="nav-number">1.</span> <span class="nav-text">如何选择算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u673A_u5668_u5B66_u4E60_u5F00_u53D1_u6B65_u9AA4"><span class="nav-number">2.</span> <span class="nav-text">机器学习开发步骤</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeeoBarloon</span>
+</div>
+
+<!--div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div-->
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"leeobarloon"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
