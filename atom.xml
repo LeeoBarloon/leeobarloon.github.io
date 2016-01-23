@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-22T03:18:22.000Z</updated>
+  <updated>2016-01-23T08:56:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Computer Learning Concept]]></title>
+    <link href="http://yoursite.com/2016/01/23/ComputerLearningConcept/"/>
+    <id>http://yoursite.com/2016/01/23/ComputerLearningConcept/</id>
+    <published>2016-01-23T08:56:02.000Z</published>
+    <updated>2016-01-23T08:56:59.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="u673A_u5668_u5B66_u4E60"><a href="#u673A_u5668_u5B66_u4E60" class="headerlink" title="机器学习"></a>机器学习</h1><p>机器学习的概念：<br>关于机器学习的概念有很多，我们可以从下面基本书中的定义中自己领会</p>
+<h2 id="Tom_Mitchell_u2018s_Machine_Learning"><a href="#Tom_Mitchell_u2018s_Machine_Learning" class="headerlink" title="Tom Mitchell‘s Machine Learning"></a>Tom Mitchell‘s Machine Learning</h2><p>Tom Mitchell在他的《<a href="http://www.amazon.com/dp/0070428077?tag=job0ae-20" target="_blank" rel="external">Machine Learning</a>》（中文版<a href="http://www.amazon.cn/gp/product/B002WC7NH2/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=536&amp;creative=3200&amp;creativeASIN=B002WC7NH2&amp;linkCode=as2&amp;tag=vastwork-23" target="_blank" rel="external">机器学习</a>)中如此定义：</p>
+<blockquote>
+<p>The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with experience.</p>
+</blockquote>
+<p>Tom Mitchell还有一个更加常被别人提到的定义：</p>
+<blockquote>
+<p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E</p>
+</blockquote>
+<p>这个概念比较绕口，翻译成中文就是：</p>
+<blockquote>
+<p>所谓机器学习，就是给定一个任务T和一个测量方法P，可以获得的经验E，如果针对该任务T，其针对P的测量结果性能可以得到提升，则说明其得到了学习</p>
+</blockquote>
+<p>##Elements of Statistical Learning<br>在《<a href="http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20" target="_blank" rel="external">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a>》中如此定义：</p>
+<blockquote>
+<p>Vast amounts of data are being generated in many fields, and the statisticians’s job is to make sense of it all: to extract important patterns and trends, and to understand “what the data says”. We call this learning from data.</p>
+</blockquote>
+<p>翻译成中文:</p>
+<blockquote>
+<p>在很多领域都会产生海量的数据，统计学家的工作就是让这些数据产生意义（或者说从中提取出有意义的含义）：提取重要的模式与趋势，然后弄明白“这些数据到底在说什么”.我们称之为：learning from data</p>
+</blockquote>
+<h2 id="Pattern_Recognition"><a href="#Pattern_Recognition" class="headerlink" title="Pattern Recognition"></a>Pattern Recognition</h2><p>Bishop在他的书《<a href="http://www.amazon.com/dp/0387310738?tag=inspiredalgor-20" target="_blank" rel="external">Pattern Recognition and Machine Learning</a>》的定义：</p>
+<blockquote>
+<p>One of the most interesting features of machine learning is that it lies on the boundary of several different academic disciplines, principally computer science, statistics, mathematics, and engineering. …machine learning is usually studied as part of artificial intelligence, which puts it firmly into computer science …understanding why these algorithms work requires a certain amount of statistical and mathematical sophistication that is often missing from computer science undergraduates.</p>
+</blockquote>
+<p>这么长的英文，不翻译成中文对不起观众…</p>
+<blockquote>
+<p>机器学习最有趣的地方就是：它基于几种不同学科，主要包括：计算机科学，统计学，数学，工程学等等，机器学习常用在人工智能领域（这也应该包括在计算机科学中）。要弄明白这些问题，常常需要一些统计学和数学的理论，而这些恰恰是那些从计算机科学专业别也得学生所常常遗忘掉的…</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u673A_u5668_u5B66_u4E60"><a href="#u673A_u5668_u5B66_u4E60" class="headerlink" title="机器学习"></a>机器学习</h1><p>机器学习的概念：<br>关于机器学习的概念有很多]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[CreateHexo]]></title>
@@ -81,162 +123,6 @@ modified:   readme.md
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
       <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[像模像样写python（1）]]></title>
-    <link href="http://yoursite.com/2016/01/20/2015-03-16-%E5%83%8F%E6%A8%A1%E5%83%8F%E6%A0%B7%E5%86%99python/"/>
-    <id>http://yoursite.com/2016/01/20/2015-03-16-像模像样写python/</id>
-    <published>2016-01-20T11:22:04.000Z</published>
-    <updated>2016-01-13T05:36:03.000Z</updated>
-    <content type="html"><![CDATA[<p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files" target="_blank" rel="external">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>
-<a id="more"></a>
-<p>我首先就被文章中的这首“诗”所吸引了：</p>
-<pre><code>The Zen of python
-
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren&apos;t special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-</code></pre><p>作者很装B的起了个名字，称之为python之禅，我斗胆用很烂的英文水平翻译一下：</p>
-<pre><code>python之禅
-
-优美总好过丑陋
-说明白点总强于含糊其辞
-复杂不如简单明了
-但总好过晦涩难言
-平展开来，别套来套去
-清清爽爽而不是浓妆艳抹
-提高你的可读性吧
-总还没有特殊到要打破这些规则
-当然事实总跨越理论
-不要让错误悄悄溜走
-除非明说要溜走...
-</code></pre><p><em>我觉得还需要修改，先这么着吧</em></p>
-<p>这首诗还有后半部分，我就不翻译了，大家看看</p>
-<pre><code>In the face of ambiguity, refuse the temptation to guess.
-There should be one—and preferably only one—obvious way to do it.
-Although that way may not be obvious at first unless you&apos;re Dutch.
-Now is better than never.
-Although never is often better than right now.
-If the implementation is hard to explain, it&apos;s a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea—let&apos;s do more of those!
-</code></pre><p>很有意思的是，当你在python的命令行里输入：</p>
-<pre><code>&gt;&gt;&gt;import this
-</code></pre><p>的时候，就会出现这首诗~，python果然符合我的尿性，哈哈哈</p>
-<p>为了强调可读性的重要性，文章还应用了一句很有B格德话：</p>
-<blockquote>
-<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
-</blockquote>
-<p>—Abelson &amp; Sussman, Structure and Interpretation of Computer Programs</p>
-<p>然后作者建议我们先去读读<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="external">PEP 8</a><br>其中，PEP的解释是Python Enhancement Proposal，就是Python改进建议，就是建议python应该如何去写的一个说明文档</p>
-<p>python的社区有他自己的标准，这些标准主要就备注在PEP8中</p>
-<p>由于缩进和空格在python中格外重要，所以这里要着重强调几点：</p>
-<p><strong>whitespace1</strong></p>
-<ol>
-<li>每一个缩进用四个空格表示</li>
-<li>不要用tab</li>
-<li>永远不要将tab和空格混用（）</li>
-<li>函数之间留一行空格</li>
-<li>累之间留两行空格</li>
-</ol>
-<p><strong>whitespace2</strong></p>
-<ol>
-<li>在dict，list和元祖以及&amp;参数列表的“,”后面加上一个空格，注意，在dict中，不要在“：”后面留空格</li>
-<li>在赋值或比较符间加上空格</li>
-<li>在括号之前或参数之前不添加空格</li>
-<li>在docstrings中不要立即空格</li>
-</ol>
-<p><strong>naming</strong></p>
-<ol>
-<li>joined_lower 可以是 函数名, 方法名, 属性名</li>
-<li>joined_lower or ALL_CAPS 是常量</li>
-<li>StudlyCaps 类名</li>
-<li>camelCase 只有在预先制定好的命名规范使用</li>
-<li>属性: interface, _internal, __private</li>
-<li>但尽量避免__private形式。下面两个链接解释了 为什么python中没有 private声明?</li>
-</ol>
-<p><strong>Long lines &amp; Continuations</strong></p>
-<p>一行不要超过80个字符</p>
-<p>在括号里的换行使用隐含换行，但要注意对齐</p>
-<pre><code>def __init__(self, first, second, third,
-             fourth, fifth, sixth):
-    output = (first + second + third
-              + fourth + fifth + sixth)
-</code></pre><p>其它换行要使用“\”，注意后面千万不要有空格</p>
-<pre><code>VeryLong.left_hand_side \
-    = even_longer.right_hand_side()
-</code></pre><p><strong>Long Strings</strong></p>
-<p>相邻的文本字符会被编译器自动合并到一起</p>
-<pre><code>&gt;&gt;&gt;print &apos;o&apos; &apos;n&apos; &apos;e&apos;
-one
-</code></pre><p>文本之间的空格不是必须的，但为了更可读，建议加上。任何类型的引用都可以</p>
-<pre><code>&gt;&gt;&gt;print &apos;o&apos; r&apos;\/\/&apos; &quot;&quot;&quot;o&quot;&quot;&quot;
-o\/\/o
-</code></pre><p>注意，在string前面加上r表示raw字符串，该字符串中的“\”将不被转义。可用于正则表达式和windows系统中的文件路径<br>需要注意的时，被赋值的字符串对象不能被自动拼接</p>
-<pre><code>&gt;&gt;&gt;a = &apos;one&apos;
-&gt;&gt;&gt;b = &apos;two&apos;
-&gt;&gt;&gt;a b
-File &quot;&lt;stdin&gt;&quot;, line 1
-a b
-  ^
-SyntaxError: invalid syntax
-</code></pre><p>这是因为自动拼接是编译器的特性，而不是解释器的。必须在字符串对象中添加“+”保证运行时可以正常拼接。</p>
-<pre><code>text = （&apos;Long strings can be made up &apos;
-        &apos;of several shorter strings&apos;）
-</code></pre><p>注意，括号中允许隐式的换行</p>
-<p>多行字符用“”“ “”“来表明：</p>
-<pre><code>&quot;&quot;&quot;
-Triple
-double
-quotes
-&quot;&quot;&quot;
-</code></pre><p><strong>Compound Statements</strong></p>
-<pre><code>if foo == &apos;blah&apos;:
-    do_something()
-do_one()
-do_two()
-do_three()
-</code></pre><p>类似上面的格式是推荐的，而不推荐下面这种：</p>
-<pre><code>if foo == &apos;blah&apos;: do_something()
-do_one(); do_two(); do_three()
-</code></pre><p>上述的第一个带缩进格式的代码更容易表现程序的流程，而且第二个缩进更容易表示在if中会有一些其他的功能代码，当然，这样写最大的一个优点就是：<strong>增加可读性</strong>    </p>
-<p><strong>Docstrings &amp; Comments</strong></p>
-<blockquote>
-<p>Docstrings = How to use code</p>
-<p>Comments = Why(rationable) &amp; how code works</p>
-</blockquote>
-<p>Docstring 解释了如何调用该代码，主要针对的对象是该代码的用户，docstring应该包含如下内容：</p>
-<ul>
-<li>解释这个方法的目的，经管你自己一清二楚，但并不表示别人能很容易的明白其目的</li>
-<li>描述期待的参数、返回值、和可能抛出的异常</li>
-<li>如果这个方法只能被唯一的调用者配合使用，那么就需要提及这个调用者</li>
-</ul>
-<p>Comments 表示了你的代码为何如此，主要针对的对象是该代码的维护者，例子：</p>
-<pre><code># !!! BUG：...
-# !!! FIX: This is a hack
-# !!! Why is this here?
-</code></pre><p>Docstrings 和 Comments 都是写给你自己的，所以建议你写的好一点~！</p>
-<p>错误的Docstrings 和 Comments 比没有还可怕，所以最好能够随着代码的变化而对其加以更新和维护。<br><a href="http://www.python.org/dev/peps/pep-0257/" target="_blank" rel="external">PEP 257</a> 专门介绍了docstrings</p>
-<p><strong>Practicality Beats Purity</strong><br>凡事都有例外，在一些特殊情况下，也不一定要遵守上述规则</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>]]>
-    
-    </summary>
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-      <category term="python积累" scheme="http://yoursite.com/categories/python%E7%A7%AF%E7%B4%AF/"/>
     
   </entry>
   
@@ -526,58 +412,158 @@ testObj.getElem03()
   </entry>
   
   <entry>
-    <title><![CDATA[git step by step 2 - git安装]]></title>
-    <link href="http://yoursite.com/2016/01/20/2015-03-17-git%20step%20by%20step%2002/"/>
-    <id>http://yoursite.com/2016/01/20/2015-03-17-git step by step 02/</id>
+    <title><![CDATA[像模像样写python（1）]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-16-%E5%83%8F%E6%A8%A1%E5%83%8F%E6%A0%B7%E5%86%99python/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-16-像模像样写python/</id>
     <published>2016-01-20T11:22:04.000Z</published>
     <updated>2016-01-13T05:36:03.000Z</updated>
-    <content type="html"><![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
-<p><a href="https://help.github.com/articles/set-up-git/#platform-mac" target="_blank" rel="external">mac</a></p>
-<p><a href="https://help.github.com/articles/set-up-git/#platform-windows" target="_blank" rel="external">windows</a></p>
+    <content type="html"><![CDATA[<p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files" target="_blank" rel="external">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>
 <a id="more"></a>
-<p>安装成功之后，打开终端(windows下面，需要打开git shell)，输入git –version查看版本信息，如果显示出来，表明安装成功啦</p>
-<pre><code>$ git --version
-git version 1.9.3 (Apple Git-50)
-</code></pre><p>在使用前，先配置一下本地用户：</p>
-<pre><code>git config --global user.name &apos;USER NAME&apos;
-git config --global user.email &apos;USER EMAIl&apos;
-</code></pre><p>然后就可以创建版本库（repo）了，可以将repo理解为一个目录，在该目录下面的所有文件都会托管到git上，用户可以通过git的命令来进行创建，删除，修改文件等操作。</p>
-<p>下面我们就现在本地创建一个版本库：</p>
-<pre><code>$ mkdir GitRepo
-$ cd GitRepo
-$ git init
-Initialized empty Git repository in /Users/liulong/Documents/GitRepo/.git/
-</code></pre><p>这样，git的版本库就创建好了，当然，目前还是一个空的git版本库</p>
-<pre><code>$ ls -al
-</code></pre><p>可以看到目录下面有一个 “.git” 的目录,感兴趣的朋友可以进到这个目录里面先看看其中有哪些东西，下面，我们就给我们的repo添一些料</p>
-<pre><code>$ vim readme.md
-</code></pre><p>然后随便编辑一些文字：</p>
-<pre><code>#This is a test
+<p>我首先就被文章中的这首“诗”所吸引了：</p>
+<pre><code>The Zen of python
 
-Hello Git hub!
-</code></pre><p>当这个文件创建之后，它并没有被git察觉到，我们还是需要一个命令，将它放置到git的版本库里面</p>
-<p>第一步：用<code>git add</code> 告诉git：</p>
-<pre><code>$ git add readme.md
-</code></pre><p>第二部：用<code>git commit -m</code>将文件提交到仓库中：</p>
-<pre><code>$ git commit -m &quot;add a new file named readme.md&quot; 
-1 file changed, 3 insertions(+)
-create mode 100644 readme.md 
-</code></pre><p>这里的-m 后的“xxx”表示对本次提交的一个描述信息，强烈建议每次提交都写好一些针对本次提交的说明。</p>
-<p>最后，当一切都完成之后，你可以用<code>git status</code>查看一下版本控制情况</p>
-<pre><code>$ git status
-On branch master
-nothing to commit, working directory clean
-</code></pre>]]></content>
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&apos;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+</code></pre><p>作者很装B的起了个名字，称之为python之禅，我斗胆用很烂的英文水平翻译一下：</p>
+<pre><code>python之禅
+
+优美总好过丑陋
+说明白点总强于含糊其辞
+复杂不如简单明了
+但总好过晦涩难言
+平展开来，别套来套去
+清清爽爽而不是浓妆艳抹
+提高你的可读性吧
+总还没有特殊到要打破这些规则
+当然事实总跨越理论
+不要让错误悄悄溜走
+除非明说要溜走...
+</code></pre><p><em>我觉得还需要修改，先这么着吧</em></p>
+<p>这首诗还有后半部分，我就不翻译了，大家看看</p>
+<pre><code>In the face of ambiguity, refuse the temptation to guess.
+There should be one—and preferably only one—obvious way to do it.
+Although that way may not be obvious at first unless you&apos;re Dutch.
+Now is better than never.
+Although never is often better than right now.
+If the implementation is hard to explain, it&apos;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea—let&apos;s do more of those!
+</code></pre><p>很有意思的是，当你在python的命令行里输入：</p>
+<pre><code>&gt;&gt;&gt;import this
+</code></pre><p>的时候，就会出现这首诗~，python果然符合我的尿性，哈哈哈</p>
+<p>为了强调可读性的重要性，文章还应用了一句很有B格德话：</p>
+<blockquote>
+<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+</blockquote>
+<p>—Abelson &amp; Sussman, Structure and Interpretation of Computer Programs</p>
+<p>然后作者建议我们先去读读<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="external">PEP 8</a><br>其中，PEP的解释是Python Enhancement Proposal，就是Python改进建议，就是建议python应该如何去写的一个说明文档</p>
+<p>python的社区有他自己的标准，这些标准主要就备注在PEP8中</p>
+<p>由于缩进和空格在python中格外重要，所以这里要着重强调几点：</p>
+<p><strong>whitespace1</strong></p>
+<ol>
+<li>每一个缩进用四个空格表示</li>
+<li>不要用tab</li>
+<li>永远不要将tab和空格混用（）</li>
+<li>函数之间留一行空格</li>
+<li>累之间留两行空格</li>
+</ol>
+<p><strong>whitespace2</strong></p>
+<ol>
+<li>在dict，list和元祖以及&amp;参数列表的“,”后面加上一个空格，注意，在dict中，不要在“：”后面留空格</li>
+<li>在赋值或比较符间加上空格</li>
+<li>在括号之前或参数之前不添加空格</li>
+<li>在docstrings中不要立即空格</li>
+</ol>
+<p><strong>naming</strong></p>
+<ol>
+<li>joined_lower 可以是 函数名, 方法名, 属性名</li>
+<li>joined_lower or ALL_CAPS 是常量</li>
+<li>StudlyCaps 类名</li>
+<li>camelCase 只有在预先制定好的命名规范使用</li>
+<li>属性: interface, _internal, __private</li>
+<li>但尽量避免__private形式。下面两个链接解释了 为什么python中没有 private声明?</li>
+</ol>
+<p><strong>Long lines &amp; Continuations</strong></p>
+<p>一行不要超过80个字符</p>
+<p>在括号里的换行使用隐含换行，但要注意对齐</p>
+<pre><code>def __init__(self, first, second, third,
+             fourth, fifth, sixth):
+    output = (first + second + third
+              + fourth + fifth + sixth)
+</code></pre><p>其它换行要使用“\”，注意后面千万不要有空格</p>
+<pre><code>VeryLong.left_hand_side \
+    = even_longer.right_hand_side()
+</code></pre><p><strong>Long Strings</strong></p>
+<p>相邻的文本字符会被编译器自动合并到一起</p>
+<pre><code>&gt;&gt;&gt;print &apos;o&apos; &apos;n&apos; &apos;e&apos;
+one
+</code></pre><p>文本之间的空格不是必须的，但为了更可读，建议加上。任何类型的引用都可以</p>
+<pre><code>&gt;&gt;&gt;print &apos;o&apos; r&apos;\/\/&apos; &quot;&quot;&quot;o&quot;&quot;&quot;
+o\/\/o
+</code></pre><p>注意，在string前面加上r表示raw字符串，该字符串中的“\”将不被转义。可用于正则表达式和windows系统中的文件路径<br>需要注意的时，被赋值的字符串对象不能被自动拼接</p>
+<pre><code>&gt;&gt;&gt;a = &apos;one&apos;
+&gt;&gt;&gt;b = &apos;two&apos;
+&gt;&gt;&gt;a b
+File &quot;&lt;stdin&gt;&quot;, line 1
+a b
+  ^
+SyntaxError: invalid syntax
+</code></pre><p>这是因为自动拼接是编译器的特性，而不是解释器的。必须在字符串对象中添加“+”保证运行时可以正常拼接。</p>
+<pre><code>text = （&apos;Long strings can be made up &apos;
+        &apos;of several shorter strings&apos;）
+</code></pre><p>注意，括号中允许隐式的换行</p>
+<p>多行字符用“”“ “”“来表明：</p>
+<pre><code>&quot;&quot;&quot;
+Triple
+double
+quotes
+&quot;&quot;&quot;
+</code></pre><p><strong>Compound Statements</strong></p>
+<pre><code>if foo == &apos;blah&apos;:
+    do_something()
+do_one()
+do_two()
+do_three()
+</code></pre><p>类似上面的格式是推荐的，而不推荐下面这种：</p>
+<pre><code>if foo == &apos;blah&apos;: do_something()
+do_one(); do_two(); do_three()
+</code></pre><p>上述的第一个带缩进格式的代码更容易表现程序的流程，而且第二个缩进更容易表示在if中会有一些其他的功能代码，当然，这样写最大的一个优点就是：<strong>增加可读性</strong>    </p>
+<p><strong>Docstrings &amp; Comments</strong></p>
+<blockquote>
+<p>Docstrings = How to use code</p>
+<p>Comments = Why(rationable) &amp; how code works</p>
+</blockquote>
+<p>Docstring 解释了如何调用该代码，主要针对的对象是该代码的用户，docstring应该包含如下内容：</p>
+<ul>
+<li>解释这个方法的目的，经管你自己一清二楚，但并不表示别人能很容易的明白其目的</li>
+<li>描述期待的参数、返回值、和可能抛出的异常</li>
+<li>如果这个方法只能被唯一的调用者配合使用，那么就需要提及这个调用者</li>
+</ul>
+<p>Comments 表示了你的代码为何如此，主要针对的对象是该代码的维护者，例子：</p>
+<pre><code># !!! BUG：...
+# !!! FIX: This is a hack
+# !!! Why is this here?
+</code></pre><p>Docstrings 和 Comments 都是写给你自己的，所以建议你写的好一点~！</p>
+<p>错误的Docstrings 和 Comments 比没有还可怕，所以最好能够随着代码的变化而对其加以更新和维护。<br><a href="http://www.python.org/dev/peps/pep-0257/" target="_blank" rel="external">PEP 257</a> 专门介绍了docstrings</p>
+<p><strong>Practicality Beats Purity</strong><br>凡事都有例外，在一些特殊情况下，也不一定要遵守上述规则</p>
+]]></content>
     <summary type="html">
-    <![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
-<p><a href="https://help.github.com/articles/set-up-git/#platform-mac">mac</a></p>
-<p><a href="https://help.github.com/articles/set-up-git/#platform-windows">windows</a></p>]]>
+    <![CDATA[<p>这篇blog摘录和翻译了自经典的文章<a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#reading-lines-from-text-data-files">Code Like a Pythonista</a>,有兴趣的同学可以到上述网站查看原文，强烈建议读读看</p>]]>
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
-      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+      <category term="python积累" scheme="http://yoursite.com/categories/python%E7%A7%AF%E7%B4%AF/"/>
     
   </entry>
   
@@ -923,17 +909,58 @@ pythons = dict(zip(given, family))
   </entry>
   
   <entry>
-    <title><![CDATA[first hexo]]></title>
-    <link href="http://yoursite.com/2016/01/20/first-hexo/"/>
-    <id>http://yoursite.com/2016/01/20/first-hexo/</id>
-    <published>2016-01-20T07:58:55.000Z</published>
-    <updated>2016-01-20T11:26:25.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>]]></content>
+    <title><![CDATA[git step by step 2 - git安装]]></title>
+    <link href="http://yoursite.com/2016/01/20/2015-03-17-git%20step%20by%20step%2002/"/>
+    <id>http://yoursite.com/2016/01/20/2015-03-17-git step by step 02/</id>
+    <published>2016-01-20T11:22:04.000Z</published>
+    <updated>2016-01-13T05:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-mac" target="_blank" rel="external">mac</a></p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-windows" target="_blank" rel="external">windows</a></p>
+<a id="more"></a>
+<p>安装成功之后，打开终端(windows下面，需要打开git shell)，输入git –version查看版本信息，如果显示出来，表明安装成功啦</p>
+<pre><code>$ git --version
+git version 1.9.3 (Apple Git-50)
+</code></pre><p>在使用前，先配置一下本地用户：</p>
+<pre><code>git config --global user.name &apos;USER NAME&apos;
+git config --global user.email &apos;USER EMAIl&apos;
+</code></pre><p>然后就可以创建版本库（repo）了，可以将repo理解为一个目录，在该目录下面的所有文件都会托管到git上，用户可以通过git的命令来进行创建，删除，修改文件等操作。</p>
+<p>下面我们就现在本地创建一个版本库：</p>
+<pre><code>$ mkdir GitRepo
+$ cd GitRepo
+$ git init
+Initialized empty Git repository in /Users/liulong/Documents/GitRepo/.git/
+</code></pre><p>这样，git的版本库就创建好了，当然，目前还是一个空的git版本库</p>
+<pre><code>$ ls -al
+</code></pre><p>可以看到目录下面有一个 “.git” 的目录,感兴趣的朋友可以进到这个目录里面先看看其中有哪些东西，下面，我们就给我们的repo添一些料</p>
+<pre><code>$ vim readme.md
+</code></pre><p>然后随便编辑一些文字：</p>
+<pre><code>#This is a test
+
+Hello Git hub!
+</code></pre><p>当这个文件创建之后，它并没有被git察觉到，我们还是需要一个命令，将它放置到git的版本库里面</p>
+<p>第一步：用<code>git add</code> 告诉git：</p>
+<pre><code>$ git add readme.md
+</code></pre><p>第二部：用<code>git commit -m</code>将文件提交到仓库中：</p>
+<pre><code>$ git commit -m &quot;add a new file named readme.md&quot; 
+1 file changed, 3 insertions(+)
+create mode 100644 readme.md 
+</code></pre><p>这里的-m 后的“xxx”表示对本次提交的一个描述信息，强烈建议每次提交都写好一些针对本次提交的说明。</p>
+<p>最后，当一切都完成之后，你可以用<code>git status</code>查看一下版本控制情况</p>
+<pre><code>$ git status
+On branch master
+nothing to commit, working directory clean
+</code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>]]>
+    <![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-mac">mac</a></p>
+<p><a href="https://help.github.com/articles/set-up-git/#platform-windows">windows</a></p>]]>
+    
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
     
   </entry>
   
