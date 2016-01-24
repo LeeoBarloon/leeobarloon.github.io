@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-01-24T03:09:51.000Z</updated>
+  <updated>2016-01-24T04:14:38.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -19,11 +19,54 @@
     <link href="http://leeobarloon.github.io/2016/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/"/>
     <id>http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/</id>
     <published>2016-01-24T03:09:51.000Z</published>
-    <updated>2016-01-24T03:09:51.000Z</updated>
-    <content type="html"></content>
+    <updated>2016-01-24T04:14:38.000Z</updated>
+    <content type="html"><![CDATA[<p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
+<p>###k-近邻算法(k-Nearest Neighbour算法，KNN算法）<br>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
+<blockquote>
+<p>采用测量不同特征值之间的距离方法进行分类的算法</p>
+</blockquote>
+<p>而百度百科上的解释更全面一点</p>
+<blockquote>
+<p>K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方法的思路是：如果一个样本在特征空间中的k个最相似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。</p>
+<p>用官方的话来说，所谓K近邻算法，即是给定一个训练数据集，对新的输入实例，在训练数据集中找到与该实例最邻近的K个实例（也就是上面所说的K个邻居）， 这K个实例的多数属于某个类，就把该输入实例分类到这个类中。</p>
+</blockquote>
+<p>KNN算法的优点和缺点也比较明显：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法优点</td>
+<td>精度高，对异常值不明感，无数据输入假定</td>
+<td></td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>计算复杂度高、空间复杂度高</td>
+<td></td>
+</tr>
+<tr>
+<td>使用数据范围</td>
+<td>数值型和标称型</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
+<p>###k-近邻算法(k-Nearest Neighbour算法，KNN算法）<br>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
+<blockquote>
+<p>采用测量不]]>
     </summary>
+    
+      <category term="机器学习" scheme="http://leeobarloon.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="读书笔记" scheme="http://leeobarloon.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -64,7 +107,7 @@
     <link href="http://leeobarloon.github.io/2016/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"/>
     <id>http://leeobarloon.github.io/2016/01/23/机器学习实战-学习笔记01/</id>
     <published>2016-01-23T13:54:01.000Z</published>
-    <updated>2016-01-23T15:26:12.000Z</updated>
+    <updated>2016-01-24T07:05:38.000Z</updated>
     <content type="html"><![CDATA[<p>##机器学习 读书笔记01<br>最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的<a href="http://open.163.com/special/opencourse/machinelearning.html" target="_blank" rel="external">斯坦福大学公开课 ：机器学习课程</a>，公开课的老师是一个华人，最后一查，发现他是一个大牛，哦不，是巨牛，请看他的相关介绍：<a href="http://baike.baidu.com/link?url=82UgpsKu2N8pN-9XWsJLQkeGVArb5GRdDthrAjGfwtuHEXNhWcTA7PQI9eZGGmxz9sogbViWV0annPGr0XGOMrF7Via3PdjXliQo0_umzuz6Q9EWE-g6y5NN1L_gdX1zlpV17EsqVchsQ9AlPw61w_" target="_blank" rel="external">Andrew Ng</a>，后来发现他是著名的公开课网站<a href="https://www.coursera.org/" target="_blank" rel="external">Course</a>的co-fonder，然后在这个网站上也发现了有关机器学习的课程<a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">公开课</a></p>
 <p>网上有学习过他的课程的网友说，网易云课堂上的课程比较老了，还是Coursera上的比较新，所以我就抱着试一试看的态度，报了他的公开课，刚好过两天就要开一期了，但愿我可以按时完成。</p>
 <p>首先来看一下有关机器学习的一些概念，我在另外一篇blog里头已经整理过了，请刚兴趣的同学移步<a href="http://leeobarloon.github.io/2016/01/23/ComputerLearningConcept/">此处</a></p>
