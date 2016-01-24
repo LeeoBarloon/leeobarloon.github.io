@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-01-24T12:23:10.000Z</updated>
+  <updated>2016-01-24T13:45:21.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://leeobarloon.github.io/2016/01/24/Matplotlib%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/"/>
     <id>http://leeobarloon.github.io/2016/01/24/Matplotlib安装和使用简要说明/</id>
     <published>2016-01-24T10:56:40.000Z</published>
-    <updated>2016-01-24T12:23:10.000Z</updated>
+    <updated>2016-01-24T13:45:21.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u7B80_u8981_u4ECB_u7ECD"><a href="#u7B80_u8981_u4ECB_u7ECD" class="headerlink" title="简要介绍"></a>简要介绍</h1><p>在Matplotlib官网上看到的介绍如下：</p>
 <blockquote>
 <p>matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. matplotlib can be used in python scripts, the python and ipython shell (ala MATLAB®* or Mathematica®†), web application servers, and six graphical user interface toolkits</p>
@@ -74,7 +74,8 @@ def run(data):
 ani = animation.FuncAnimation(fig, run, data_gen, blit=False, interval=10,
                               repeat=False, init_func=init)
 plt.show()
-</code></pre><p>然后运行一下，就可以看到这样的图样, nice~<br><img src="http://img1.ph.126.net/OjP8Ui5Jg7feSTdr9of9fg==/6631332748005886072.png" alt="figure_01"></p>
+</code></pre><p>然后运行一下，就可以看到这样的图样, nice~<br><img src="http://img0.ph.126.net/TDyKUq50DtiTQEEP0vjQrA==/6631352539215188664.png" alt="figure_01"></p>
+<p>另外，在官网上也可以找到大量的<a href="http://matplotlib.org/examples/index.html" target="_blank" rel="external">例子和说明文档</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="u7B80_u8981_u4ECB_u7ECD"><a href="#u7B80_u8981_u4ECB_u7ECD" class="headerlink" title="简要介绍"></a>简要介绍</h1><p>在Matplotlib官网上看到的介绍如下：</]]>
@@ -87,7 +88,7 @@ plt.show()
     <link href="http://leeobarloon.github.io/2016/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/"/>
     <id>http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/</id>
     <published>2016-01-24T03:09:51.000Z</published>
-    <updated>2016-01-24T12:23:59.000Z</updated>
+    <updated>2016-01-24T13:45:26.000Z</updated>
     <content type="html"><![CDATA[<p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
 <p>###k-近邻算法(k-Nearest Neighbour算法，KNN算法）<br>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
 <blockquote>
@@ -178,6 +179,75 @@ if __name__ == &apos;__main__&apos;:
 <p>说明输入的测试数据[0,0]更应该属于B类数据</p>
 <p>上面是我们写的第一个分类算法，但我们要知道，分类器并不一定总是正确的，我们可以通过多种方法检测分类算法的正确性。<br>我们可以通过大量的测试，来计算出分类算法的错误率，错误率是评估分类器是否有效的方法之一;</p>
 <h3 id="u7B2C_u4E8C_u4E2A_u4F8B_u5B50_uFF0C_u7EA6_u4F1A_u6570_u636E_u5206_u7C7B"><a href="#u7B2C_u4E8C_u4E2A_u4F8B_u5B50_uFF0C_u7EA6_u4F1A_u6570_u636E_u5206_u7C7B" class="headerlink" title="第二个例子，约会数据分类"></a>第二个例子，约会数据分类</h3><p>在开始学习书中提到的第二个例子前，我们先要了解一下它中间要用到的一个工具：<br><a href="http://www.labri.fr/perso/nrougier/teaching/matplotlib/" target="_blank" rel="external">matplotlib</a></p>
+<p>其安装和使用的简要说明请参见此<a href="http://leeobarloon.github.io/2016/01/24/Matplotlib%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/">文章</a></p>
+<p>另外，这个例子中会用到一个样本文件，朋友们可以从这里<a href="http://download.csdn.net/detail/mctyro/6504521" target="_blank" rel="external">下载</a>,如果找不到，自行google或者baidu吧~</p>
+<p>我们可以打开ch02中的<code>datingTestSet.txt</code>文档，可以发现类似这样的数据；</p>
+<pre><code>40920    8.326976    0.953952    largeDoses
+14488    7.153469    1.673904    smallDoses
+26052    1.441871    0.805124    didntLike
+75136    13.147394    0.428964    didntLike
+38344    1.669788    0.134296    didntLike
+72993    10.141740    1.032955    didntLike
+35948    6.830792    1.213192    largeDoses
+42666    13.276369    0.543880    largeDoses
+67497    8.631577    0.749278    didntLike
+...
+</code></pre><p>神马意思呢？</p>
+<p>颤抖吧，据说这是某个约会达人专门为她（注意，是她！）自己约会的对象所整理出来的一个数据样本，其中对应的特征分别是：</p>
+<pre><code>* 每年获得的飞行常客里程数
+* 玩视频游戏所耗时间百分比
+* 每周消费的冰激凌公升数（什么鬼...)
+</code></pre><p>最后一行的含义则表示该样本所属的类型：</p>
+<pre><code>不喜欢的人（didntLike），
+魅力一般的人（smallDoses），
+极具魅力的人（largeDoses）
+</code></pre><p>那么，有了这个样本类型后，该女子在下一次遇到一个新的约会对象的时候，就会通过一个算法，来预测该名男子是不是一个有魅力的人…当然，她问的问题可能会让此男摸不着头脑:”哎，你这一年飞行了多少公里啊？”,”一周你吃几次冰激凌，什么包装的？”以及”你玩不玩游戏，玩多久”之类的问题，如果遇到问这种问题的女人，请自行退散…！</p>
+<p>…言归正传(写这本书的作者脑洞挺大）</p>
+<p>我们看这个程序是怎嘛写滴：</p>
+<pre><code>def file2matrix(filename):
+fr = open(filename)
+arrayOfLines = fr.readlines()
+numberOfLines = len(arrayOfLines)
+returnMat = zeros((numberOfLines, 3))
+classLabelVector = []
+index = 0
+for line in arrayOfLines:
+    line = line.strip()
+    listFromLine = line.split(&apos;\t&apos;)
+    returnMat[index, :] = listFromLine[0:3]
+    classLabelVector.append(int(listFromLine[-1]))
+    index+=1
+return returnMat, classLabelVector
+
+if __name__ == &apos;__main__&apos;:
+    returnMat, classLabelVector = file2matrix(&apos;datingTestSet2.txt&apos;);
+</code></pre><p>程序很简单，其实就是将文件中的内容，格式化的导入到内存的结构化数据中，其中zeros((x,y))的含义就是构造一个x行，y列的矩阵，每个向量用0.0填充，当然，在python中，是用二维数组表示的，比如：</p>
+<pre><code>&gt;&gt;&gt; zeros((4,3))
+array([[ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.],
+       [ 0.,  0.,  0.]])    
+</code></pre><p>那么，接下来，我们获得了一个1000行，3列的数据结构，然后也有了这1000行数据分别代表是否是理想的约会对象的标示，接下来的任务就是利用matplotlib来绘制图像了<br>运行下面的代码：</p>
+<pre><code>def draw_figure01():
+    returnMat, classLabelVector = file2matrix(&apos;datingTestSet2.txt&apos;);
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    # 绘制返回结果中的第1和第2列数据,分别代表:玩游戏时间和冰激凌公升数
+    ax.scatter(returnMat[:, 1], returnMat[:, 2])
+    plt.show()
+
+
+if __name__ == &apos;__main__&apos;:
+    &apos;&apos;&apos;
+    group, labels = createDataSet()
+    label = classify0([0,0], group, labels, 3)
+    print label
+
+    &apos;&apos;&apos;
+    draw_figure01()
+</code></pre><p>获得的效果如下图：        </p>
+<p><img src="http://img2.ph.126.net/37xd9_uaFcEVkvJ1RWN1fA==/6631419609424482845.jpg" alt="figure_02"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
