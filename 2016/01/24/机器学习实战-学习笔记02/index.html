@@ -59,38 +59,38 @@
 
 
 
-<meta name="description" content="##机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
-###k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法呢？书中的定义比较简单：
+<meta name="description" content="机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
+k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法呢？书中的定义比较简单：
 
 采用测量不同特征值之间的距离方法进行分类的算法
 
 而百度百科上的解释更全面一点
 
-K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方">
+K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方法的思路是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习实战-学习笔记02">
 <meta property="og:url" content="http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="##机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
-###k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法呢？书中的定义比较简单：
+<meta property="og:description" content="机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
+k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法呢？书中的定义比较简单：
 
 采用测量不同特征值之间的距离方法进行分类的算法
 
 而百度百科上的解释更全面一点
 
-K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方">
+K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方法的思路是">
 <meta property="og:image" content="http://img2.ph.126.net/37xd9_uaFcEVkvJ1RWN1fA==/6631419609424482845.jpg">
-<meta property="og:updated_time" content="2016-01-24T13:45:26.000Z">
+<meta property="og:updated_time" content="2016-01-24T13:47:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实战-学习笔记02">
-<meta name="twitter:description" content="##机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
-###k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法呢？书中的定义比较简单：
+<meta name="twitter:description" content="机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
+k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法呢？书中的定义比较简单：
 
 采用测量不同特征值之间的距离方法进行分类的算法
 
 而百度百科上的解释更全面一点
 
-K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方">
+K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方法的思路是">
 
 
 
@@ -283,8 +283,8 @@ K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成�
       
 
       
-        <p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
-<p>###k-近邻算法(k-Nearest Neighbour算法，KNN算法）<br>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
+        <h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002" class="headerlink" title="机器学习 读书笔记02"></a>机器学习 读书笔记02</h2><p>我们一起来学习机器学习中的第一个算法：</p>
+<h3 id="k-_u8FD1_u90BB_u7B97_u6CD5_28k-Nearest_Neighbour_u7B97_u6CD5_uFF0CKNN_u7B97_u6CD5_uFF09"><a href="#k-_u8FD1_u90BB_u7B97_u6CD5_28k-Nearest_Neighbour_u7B97_u6CD5_uFF0CKNN_u7B97_u6CD5_uFF09" class="headerlink" title="k-近邻算法(k-Nearest Neighbour算法，KNN算法）"></a>k-近邻算法(k-Nearest Neighbour算法，KNN算法）</h3><p>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
 <blockquote>
 <p>采用测量不同特征值之间的距离方法进行分类的算法</p>
 </blockquote>
@@ -320,8 +320,7 @@ K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成�
 </tbody>
 </table>
 <hr>
-<p>###KNN算法的伪代码：</p>
-<ol>
+<h3 id="KNN_u7B97_u6CD5_u7684_u4F2A_u4EE3_u7801_uFF1A"><a href="#KNN_u7B97_u6CD5_u7684_u4F2A_u4EE3_u7801_uFF1A" class="headerlink" title="KNN算法的伪代码："></a>KNN算法的伪代码：</h3><ol>
 <li>计算已知类别数据节中的点与当前点之间的距离</li>
 <li>按照距离递增顺序排序</li>
 <li>选取与当前点距离最小的k个点</li>
@@ -329,8 +328,7 @@ K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成�
 <li>返回前k个点出现频率最高的类别最为当前点的预测分类</li>
 </ol>
 <hr>
-<p>###kNN算法的python代码：</p>
-<pre><code>from numpy import *
+<h3 id="kNN_u7B97_u6CD5_u7684python_u4EE3_u7801_uFF1A"><a href="#kNN_u7B97_u6CD5_u7684python_u4EE3_u7801_uFF1A" class="headerlink" title="kNN算法的python代码："></a>kNN算法的python代码：</h3><pre><code>from numpy import *
 import operator
 
 &apos;&apos;&apos;
@@ -596,7 +594,7 @@ if __name__ == &apos;__main__&apos;:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E8C_u4E2A_u4F8B_u5B50_uFF0C_u7EA6_u4F1A_u6570_u636E_u5206_u7C7B"><span class="nav-number">1.</span> <span class="nav-text">第二个例子，约会数据分类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002"><span class="nav-number">1.</span> <span class="nav-text">机器学习 读书笔记02</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#k-_u8FD1_u90BB_u7B97_u6CD5_28k-Nearest_Neighbour_u7B97_u6CD5_uFF0CKNN_u7B97_u6CD5_uFF09"><span class="nav-number">1.1.</span> <span class="nav-text">k-近邻算法(k-Nearest Neighbour算法，KNN算法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN_u7B97_u6CD5_u7684_u4F2A_u4EE3_u7801_uFF1A"><span class="nav-number">1.2.</span> <span class="nav-text">KNN算法的伪代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kNN_u7B97_u6CD5_u7684python_u4EE3_u7801_uFF1A"><span class="nav-number">1.3.</span> <span class="nav-text">kNN算法的python代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E8C_u4E2A_u4F8B_u5B50_uFF0C_u7EA6_u4F1A_u6570_u636E_u5206_u7C7B"><span class="nav-number">1.4.</span> <span class="nav-text">第二个例子，约会数据分类</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
