@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,22 +59,24 @@
 
 
 
-<meta name="description" content="我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具
-mac
-windows">
+<meta name="description" content="简要介绍在Matplotlib官网上看到的介绍如下：
+
+matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. matplo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git step by step 2 - git安装">
-<meta property="og:url" content="http://leeobarloon.github.io/2015/03/17/git step by step 02/index.html">
+<meta property="og:title" content="Matplotlib安装和使用简要说明">
+<meta property="og:url" content="http://leeobarloon.github.io/2016/01/24/Matplotlib安装和使用简要说明/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具
-mac
-windows">
-<meta property="og:updated_time" content="2016-01-23T13:36:12.000Z">
+<meta property="og:description" content="简要介绍在Matplotlib官网上看到的介绍如下：
+
+matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. matplo">
+<meta property="og:image" content="http://matplotlib.org/_static/logo_sidebar_horiz.png">
+<meta property="og:image" content="http://img1.ph.126.net/OjP8Ui5Jg7feSTdr9of9fg==/6631332748005886072.png">
+<meta property="og:updated_time" content="2016-01-24T12:23:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git step by step 2 - git安装">
-<meta name="twitter:description" content="我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具
-mac
-windows">
+<meta name="twitter:title" content="Matplotlib安装和使用简要说明">
+<meta name="twitter:description" content="简要介绍在Matplotlib官网上看到的介绍如下：
+
+matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. matplo">
 
 
 
@@ -92,7 +94,7 @@ windows">
   };
 </script>
 
-  <title> git step by step 2 - git安装 | Leeo‘s Blog </title>
+  <title> Matplotlib安装和使用简要说明 | Leeo‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -222,7 +224,7 @@ windows">
             
             
               
-                git step by step 2 - git安装
+                Matplotlib安装和使用简要说明
               
             
           </h1>
@@ -234,38 +236,19 @@ windows">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-17T00:00:00+08:00" content="2015-03-17">
-              2015-03-17
+            <time itemprop="dateCreated" datetime="2016-01-24T18:56:40+08:00" content="2016-01-24">
+              2016-01-24
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git-step-by-step/" itemprop="url" rel="index">
-                    <span itemprop="name">git step by step</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/17/git step by step 02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/17/git step by step 02/" itemprop="commentsCount"></span>
+                <a href="/2016/01/24/Matplotlib安装和使用简要说明/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/Matplotlib安装和使用简要说明/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -286,70 +269,79 @@ windows">
       
 
       
-        <p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
-<p><a href="https://help.github.com/articles/set-up-git/#platform-mac" target="_blank" rel="external">mac</a></p>
-<p><a href="https://help.github.com/articles/set-up-git/#platform-windows" target="_blank" rel="external">windows</a></p>
-<a id="more"></a>
-<p>安装成功之后，打开终端(windows下面，需要打开git shell)，输入git –version查看版本信息，如果显示出来，表明安装成功啦</p>
-<pre><code>$ git --version
-git version 1.9.3 (Apple Git-50)
-</code></pre><p>在使用前，先配置一下本地用户：</p>
-<pre><code>git config --global user.name &apos;USER NAME&apos;
-git config --global user.email &apos;USER EMAIl&apos;
-</code></pre><p>然后就可以创建版本库（repo）了，可以将repo理解为一个目录，在该目录下面的所有文件都会托管到git上，用户可以通过git的命令来进行创建，删除，修改文件等操作。</p>
-<p>下面我们就现在本地创建一个版本库：</p>
-<pre><code>$ mkdir GitRepo
-$ cd GitRepo
-$ git init
-Initialized empty Git repository in /Users/liulong/Documents/GitRepo/.git/
-</code></pre><p>这样，git的版本库就创建好了，当然，目前还是一个空的git版本库</p>
-<pre><code>$ ls -al
-</code></pre><p>可以看到目录下面有一个 “.git” 的目录,感兴趣的朋友可以进到这个目录里面先看看其中有哪些东西，下面，我们就给我们的repo添一些料</p>
-<pre><code>$ vim readme.md
-</code></pre><p>然后随便编辑一些文字：</p>
-<pre><code>#This is a test
+        <h1 id="u7B80_u8981_u4ECB_u7ECD"><a href="#u7B80_u8981_u4ECB_u7ECD" class="headerlink" title="简要介绍"></a>简要介绍</h1><p>在Matplotlib官网上看到的介绍如下：</p>
+<blockquote>
+<p>matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. matplotlib can be used in python scripts, the python and ipython shell (ala MATLAB®* or Mathematica®†), web application servers, and six graphical user interface toolkits</p>
+</blockquote>
+<p>我们可以看到用这个工具可以绘制出质量很高的图例：<br><img src="http://matplotlib.org/_static/logo_sidebar_horiz.png" alt="figure1"></p>
+<h1 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h1><p>在MAC下的安装很简单：</p>
+<blockquote>
+<p>$ pip install matplotlib</p>
+</blockquote>
+<p>安装成功后，可以在matplotlib上找一些例子试试看，比如：</p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
-Hello Git hub!
-</code></pre><p>当这个文件创建之后，它并没有被git察觉到，我们还是需要一个命令，将它放置到git的版本库里面</p>
-<p>第一步：用<code>git add</code> 告诉git：</p>
-<pre><code>$ git add readme.md
-</code></pre><p>第二部：用<code>git commit -m</code>将文件提交到仓库中：</p>
-<pre><code>$ git commit -m &quot;add a new file named readme.md&quot; 
-1 file changed, 3 insertions(+)
-create mode 100644 readme.md 
-</code></pre><p>这里的-m 后的“xxx”表示对本次提交的一个描述信息，强烈建议每次提交都写好一些针对本次提交的说明。</p>
-<p>最后，当一切都完成之后，你可以用<code>git status</code>查看一下版本控制情况</p>
-<pre><code>$ git status
-On branch master
-nothing to commit, working directory clean
-</code></pre>
+
+def data_gen(t=0):
+    cnt = 0
+    while cnt &lt; 1000:
+        cnt += 1
+        t += 0.1
+        yield t, np.sin(2*np.pi*t) * np.exp(-t/10.)
+
+
+def init():
+    ax.set_ylim(-1.1, 1.1)
+    ax.set_xlim(0, 10)
+    del xdata[:]
+    del ydata[:]
+    line.set_data(xdata, ydata)
+    return line,
+
+fig, ax = plt.subplots()
+line, = ax.plot([], [], lw=2)
+ax.grid()
+xdata, ydata = [], []
+
+
+def run(data):
+    # update the data
+    t, y = data
+    xdata.append(t)
+    ydata.append(y)
+    xmin, xmax = ax.get_xlim()
+
+    if t &gt;= xmax:
+        ax.set_xlim(xmin, 2*xmax)
+        ax.figure.canvas.draw()
+    line.set_data(xdata, ydata)
+
+    return line,
+
+ani = animation.FuncAnimation(fig, run, data_gen, blit=False, interval=10,
+                              repeat=False, init_func=init)
+plt.show()
+</code></pre><p>然后运行一下，就可以看到这样的图样, nice~<br><img src="http://img1.ph.126.net/OjP8Ui5Jg7feSTdr9of9fg==/6631332748005886072.png" alt="figure_01"></p>
+
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag">#git</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/17/jekyll 模板/" rel="next" title="Jekyll模板">
-                <i class="fa fa-chevron-left"></i> Jekyll模板
+              <a href="/2016/01/24/机器学习实战-学习笔记02/" rel="next" title="机器学习实战-学习笔记02">
+                <i class="fa fa-chevron-left"></i> 机器学习实战-学习笔记02
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/18/在linux上配置网站/" rel="prev" title="linux下面的简单页面配置">
-                linux下面的简单页面配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -375,8 +367,8 @@ nothing to commit, working directory clean
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/03/17/git step by step 02/"
-           data-title="git step by step 2 - git安装" data-url="http://leeobarloon.github.io/2015/03/17/git step by step 02/">
+      <div class="ds-thread" data-thread-key="2016/01/24/Matplotlib安装和使用简要说明/"
+           data-title="Matplotlib安装和使用简要说明" data-url="http://leeobarloon.github.io/2016/01/24/Matplotlib安装和使用简要说明/">
       </div>
     
   </div>
@@ -474,7 +466,7 @@ nothing to commit, working directory clean
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u7B80_u8981_u4ECB_u7ECD"><span class="nav-number">1.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B89_u88C5"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
