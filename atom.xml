@@ -3,9 +3,9 @@
   <title><![CDATA[Leeo‘s Blog]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-01-23T15:08:13.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://leeobarloon.github.io/"/>
+  <updated>2016-01-24T03:09:51.000Z</updated>
+  <id>http://leeobarloon.github.io/</id>
   
   <author>
     <name><![CDATA[LeeoBarloon]]></name>
@@ -15,9 +15,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[机器学习实战-学习笔记02]]></title>
+    <link href="http://leeobarloon.github.io/2016/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/"/>
+    <id>http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/</id>
+    <published>2016-01-24T03:09:51.000Z</published>
+    <updated>2016-01-24T03:09:51.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[github上的ios代码]]></title>
-    <link href="http://yoursite.com/2016/01/23/IOS%20Development/"/>
-    <id>http://yoursite.com/2016/01/23/IOS Development/</id>
+    <link href="http://leeobarloon.github.io/2016/01/23/IOS%20Development/"/>
+    <id>http://leeobarloon.github.io/2016/01/23/IOS Development/</id>
     <published>2016-01-23T15:08:13.000Z</published>
     <updated>2016-01-23T15:08:13.000Z</updated>
     <content type="html"><![CDATA[<p>现在的IOS开发，有很多可以借鉴的轮子，我们不用再像之前一样，自己还需要写很多比较高级一些的控件，目前在很多的社区，已经有大量的高级控件以及可以借鉴的代码；对于产品初期，快速搭建一个demo效果的APP应用来说，最好的方法就是从其中挑选比较适合你么产品的开源代码，加以借鉴和使用<br><a id="more"></a></p>
@@ -38,23 +51,23 @@
     
     </summary>
     
-      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+      <category term="Github" scheme="http://leeobarloon.github.io/tags/Github/"/>
     
-      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
     
-      <category term="IOS代码库" scheme="http://yoursite.com/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+      <category term="IOS代码库" scheme="http://leeobarloon.github.io/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[机器学习实战-学习笔记01]]></title>
-    <link href="http://yoursite.com/2016/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"/>
-    <id>http://yoursite.com/2016/01/23/机器学习实战-学习笔记01/</id>
+    <link href="http://leeobarloon.github.io/2016/01/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"/>
+    <id>http://leeobarloon.github.io/2016/01/23/机器学习实战-学习笔记01/</id>
     <published>2016-01-23T13:54:01.000Z</published>
-    <updated>2016-01-23T15:05:14.000Z</updated>
+    <updated>2016-01-23T15:26:12.000Z</updated>
     <content type="html"><![CDATA[<p>##机器学习 读书笔记01<br>最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的<a href="http://open.163.com/special/opencourse/machinelearning.html" target="_blank" rel="external">斯坦福大学公开课 ：机器学习课程</a>，公开课的老师是一个华人，最后一查，发现他是一个大牛，哦不，是巨牛，请看他的相关介绍：<a href="http://baike.baidu.com/link?url=82UgpsKu2N8pN-9XWsJLQkeGVArb5GRdDthrAjGfwtuHEXNhWcTA7PQI9eZGGmxz9sogbViWV0annPGr0XGOMrF7Via3PdjXliQo0_umzuz6Q9EWE-g6y5NN1L_gdX1zlpV17EsqVchsQ9AlPw61w_" target="_blank" rel="external">Andrew Ng</a>，后来发现他是著名的公开课网站<a href="https://www.coursera.org/" target="_blank" rel="external">Course</a>的co-fonder，然后在这个网站上也发现了有关机器学习的课程<a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">公开课</a></p>
 <p>网上有学习过他的课程的网友说，网易云课堂上的课程比较老了，还是Coursera上的比较新，所以我就抱着试一试看的态度，报了他的公开课，刚好过两天就要开一期了，但愿我可以按时完成。</p>
-<p>首先来看一下有关机器学习的一些概念，我在另外一篇blog里头已经整理过了，请刚兴趣的同学移步<a href="http://leeobarloon.github.io/2016/01/23/ComputerLearningConcept/" target="_blank" rel="external">此处</a></p>
+<p>首先来看一下有关机器学习的一些概念，我在另外一篇blog里头已经整理过了，请刚兴趣的同学移步<a href="http://leeobarloon.github.io/2016/01/23/ComputerLearningConcept/">此处</a></p>
 <p>后来，回家本来想翻看一下之前大学时候数学相关的书籍，然后竟然被我找到了这本书<a href="http://book.douban.com/subject/24703171/" target="_blank" rel="external">《机器学习实战》</a>，原来我去年就买过这本书，但后来发现看不大懂，看来上帝早有安排啊，哈哈~</p>
 <hr>
 <p>言归正传，下面我们就开始学习这本书吧~</p>
@@ -153,22 +166,22 @@
 </ol>
 <p>其中，第4和第5步骤，是机器学习的核心</p>
 <p>本书主要用到的语言是<code>python</code>，并且会频繁的用到<code>python</code>中的<code>Numpy</code>类库</p>
-<p>具体如何使用，请大家自行查考资料，这里就不在啰嗦了</p>
+<p>具体如何使用，请大家自行查考资料，这里就不在啰嗦了.</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>##机器学习 读书笔记01<br>最近开始研究机器学习(Computer Learning）,发现其实已经有很多很好的资源了，其中比较著名的就是网易云课堂上的<a href="http://open.163.com/special/opencourse/machinelea]]>
     </summary>
     
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="机器学习" scheme="http://leeobarloon.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://leeobarloon.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Computer Learning Concept]]></title>
-    <link href="http://yoursite.com/2016/01/23/ComputerLearningConcept/"/>
-    <id>http://yoursite.com/2016/01/23/ComputerLearningConcept/</id>
+    <link href="http://leeobarloon.github.io/2016/01/23/ComputerLearningConcept/"/>
+    <id>http://leeobarloon.github.io/2016/01/23/ComputerLearningConcept/</id>
     <published>2016-01-23T08:56:02.000Z</published>
     <updated>2016-01-23T08:56:59.000Z</updated>
     <content type="html"><![CDATA[<h1 id="u673A_u5668_u5B66_u4E60"><a href="#u673A_u5668_u5B66_u4E60" class="headerlink" title="机器学习"></a>机器学习</h1><p>机器学习的概念：<br>关于机器学习的概念有很多，我们可以从下面基本书中的定义中自己领会</p>
@@ -209,8 +222,8 @@
   
   <entry>
     <title><![CDATA[CreateHexo]]></title>
-    <link href="http://yoursite.com/2016/01/22/CreateHexo/"/>
-    <id>http://yoursite.com/2016/01/22/CreateHexo/</id>
+    <link href="http://leeobarloon.github.io/2016/01/22/CreateHexo/"/>
+    <id>http://leeobarloon.github.io/2016/01/22/CreateHexo/</id>
     <published>2016-01-22T03:18:01.000Z</published>
     <updated>2016-01-22T03:18:22.000Z</updated>
     <content type="html"><![CDATA[<h1 id="HEXO__u521B_u5EFABlog"><a href="#HEXO__u521B_u5EFABlog" class="headerlink" title="HEXO 创建Blog"></a>HEXO 创建Blog</h1><p>决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架</p>
@@ -237,8 +250,8 @@
   
   <entry>
     <title><![CDATA[first hexo]]></title>
-    <link href="http://yoursite.com/2016/01/20/first-hexo/"/>
-    <id>http://yoursite.com/2016/01/20/first-hexo/</id>
+    <link href="http://leeobarloon.github.io/2016/01/20/first-hexo/"/>
+    <id>http://leeobarloon.github.io/2016/01/20/first-hexo/</id>
     <published>2016-01-20T07:58:55.000Z</published>
     <updated>2016-01-20T11:26:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>]]></content>
@@ -246,14 +259,14 @@
     <![CDATA[<h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>]]>
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://leeobarloon.github.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2016/01/20/hello-world/"/>
-    <id>http://yoursite.com/2016/01/20/hello-world/</id>
+    <link href="http://leeobarloon.github.io/2016/01/20/hello-world/"/>
+    <id>http://leeobarloon.github.io/2016/01/20/hello-world/</id>
     <published>2016-01-20T07:48:33.000Z</published>
     <updated>2016-01-20T07:48:33.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -274,8 +287,8 @@
   
   <entry>
     <title><![CDATA[利用纯代码构建IOS项目-01]]></title>
-    <link href="http://yoursite.com/2015/03/30/CreateIOSViaPureCode/"/>
-    <id>http://yoursite.com/2015/03/30/CreateIOSViaPureCode/</id>
+    <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode/"/>
+    <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode/</id>
     <published>2015-03-29T16:00:00.000Z</published>
     <updated>2016-01-23T15:06:52.000Z</updated>
     <content type="html"><![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>
@@ -310,18 +323,18 @@
     
     </summary>
     
-      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
     
-      <category term="Objc" scheme="http://yoursite.com/tags/Objc/"/>
+      <category term="Objc" scheme="http://leeobarloon.github.io/tags/Objc/"/>
     
-      <category term="IOS开发" scheme="http://yoursite.com/categories/IOS%E5%BC%80%E5%8F%91/"/>
+      <category term="IOS开发" scheme="http://leeobarloon.github.io/categories/IOS%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[利用纯代码构建IOS项目-02]]></title>
-    <link href="http://yoursite.com/2015/03/30/CreateIOSViaPureCode02/"/>
-    <id>http://yoursite.com/2015/03/30/CreateIOSViaPureCode02/</id>
+    <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/"/>
+    <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/</id>
     <published>2015-03-29T16:00:00.000Z</published>
     <updated>2016-01-23T15:07:08.000Z</updated>
     <content type="html"><![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>
@@ -354,18 +367,18 @@ pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
     
     </summary>
     
-      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
     
-      <category term="Objc" scheme="http://yoursite.com/tags/Objc/"/>
+      <category term="Objc" scheme="http://leeobarloon.github.io/tags/Objc/"/>
     
-      <category term="IOS开发" scheme="http://yoursite.com/categories/IOS%E5%BC%80%E5%8F%91/"/>
+      <category term="IOS开发" scheme="http://leeobarloon.github.io/categories/IOS%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[github上的ios代码]]></title>
-    <link href="http://yoursite.com/2015/03/30/IOS%20Github%20Repos/"/>
-    <id>http://yoursite.com/2015/03/30/IOS Github Repos/</id>
+    <link href="http://leeobarloon.github.io/2015/03/30/IOS%20Github%20Repos/"/>
+    <id>http://leeobarloon.github.io/2015/03/30/IOS Github Repos/</id>
     <published>2015-03-29T16:00:00.000Z</published>
     <updated>2016-01-23T15:07:36.000Z</updated>
     <content type="html"><![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
@@ -375,18 +388,58 @@ pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
 ]]>
     </summary>
     
-      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+      <category term="Github" scheme="http://leeobarloon.github.io/tags/Github/"/>
     
-      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
     
-      <category term="IOS代码库" scheme="http://yoursite.com/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+      <category term="IOS代码库" scheme="http://leeobarloon.github.io/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Swift first try - Swift 初探]]></title>
+    <link href="http://leeobarloon.github.io/2015/03/27/Swift%20First%20Try/"/>
+    <id>http://leeobarloon.github.io/2015/03/27/Swift First Try/</id>
+    <published>2015-03-26T16:00:00.000Z</published>
+    <updated>2016-01-23T15:06:36.000Z</updated>
+    <content type="html"><![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>
+<a id="more"></a>
+<p>初看，swift和一些脚本语言有点类似，也可以不用明确的声明变量的类型，比如你可以这样:</p>
+<pre><code>var testString = &quot;a string&quot;
+</code></pre><p>也可以这样</p>
+<pre><code>var testInt = 10
+</code></pre><p>当然，你也可以明确的申明变量的类型：</p>
+<pre><code>var testDouble : Double = 10.32
+</code></pre><p>swift有很多类型，其实也无非就是<code>Int</code>,<code>Float</code>,<code>Double</code>,<code>String</code>,<code>Bool</code>等，要注意的是，当你这样申明一个变量的时候：<code>var test = 1230.3</code>,编译器会自动的认为这是一个Double</p>
+<p>另外，Swift也可以申明常量：</p>
+<pre><code>let constantValue = 10
+</code></pre><p>并且，还建议开发者应该优先使用<code>let</code>而不是<code>var</code>,因为这样，编译器可以做一些优化，那咱就<code>let it go</code>吧。</p>
+<p>在Swift中还有这样的写法：</p>
+<pre><code>let testName = “ComiCoder”
+let testStr = “\(testName) is a good man!”
+println(testStr) 
+
+-----output----
+ComiCoder is a good man!
+</code></pre><p>你会发现，我们可以用: <code>\(your expression)</code> 这样的语法来在字符串中内嵌其他变量</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
+    
+      <category term="SWIFT" scheme="http://leeobarloon.github.io/tags/SWIFT/"/>
+    
+      <category term="Swift入门" scheme="http://leeobarloon.github.io/categories/Swift%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Swift first try - Swift 的class]]></title>
-    <link href="http://yoursite.com/2015/03/27/Swift%20First%20Try%2002/"/>
-    <id>http://yoursite.com/2015/03/27/Swift First Try 02/</id>
+    <link href="http://leeobarloon.github.io/2015/03/27/Swift%20First%20Try%2002/"/>
+    <id>http://leeobarloon.github.io/2015/03/27/Swift First Try 02/</id>
     <published>2015-03-26T16:00:00.000Z</published>
     <updated>2016-01-23T15:06:21.000Z</updated>
     <content type="html"><![CDATA[<p>下面我们来看看swift中，如何定义和使用一个类<br><a id="more"></a></p>
@@ -434,58 +487,18 @@ testObj.getElem03()
     
     </summary>
     
-      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
     
-      <category term="SWIFT" scheme="http://yoursite.com/tags/SWIFT/"/>
+      <category term="SWIFT" scheme="http://leeobarloon.github.io/tags/SWIFT/"/>
     
-      <category term="Swift入门" scheme="http://yoursite.com/categories/Swift%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Swift first try - Swift 初探]]></title>
-    <link href="http://yoursite.com/2015/03/27/Swift%20First%20Try/"/>
-    <id>http://yoursite.com/2015/03/27/Swift First Try/</id>
-    <published>2015-03-26T16:00:00.000Z</published>
-    <updated>2016-01-23T15:06:36.000Z</updated>
-    <content type="html"><![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>
-<a id="more"></a>
-<p>初看，swift和一些脚本语言有点类似，也可以不用明确的声明变量的类型，比如你可以这样:</p>
-<pre><code>var testString = &quot;a string&quot;
-</code></pre><p>也可以这样</p>
-<pre><code>var testInt = 10
-</code></pre><p>当然，你也可以明确的申明变量的类型：</p>
-<pre><code>var testDouble : Double = 10.32
-</code></pre><p>swift有很多类型，其实也无非就是<code>Int</code>,<code>Float</code>,<code>Double</code>,<code>String</code>,<code>Bool</code>等，要注意的是，当你这样申明一个变量的时候：<code>var test = 1230.3</code>,编译器会自动的认为这是一个Double</p>
-<p>另外，Swift也可以申明常量：</p>
-<pre><code>let constantValue = 10
-</code></pre><p>并且，还建议开发者应该优先使用<code>let</code>而不是<code>var</code>,因为这样，编译器可以做一些优化，那咱就<code>let it go</code>吧。</p>
-<p>在Swift中还有这样的写法：</p>
-<pre><code>let testName = “ComiCoder”
-let testStr = “\(testName) is a good man!”
-println(testStr) 
-
------output----
-ComiCoder is a good man!
-</code></pre><p>你会发现，我们可以用: <code>\(your expression)</code> 这样的语法来在字符串中内嵌其他变量</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>]]>
-    
-    </summary>
-    
-      <category term="IOS" scheme="http://yoursite.com/tags/IOS/"/>
-    
-      <category term="SWIFT" scheme="http://yoursite.com/tags/SWIFT/"/>
-    
-      <category term="Swift入门" scheme="http://yoursite.com/categories/Swift%E5%85%A5%E9%97%A8/"/>
+      <category term="Swift入门" scheme="http://leeobarloon.github.io/categories/Swift%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git step by step 5 - git的工作流]]></title>
-    <link href="http://yoursite.com/2015/03/23/git%20step%20by%20step%2005/"/>
-    <id>http://yoursite.com/2015/03/23/git step by step 05/</id>
+    <link href="http://leeobarloon.github.io/2015/03/23/git%20step%20by%20step%2005/"/>
+    <id>http://leeobarloon.github.io/2015/03/23/git step by step 05/</id>
     <published>2015-03-22T16:00:00.000Z</published>
     <updated>2016-01-23T13:49:13.000Z</updated>
     <content type="html"><![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2004/" target="_blank" rel="external">git step by step4</a></p>
@@ -509,16 +522,16 @@ ComiCoder is a good man!
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
-      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git step by step 6 - git的恢复流程]]></title>
-    <link href="http://yoursite.com/2015/03/23/git%20step%20by%20step%2006/"/>
-    <id>http://yoursite.com/2015/03/23/git step by step 06/</id>
+    <link href="http://leeobarloon.github.io/2015/03/23/git%20step%20by%20step%2006/"/>
+    <id>http://leeobarloon.github.io/2015/03/23/git step by step 06/</id>
     <published>2015-03-22T16:00:00.000Z</published>
     <updated>2016-01-23T15:06:00.000Z</updated>
     <content type="html"><![CDATA[<p>接上文 <a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/23/git%20step%20by%20step%2005/" target="_blank" rel="external">git step by step 05</a></p>
@@ -551,16 +564,16 @@ modified:   readme.md
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
-      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git step by step 1 - git简介]]></title>
-    <link href="http://yoursite.com/2015/03/20/git%20step-by-step%2001/"/>
-    <id>http://yoursite.com/2015/03/20/git step-by-step 01/</id>
+    <link href="http://leeobarloon.github.io/2015/03/20/git%20step-by-step%2001/"/>
+    <id>http://leeobarloon.github.io/2015/03/20/git step-by-step 01/</id>
     <published>2015-03-20T07:58:55.000Z</published>
     <updated>2016-01-23T13:35:16.000Z</updated>
     <content type="html"><![CDATA[<p>很早就接触git，也有大名鼎鼎的github的账号，但一直以来都觉得git的命令实在不少，但自己主要用的就是那么几个，pull下来，push上去，其实说不上了解，顶多算略知皮毛，希望通过这个blog系列，可以让自己更多的了解git的精要，并且能够更好的和工作结合起来</p>
@@ -591,14 +604,14 @@ modified:   readme.md
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git step by step 3 - git简单操作]]></title>
-    <link href="http://yoursite.com/2015/03/19/git%20step%20by%20step%2003/"/>
-    <id>http://yoursite.com/2015/03/19/git step by step 03/</id>
+    <link href="http://leeobarloon.github.io/2015/03/19/git%20step%20by%20step%2003/"/>
+    <id>http://leeobarloon.github.io/2015/03/19/git step by step 03/</id>
     <published>2015-03-18T16:00:00.000Z</published>
     <updated>2016-01-23T13:37:35.000Z</updated>
     <content type="html"><![CDATA[<p>接上文<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/17/git%20step%20by%20step%2002/" target="_blank" rel="external">git step by step2</a></p>
@@ -648,16 +661,16 @@ modified:   readme.md
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
-      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git step by step 4 - git reset 的命令介绍]]></title>
-    <link href="http://yoursite.com/2015/03/19/git-step-by-step-04/"/>
-    <id>http://yoursite.com/2015/03/19/git-step-by-step-04/</id>
+    <link href="http://leeobarloon.github.io/2015/03/19/git-step-by-step-04/"/>
+    <id>http://leeobarloon.github.io/2015/03/19/git-step-by-step-04/</id>
     <published>2015-03-18T16:00:00.000Z</published>
     <updated>2016-01-23T13:38:07.000Z</updated>
     <content type="html"><![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2003/" target="_blank" rel="external">git step by step3</a></p>
@@ -694,16 +707,16 @@ Date:   Tue Mar 17 15:42:45 2015 +0800
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
-      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
+      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[python网络爬虫01]]></title>
-    <link href="http://yoursite.com/2015/03/19/PythonWebRobot/"/>
-    <id>http://yoursite.com/2015/03/19/PythonWebRobot/</id>
+    <link href="http://leeobarloon.github.io/2015/03/19/PythonWebRobot/"/>
+    <id>http://leeobarloon.github.io/2015/03/19/PythonWebRobot/</id>
     <published>2015-03-18T16:00:00.000Z</published>
     <updated>2016-01-23T13:38:49.000Z</updated>
     <content type="html"><![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>
@@ -730,20 +743,20 @@ Date:   Tue Mar 17 15:42:45 2015 +0800
     
     </summary>
     
-      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+      <category term="Web" scheme="http://leeobarloon.github.io/tags/Web/"/>
     
-      <category term="WebCrawler" scheme="http://yoursite.com/tags/WebCrawler/"/>
+      <category term="WebCrawler" scheme="http://leeobarloon.github.io/tags/WebCrawler/"/>
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="http://leeobarloon.github.io/tags/python/"/>
     
-      <category term="python爬虫" scheme="http://yoursite.com/categories/python%E7%88%AC%E8%99%AB/"/>
+      <category term="python爬虫" scheme="http://leeobarloon.github.io/categories/python%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[linux下面的简单页面配置]]></title>
-    <link href="http://yoursite.com/2015/03/18/%E5%9C%A8linux%E4%B8%8A%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99/"/>
-    <id>http://yoursite.com/2015/03/18/在linux上配置网站/</id>
+    <link href="http://leeobarloon.github.io/2015/03/18/%E5%9C%A8linux%E4%B8%8A%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99/"/>
+    <id>http://leeobarloon.github.io/2015/03/18/在linux上配置网站/</id>
     <published>2015-03-17T16:00:00.000Z</published>
     <updated>2016-01-23T13:37:10.000Z</updated>
     <content type="html"><![CDATA[<p>最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了</p>
@@ -767,18 +780,18 @@ Date:   Tue Mar 17 15:42:45 2015 +0800
     
     </summary>
     
-      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+      <category term="Web" scheme="http://leeobarloon.github.io/tags/Web/"/>
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://leeobarloon.github.io/tags/linux/"/>
     
-      <category term="linux下的技术积累" scheme="http://yoursite.com/categories/linux%E4%B8%8B%E7%9A%84%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+      <category term="linux下的技术积累" scheme="http://leeobarloon.github.io/categories/linux%E4%B8%8B%E7%9A%84%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git step by step 2 - git安装]]></title>
-    <link href="http://yoursite.com/2015/03/17/git%20step%20by%20step%2002/"/>
-    <id>http://yoursite.com/2015/03/17/git step by step 02/</id>
+    <link href="http://leeobarloon.github.io/2015/03/17/git%20step%20by%20step%2002/"/>
+    <id>http://leeobarloon.github.io/2015/03/17/git step by step 02/</id>
     <published>2015-03-16T16:00:00.000Z</published>
     <updated>2016-01-23T13:36:12.000Z</updated>
     <content type="html"><![CDATA[<p>我比较懒，在mac和windows下，都是直接下载github官网的安装包，其附带GUI软件以及git shell命令行工具</p>
@@ -825,31 +838,9 @@ nothing to commit, working directory clean
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
-      <category term="git step by step" scheme="http://yoursite.com/categories/git-step-by-step/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Jekyll模板]]></title>
-    <link href="http://yoursite.com/2015/03/17/jekyll%20%E6%A8%A1%E6%9D%BF/"/>
-    <id>http://yoursite.com/2015/03/17/jekyll 模板/</id>
-    <published>2015-03-16T16:00:00.000Z</published>
-    <updated>2016-01-23T13:36:50.000Z</updated>
-    <content type="html"><![CDATA[<p>在jekyll的官网上，有很多jekyll的模板，等以后有空再去比自己的空间弄一弄，最好可以更多的了解一下jekyll的使用</p>
-<p><a href="https://github.com/jekyll/jekyll/wiki/sites" target="_blank" rel="external">jekyll模板</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在jekyll的官网上，有很多jekyll的模板，等以后有空再去比自己的空间弄一弄，最好可以更多的了解一下jekyll的使用</p>
-<p><a href="https://github.com/jekyll/jekyll/wiki/sites" target="_blan]]>
-    </summary>
-    
-      <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
-    
-      <category term="Jekyll" scheme="http://yoursite.com/tags/Jekyll/"/>
-    
-      <category term="杂文" scheme="http://yoursite.com/categories/%E6%9D%82%E6%96%87/"/>
+      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
     
   </entry>
   

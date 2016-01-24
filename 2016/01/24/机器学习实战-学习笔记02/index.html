@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="接上文git step by step2">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git step by step 3 - git简单操作">
-<meta property="og:url" content="http://leeobarloon.github.io/2015/03/19/git step by step 03/index.html">
+<meta property="og:title" content="机器学习实战-学习笔记02">
+<meta property="og:url" content="http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="接上文git step by step2">
-<meta property="og:updated_time" content="2016-01-23T13:37:35.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-01-24T03:09:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git step by step 3 - git简单操作">
-<meta name="twitter:description" content="接上文git step by step2">
+<meta name="twitter:title" content="机器学习实战-学习笔记02">
+<meta name="twitter:description">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> git step by step 3 - git简单操作 | Leeo‘s Blog </title>
+  <title> 机器学习实战-学习笔记02 | Leeo‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,7 +216,7 @@
             
             
               
-                git step by step 3 - git简单操作
+                机器学习实战-学习笔记02
               
             
           </h1>
@@ -228,38 +228,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-19T00:00:00+08:00" content="2015-03-19">
-              2015-03-19
+            <time itemprop="dateCreated" datetime="2016-01-24T11:09:51+08:00" content="2016-01-24">
+              2016-01-24
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git-step-by-step/" itemprop="url" rel="index">
-                    <span itemprop="name">git step by step</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/19/git step by step 03/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/19/git step by step 03/" itemprop="commentsCount"></span>
+                <a href="/2016/01/24/机器学习实战-学习笔记02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/机器学习实战-学习笔记02/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,75 +261,24 @@
       
 
       
-        <p>接上文<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/17/git%20step%20by%20step%2002/" target="_blank" rel="external">git step by step2</a></p>
-<a id="more"></a>
-<p>我们已经在我们的版本控制库中添加了readme.md文件，我们现在就来编辑一下它，将其修改为：</p>
-<pre><code>#This is a test
-Hello GitHub
-git is a great tool for coder...
-</code></pre><p>然后我们用<code>git status</code>命令查看一下</p>
-<pre><code>$ git status
-
-# On branch master
-# Changes not staged for commit:
-# ( use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-# (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-
-# modified:   readme.md
-
-# no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>从提示可以看出，该文档的内容已近被修改，git给我们两个选择，一个就是用git add 将此次修改提交到版本库，第二个就是用checkout – 恢复此次修改，我们可以试一下第二种</p>
-<pre><code>git checkout -- readme.md
-</code></pre><p>然后打开 readme.md，我们发现内容已近变成了之前的了…好把，那我们再重复一下上面的动作，修改文件，进行查看，然后我们可以用 <code>git diff</code>查看一下文件发生了什么变化.</p>
-<pre><code>diff --git a/readme.md b/readme.md
-index 76d2bc6..45e0d75 100644
---- a/readme.md
-+++ b/readme.md
-@@ -1,3 +1,3 @@
- #This is a test
--
--Hello Git Hub!
-+Hello GitHub
-+git is a great tool for coder...
-</code></pre><p>可以看出，我们修改了 Hello Git Hub！这一行，并添加了 git is a …这一行</p>
-<p>下面，我们就用<code>git add</code>将该文件提交到仓库吧</p>
-<pre><code>git add readme.md
-</code></pre><p>在commit之前，我们再用git status查看一下吧（注意git status是一个经常会用到的命令）</p>
-<pre><code>On branch master
-Changes to be committed:
-    (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-
-modified:   readme.md
-</code></pre><p>下面，就用git commit -m “xxxxx”</p>
-<p>OK啦，这样就算最简单的git的使用喽</p>
-
+        
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag">#git</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/19/git-step-by-step-04/" rel="next" title="git step by step 4 - git reset 的命令介绍">
-                <i class="fa fa-chevron-left"></i> git step by step 4 - git reset 的命令介绍
+              <a href="/2016/01/23/IOS Development/" rel="next" title="github上的ios代码">
+                <i class="fa fa-chevron-left"></i> github上的ios代码
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/20/git step-by-step 01/" rel="prev" title="git step by step 1 - git简介">
-                git step by step 1 - git简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -374,8 +304,8 @@ modified:   readme.md
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/03/19/git step by step 03/"
-           data-title="git step by step 3 - git简单操作" data-url="http://leeobarloon.github.io/2015/03/19/git step by step 03/">
+      <div class="ds-thread" data-thread-key="2016/01/24/机器学习实战-学习笔记02/"
+           data-title="机器学习实战-学习笔记02" data-url="http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/">
       </div>
     
   </div>
