@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-01-24T04:14:38.000Z</updated>
+  <updated>2016-01-24T09:32:11.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://leeobarloon.github.io/2016/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/"/>
     <id>http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/</id>
     <published>2016-01-24T03:09:51.000Z</published>
-    <updated>2016-01-24T04:14:38.000Z</updated>
+    <updated>2016-01-24T09:32:11.000Z</updated>
     <content type="html"><![CDATA[<p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
 <p>###k-近邻算法(k-Nearest Neighbour算法，KNN算法）<br>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
 <blockquote>
@@ -56,6 +56,57 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<p>###KNN算法的伪代码：</p>
+<ol>
+<li>计算已知类别数据节中的点与当前点之间的距离</li>
+<li>按照距离递增顺序排序</li>
+<li>选取与当前点距离最小的k个点</li>
+<li>确定前k个点所在类别的出现频率</li>
+<li>返回前k个点出现频率最高的类别最为当前点的预测分类</li>
+</ol>
+<hr>
+<p>###kNN算法的python代码：</p>
+<pre><code>from numpy import *
+import operator
+
+&apos;&apos;&apos;
+获得已有的数据集和标签
+&apos;&apos;&apos;
+def createDataSet():
+    group = array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
+    labels = [&apos;A&apos;, &apos;A&apos;, &apos;B&apos;, &apos;B&apos;]
+    return group, labels
+
+&apos;&apos;&apos;
+分类算法0，获得输入的inX最应该属于的标签类型
+&apos;&apos;&apos;
+def classify0(inX, dataSet, labels, k):
+    #计算距离
+    dataSetSize = dataSet.shape[0]
+    diffMat = tile(inX, (dataSetSize,1)) - dataSet
+    sqDiffMat = diffMat**2
+    sqDistances = sqDiffMat.sum(axis=1)
+    distances = sqDistances**0.5
+    sortedDistIndicies = distances.argsort()
+
+    classCount = {}
+    #选择距离最小的k个点
+    for i in range(k):
+        voteIlabel = labels[sortedDistIndicies[i]]
+        classCount[voteIlabel] = classCount.get(voteIlabel,0)+1
+    #排序    
+    sortedDistIndicies = sorted(classCount.iteritems(),
+                                key=operator.itemgetter(1), reverse=True)
+    return sortedDistIndicies[0][0]
+
+if __name__ == &apos;__main__&apos;:
+    group, labels = createDataSet()
+    label = classify0([0,0], group, labels, 3)
+    print label
+</code></pre><p>获得的结果是：</p>
+<pre><code>$ B
+</code></pre><p>说明输入的测试数据[0,0]更应该属于B类数据</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>##机器学习 读书笔记02<br>我们一起来学习机器学习中的第一个算法：</p>
