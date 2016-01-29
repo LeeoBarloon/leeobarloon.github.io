@@ -80,7 +80,8 @@ k-近邻算法(k-Nearest Neighbour算法，KNN算法）什么是k-近邻算法�
 
 K最近邻(k-Nearest Neighbour，KNN)分类算法，是一个理论上比较成熟的方法，也是最简单的机器学习算法之一。该方法的思路是">
 <meta property="og:image" content="http://img2.ph.126.net/37xd9_uaFcEVkvJ1RWN1fA==/6631419609424482845.jpg">
-<meta property="og:updated_time" content="2016-01-24T13:47:26.000Z">
+<meta property="og:image" content="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145403797675.png">
+<meta property="og:updated_time" content="2016-01-29T05:27:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实战-学习笔记02">
 <meta name="twitter:description" content="机器学习 读书笔记02我们一起来学习机器学习中的第一个算法：
@@ -440,6 +441,47 @@ if __name__ == &apos;__main__&apos;:
     draw_figure01()
 </code></pre><p>获得的效果如下图：        </p>
 <p><img src="http://img2.ph.126.net/37xd9_uaFcEVkvJ1RWN1fA==/6631419609424482845.jpg" alt="figure_02"></p>
+<p>为了将两种类型的数据分清楚，可以在绘制的函数中加入尺寸和颜色的信息：</p>
+<pre><code>...
+ax.scatter(returnMat[:, 1], returnMat[:, 2],
+    15*array(classLabelVector),15*array(classLabelVector))
+...
+</code></pre><p>可以看到这样的效果了：<br><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145403797675.png" alt="figure_03"></p>
+<p>恩，感觉效果还可以…</p>
+<p>但是为了计算样本之间的相差程度，我们还需要进一步的计算，如下表：</p>
+<pre><code>40920    8.326976    0.953952    largeDoses
+14488    7.153469    1.673904    smallDoses
+26052    1.441871    0.805124    didntLike
+75136    13.147394 0.428964    didntLike
+</code></pre><p>我们发现，如果按照欧几里得计算公式，来计算样本之间的距离，则第一列的影响因子过大（权重过大），那么我们就需要平衡几个因素之间的影响效果，最简单的办法就是：<code>数值归一化</code>，简单点说，就是让这些熟知的特征化数值都转化到0到1之间。</p>
+<pre><code>def autoNorm(dataSet):
+    minValues = dataSet.min(0)
+    maxValues = dataSet.max(0)
+    ranges = maxValues - minValues
+    normDataSet = zeros(shape(dataSet))
+    m = dataSet.shape[0]
+    normDataSet = dataSet - tile(minValues, (m, 1))
+    normDataSet = normDataSet/tile(ranges,(m,1))
+    return normDataSet, ranges, minValues
+</code></pre><p>上面的代码，就是将原有矩阵中的每一个向量归一化到0到1之间的区间中了:</p>
+<p>接下来，我们就可以测试一下，通过我们的kNN算法，是否可以比较准确的判断此人是否适合约会了，那么如何获得测试数据呢？其实很简单，就是从样本数据中，抽取出一部分(比如10%）作为测试数据，然后比对一下，按照算法获得的结果，是否和真实的结果一致，这样，就可以获得一个算法的正确率，代码如下:</p>
+<pre><code>def datingClassTest():
+    hoRadio = 0.1
+    datingDataMat, datingLabels = file2matrix(&apos;datingTestSet2.txt&apos;)
+    normDataSet, ranges, minValues = autoNorm(datingDataMat)
+    m = normDataSet.shape[0] #获得行数
+    numTestVecs = int(m*hoRadio)
+    errorCount = 0
+    for i in range(numTestVecs):
+       classifierResult = classify0(normDataSet[i,:],normDataSet[numTestVecs:m,:], datingLabels[numTestVecs:m],3)
+       print &quot;the classifier came back with: %d, the real answer is %d&quot; %(classifierResult, datingLabels[i])
+       if(classifierResult!=datingLabels[i]):
+           errorCount += 1.0
+    print &quot;The total error rate is : %f&quot; %(errorCount/float(numTestVecs))
+</code></pre><p>最后获得的错误率是5%，还是不错的（书中计算出来是2.4%,不知道是不是数据不同导致的）</p>
+<p>恩，接下来，你就可以仿照这个kNN算法来写一个自己的约会对象筛查程序了</p>
+<p>。。。。</p>
+<p>当然是做梦啦，谁会来和程序员约会…？</p>
 
       
     </div>
