@@ -88,7 +88,7 @@ plt.show()
     <link href="http://leeobarloon.github.io/2016/01/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/"/>
     <id>http://leeobarloon.github.io/2016/01/24/机器学习实战-学习笔记02/</id>
     <published>2016-01-24T03:09:51.000Z</published>
-    <updated>2016-01-29T05:27:59.000Z</updated>
+    <updated>2016-01-29T05:33:58.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002" class="headerlink" title="机器学习 读书笔记02"></a>机器学习 读书笔记02</h2><p>我们一起来学习机器学习中的第一个算法：</p>
 <h3 id="k-_u8FD1_u90BB_u7B97_u6CD5_28k-Nearest_Neighbour_u7B97_u6CD5_uFF0CKNN_u7B97_u6CD5_uFF09"><a href="#k-_u8FD1_u90BB_u7B97_u6CD5_28k-Nearest_Neighbour_u7B97_u6CD5_uFF0CKNN_u7B97_u6CD5_uFF09" class="headerlink" title="k-近邻算法(k-Nearest Neighbour算法，KNN算法）"></a>k-近邻算法(k-Nearest Neighbour算法，KNN算法）</h3><p>什么是k-近邻算法呢？<br>书中的定义比较简单：</p>
 <blockquote>
@@ -287,6 +287,8 @@ ax.scatter(returnMat[:, 1], returnMat[:, 2],
 <p>恩，接下来，你就可以仿照这个kNN算法来写一个自己的约会对象筛查程序了</p>
 <p>。。。。</p>
 <p>当然是做梦啦，谁会来和程序员约会…？</p>
+<p>当然，这个例子中的向量维度是很少的，总共才有3列，像书中提到的自体识别的例子，一个例子的样本最终会被转化为1024维度的矩阵，并且要和样本数据中的超多2000个向量进行距离运算，这个算法的效率是不大高的，那么接下来，我们就来看一看，为了解决这个算法效率的问题，将要引进的 <code>k决策树</code> 算法！</p>
+<p>下回一起来学习…</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB002" class="headerlink"]]>
