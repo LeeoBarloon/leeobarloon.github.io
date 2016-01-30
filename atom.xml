@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-01-24T13:45:21.000Z</updated>
+  <updated>2016-01-30T14:38:06.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -13,6 +13,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[机器学习-课程进度-第一周]]></title>
+    <link href="http://leeobarloon.github.io/2016/01/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6-%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
+    <id>http://leeobarloon.github.io/2016/01/30/机器学习-课程进度-第一周/</id>
+    <published>2016-01-30T14:33:21.000Z</published>
+    <updated>2016-01-30T14:38:06.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60_u8FDB_u5EA6"><a href="#u673A_u5668_u5B66_u4E60_u8FDB_u5EA6" class="headerlink" title="机器学习进度"></a>机器学习进度</h2><p>乘学习的激情还没有磨灭，报了Coursera上的机器学习的<a href="https://www.coursera.org/learn/machine-learning/home/welcome" target="_blank" rel="external">课程</a>，主讲老师还是<a href="http://baike.baidu.com/link?url=JeEwqPqM_TpBKTf80IFRpzbwCTeiYtN9xbjnzPNBlAxCeetxzrEhsjJyZX0shMHPLZy58kh7RrM-sDvVBLtPa6TnkAlPnr3RhF2glR2DsubfAM-iyrcEl0eeUbjMc2S79dZs8OK9BpYWRj_l9n94a_" target="_blank" rel="external">Andrew Ng</a>，第一周总算是学完了</p>
+<p>留贴纪念一下，争取接下来的进度也能顺利</p>
+<hr>
+<p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145416435047.png" alt="pic_1"></p>
+<hr>
+<p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145416434955.png" alt="pic_2"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="u673A_u5668_u5B66_u4E60_u8FDB_u5EA6"><a href="#u673A_u5668_u5B66_u4E60_u8FDB_u5EA6" class="headerlink" title="机器学习进度"></a>机器学习进度</h2]]>
+    </summary>
+    
+      <category term="Coursera" scheme="http://leeobarloon.github.io/tags/Coursera/"/>
+    
+      <category term="机器学习" scheme="http://leeobarloon.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[机器学习实战-学习笔记03]]></title>
+    <link href="http://leeobarloon.github.io/2016/01/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003/"/>
+    <id>http://leeobarloon.github.io/2016/01/29/机器学习实战-学习笔记03/</id>
+    <published>2016-01-29T06:55:22.000Z</published>
+    <updated>2016-01-29T06:55:22.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Matplotlib安装和使用简要说明]]></title>
@@ -559,73 +595,6 @@ ax.scatter(returnMat[:, 1], returnMat[:, 2],
   </entry>
   
   <entry>
-    <title><![CDATA[利用纯代码构建IOS项目-01]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode/"/>
-    <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode/</id>
-    <published>2015-03-29T16:00:00.000Z</published>
-    <updated>2016-01-23T15:06:52.000Z</updated>
-    <content type="html"><![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>
-<a id="more"></a>
-<ol>
-<li><p>选择File-&gt;New Project-&gt;Single View Application,填写必要信息，创建一个工程</p>
-</li>
-<li><p>打开Supporting Files-&gt;info.plist<br>删掉有关StoryBoard的配置</p>
-</li>
-<li><p>删掉Main.storyboard</p>
-</li>
-</ol>
-<p>修改AppDelegate.m 中的方法：</p>
-<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:    (NSDictionary *)launchOptions 
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(10/* x */, 10/* y */, 200/* width */, 200/* height */)];
-
-    myView.backgroundColor = [UIColor redColor];
-
-    [self.window addSubview:myView];
-    [myView setFrame:CGRectMake(10, 30, 200, 200)];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
-}
-</code></pre><p>然后运行，就可以看到一个由纯代码运行成功的ios的简单例子了…</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>]]>
-    
-    </summary>
-    
-      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
-    
-      <category term="Objc" scheme="http://leeobarloon.github.io/tags/Objc/"/>
-    
-      <category term="IOS开发" scheme="http://leeobarloon.github.io/categories/IOS%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[github上的ios代码]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/30/IOS%20Github%20Repos/"/>
-    <id>http://leeobarloon.github.io/2015/03/30/IOS Github Repos/</id>
-    <published>2015-03-29T16:00:00.000Z</published>
-    <updated>2016-01-23T15:07:36.000Z</updated>
-    <content type="html"><![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
-]]>
-    </summary>
-    
-      <category term="Github" scheme="http://leeobarloon.github.io/tags/Github/"/>
-    
-      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
-    
-      <category term="IOS代码库" scheme="http://leeobarloon.github.io/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[利用纯代码构建IOS项目-02]]></title>
     <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/"/>
     <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/</id>
@@ -670,42 +639,69 @@ pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
   </entry>
   
   <entry>
-    <title><![CDATA[Swift first try - Swift 初探]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/27/Swift%20First%20Try/"/>
-    <id>http://leeobarloon.github.io/2015/03/27/Swift First Try/</id>
-    <published>2015-03-26T16:00:00.000Z</published>
-    <updated>2016-01-23T15:06:36.000Z</updated>
-    <content type="html"><![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>
-<a id="more"></a>
-<p>初看，swift和一些脚本语言有点类似，也可以不用明确的声明变量的类型，比如你可以这样:</p>
-<pre><code>var testString = &quot;a string&quot;
-</code></pre><p>也可以这样</p>
-<pre><code>var testInt = 10
-</code></pre><p>当然，你也可以明确的申明变量的类型：</p>
-<pre><code>var testDouble : Double = 10.32
-</code></pre><p>swift有很多类型，其实也无非就是<code>Int</code>,<code>Float</code>,<code>Double</code>,<code>String</code>,<code>Bool</code>等，要注意的是，当你这样申明一个变量的时候：<code>var test = 1230.3</code>,编译器会自动的认为这是一个Double</p>
-<p>另外，Swift也可以申明常量：</p>
-<pre><code>let constantValue = 10
-</code></pre><p>并且，还建议开发者应该优先使用<code>let</code>而不是<code>var</code>,因为这样，编译器可以做一些优化，那咱就<code>let it go</code>吧。</p>
-<p>在Swift中还有这样的写法：</p>
-<pre><code>let testName = “ComiCoder”
-let testStr = “\(testName) is a good man!”
-println(testStr) 
-
------output----
-ComiCoder is a good man!
-</code></pre><p>你会发现，我们可以用: <code>\(your expression)</code> 这样的语法来在字符串中内嵌其他变量</p>
+    <title><![CDATA[github上的ios代码]]></title>
+    <link href="http://leeobarloon.github.io/2015/03/30/IOS%20Github%20Repos/"/>
+    <id>http://leeobarloon.github.io/2015/03/30/IOS Github Repos/</id>
+    <published>2015-03-29T16:00:00.000Z</published>
+    <updated>2016-01-23T15:07:36.000Z</updated>
+    <content type="html"><![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>]]>
+    <![CDATA[<p>请看链接：<a href="http://github.ibireme.com/github/list/ios/" target="_blank" rel="external">IOS Github Repos</a></p>
+]]>
+    </summary>
+    
+      <category term="Github" scheme="http://leeobarloon.github.io/tags/Github/"/>
+    
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
+    
+      <category term="IOS代码库" scheme="http://leeobarloon.github.io/categories/IOS%E4%BB%A3%E7%A0%81%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[利用纯代码构建IOS项目-01]]></title>
+    <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode/"/>
+    <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode/</id>
+    <published>2015-03-29T16:00:00.000Z</published>
+    <updated>2016-01-23T15:06:52.000Z</updated>
+    <content type="html"><![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>
+<a id="more"></a>
+<ol>
+<li><p>选择File-&gt;New Project-&gt;Single View Application,填写必要信息，创建一个工程</p>
+</li>
+<li><p>打开Supporting Files-&gt;info.plist<br>删掉有关StoryBoard的配置</p>
+</li>
+<li><p>删掉Main.storyboard</p>
+</li>
+</ol>
+<p>修改AppDelegate.m 中的方法：</p>
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:    (NSDictionary *)launchOptions 
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(10/* x */, 10/* y */, 200/* width */, 200/* height */)];
+
+    myView.backgroundColor = [UIColor redColor];
+
+    [self.window addSubview:myView];
+    [myView setFrame:CGRectMake(10, 30, 200, 200)];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+</code></pre><p>然后运行，就可以看到一个由纯代码运行成功的ios的简单例子了…</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>]]>
     
     </summary>
     
       <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
     
-      <category term="SWIFT" scheme="http://leeobarloon.github.io/tags/SWIFT/"/>
+      <category term="Objc" scheme="http://leeobarloon.github.io/tags/Objc/"/>
     
-      <category term="Swift入门" scheme="http://leeobarloon.github.io/categories/Swift%E5%85%A5%E9%97%A8/"/>
+      <category term="IOS开发" scheme="http://leeobarloon.github.io/categories/IOS%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -757,6 +753,46 @@ testObj.getElem03()
 ]]></content>
     <summary type="html">
     <![CDATA[<p>下面我们来看看swift中，如何定义和使用一个类<br>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
+    
+      <category term="SWIFT" scheme="http://leeobarloon.github.io/tags/SWIFT/"/>
+    
+      <category term="Swift入门" scheme="http://leeobarloon.github.io/categories/Swift%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Swift first try - Swift 初探]]></title>
+    <link href="http://leeobarloon.github.io/2015/03/27/Swift%20First%20Try/"/>
+    <id>http://leeobarloon.github.io/2015/03/27/Swift First Try/</id>
+    <published>2015-03-26T16:00:00.000Z</published>
+    <updated>2016-01-23T15:06:36.000Z</updated>
+    <content type="html"><![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>
+<a id="more"></a>
+<p>初看，swift和一些脚本语言有点类似，也可以不用明确的声明变量的类型，比如你可以这样:</p>
+<pre><code>var testString = &quot;a string&quot;
+</code></pre><p>也可以这样</p>
+<pre><code>var testInt = 10
+</code></pre><p>当然，你也可以明确的申明变量的类型：</p>
+<pre><code>var testDouble : Double = 10.32
+</code></pre><p>swift有很多类型，其实也无非就是<code>Int</code>,<code>Float</code>,<code>Double</code>,<code>String</code>,<code>Bool</code>等，要注意的是，当你这样申明一个变量的时候：<code>var test = 1230.3</code>,编译器会自动的认为这是一个Double</p>
+<p>另外，Swift也可以申明常量：</p>
+<pre><code>let constantValue = 10
+</code></pre><p>并且，还建议开发者应该优先使用<code>let</code>而不是<code>var</code>,因为这样，编译器可以做一些优化，那咱就<code>let it go</code>吧。</p>
+<p>在Swift中还有这样的写法：</p>
+<pre><code>let testName = “ComiCoder”
+let testStr = “\(testName) is a good man!”
+println(testStr) 
+
+-----output----
+ComiCoder is a good man!
+</code></pre><p>你会发现，我们可以用: <code>\(your expression)</code> 这样的语法来在字符串中内嵌其他变量</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>自己也算写过几个IOS程序，但是一直以来都不是很喜欢写IOS的代码，因为objective-c的语法太TMD的恶心了，特别是它那丑陋的[]的语法，尽管很多人都说习惯了就好，还是很优美的，但我压根不觉得，另外，obj-c的内存控制，本来已经习惯了，后来它自己又加上了ARC，我就更不知所谓了，而且Xcode每次更新后，其中很多特性就需要继续学习，或者说重新学习，干脆我就重新学Swift得了，但愿这玩意儿优美一点…</p>]]>
     
     </summary>
     
@@ -882,92 +918,6 @@ modified:   readme.md
   </entry>
   
   <entry>
-    <title><![CDATA[git step by step 4 - git reset 的命令介绍]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/19/git-step-by-step-04/"/>
-    <id>http://leeobarloon.github.io/2015/03/19/git-step-by-step-04/</id>
-    <published>2015-03-18T16:00:00.000Z</published>
-    <updated>2016-01-23T13:38:07.000Z</updated>
-    <content type="html"><![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2003/" target="_blank" rel="external">git step by step3</a></p>
-<a id="more"></a>
-<p>我们日常的工作中，对一个文件可能会有多次的修改和提交，很显然，我们肯定不能记住每一次的提交情况，git也提供了这个功能：</p>
-<pre><code>git log
-</code></pre><p>用这个命令，我们就可以看到每一次的提交情况：</p>
-<pre><code>commit 905fe1cf74f9925abb548c5bf3f17ed62f0b4bfd
-Author: ComiCoder &lt;glutinit@gmail.com&gt;
-Date:   Thu Mar 19 17:57:03 2015 +0800
-
-    add
-
-commit 8790026bbc7687561c5065112f18a726ba313c38
-Author: ComiCoder &lt;glutinit@gmail.com&gt;
-Date:   Tue Mar 17 15:42:45 2015 +0800
-
-    add a new file named readme.md
-</code></pre><p>你也可以给<code>git log</code>加一个参数<code>--pretty=oneline</code>,这样，可以看到更简洁的log记录：</p>
-<pre><code>905fe1cf74f9925abb548c5bf3f17ed62f0b4bfd add
-8790026bbc7687561c5065112f18a726ba313c38 add a new file named readme.md
-</code></pre><p>可以看到每一句话最开头的那长段id，就是每次的 <code>commit id</code></p>
-<p>那么接下来，如果我们企图将上文中的 3月19日 的那个提交回退的话，我们应该如何做呢？很简单</p>
-<pre><code>git reset --hard HEAD^
-</code></pre><p>这样就行了，其中HEAD表示当前版本，那么HEAD^就表示上一个版本，HEAD^^自然就表示上上一个版本，<br>那么，往前回退N各版本，就输入<code>git reset --hard HEAD~N</code>即可</p>
-<p>输入完<code>git reset --hard HEAD^</code>,我们再用 <code>git log</code>查看一下，发现，最近的一次提交没有了，我们已经会推到了上一个版本。</p>
-<p>我们回退了之后后悔了咋办，也是有办法的，如果你的shell界面没有关闭，那么你还可以通过输入git reset –hard commitID的方法回复到你想要的版本，其中commitID不需要输全，你只需要输入前几个即可，git会帮你搜到，那么按照上面的git log的信息，我们就可以输入；</p>
-<pre><code>git reset --hard 905fe1c
-</code></pre><p>然后再用git log查看一下,哎，一切都恢复原状啦，你会发现git的回复速度很快，因为它只是将HEAD指向了你想要的那个版本上，并没有做删除的工作</p>
-<p>另外，你还可以通过输入：<code>git reflog</code>来查看一下每一次的git 命令</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>接上文：<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/19/git%20step%20by%20step%2003/">git step by step3</a></p>]]>
-    
-    </summary>
-    
-      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
-    
-      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[python网络爬虫01]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/19/PythonWebRobot/"/>
-    <id>http://leeobarloon.github.io/2015/03/19/PythonWebRobot/</id>
-    <published>2015-03-18T16:00:00.000Z</published>
-    <updated>2016-01-23T13:38:49.000Z</updated>
-    <content type="html"><![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>
-<a id="more"></a>
-<p>在开始之前，我们先制定一个爬虫工具的目的，我们究竟要爬什么呢？我最近常去的网站就是<a href="http://huaban.com" target="_blank" rel="external">huaban.com</a>，我们就从花瓣上爬一些美女图片吧，哈哈</p>
-<p>在写爬虫之前，我们必须了解一下python爬虫的基本知识，显而易见，首先你必须要会用python，第二，你必须对HTTP协议有一定的了解，在python中，和HTTP相关的两个库就是urllib和urllib2，也可以稍微走一些了解</p>
-<p>##PYTHON<br>Python是一门很不错的语言，你既可以把它作为主要的开发语言，也可以作为辅助性的工具，走一些日常的批处理工作，对于我来说，目前我主要用python写了一个APP的服务端(基于Django框架)，我觉得比起java和java社区的Spring3框架，python更适合我个人，那么首先，介绍几各适合python入门的网站吧：</p>
-<ol>
-<li><a href="http://www.2cto.com/shouce/Pythonbbf/" target="_blank" rel="external">笨办法学python</a></li>
-<li><a href="http://learnpythonthehardway.org/" target="_blank" rel="external">learn python the hard way 笨办法学python英文版</a></li>
-<li><a href="/[A byte of Python](http://itlab.idcquan.com/linux/manual/python_chinese/">简明python教程</a></li>
-<li><a href="http://www.swaroopch.com/notes/python/" target="_blank" rel="external">A Byte of Python</a></li>
-<li><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000" target="_blank" rel="external">廖雪峰python教程</a></li>
-</ol>
-<p>看看上面几个基本上就没什么太大问题了，当然，python的内容还是很深入的，需要更进一步了解，就需要阅读更多的内容，多逛逛几个知名论坛等等</p>
-<h2 id="urlib__u548C_urllib2"><a href="#urlib__u548C_urllib2" class="headerlink" title="urlib 和 urllib2"></a>urlib 和 urllib2</h2><p>这两个库是学习python 爬虫的最基本的两个库，最好也能够对它们有一定的了解和掌握</p>
-<p>urllib：比较简单，功能相对也比较弱，可以从指定的URL下载文件，或是对一些字符串进行编码解码以使他们成为特定的 URL串。</p>
-<p>urllib2：它有各种各样的Handler啊，Processor啊可以处理更复杂的问 题，比如网络认证，使用代理服务器，使用cookie等等。</p>
-<h2 id="python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F"><a href="#python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F" class="headerlink" title="python的正则表达式"></a>python的正则表达式</h2><p>有了正则表达式，就可以更有效率地从抓取的网页信息中提炼你需要的内容，这个可以看看下面这篇文章：<br><a href="http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="external">Python正则表达式</a></p>
-<p>##Scrapy<br>是一个python爬虫框架，最好在我们实现了最简单的python爬虫功能之后，再加以了解~</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>]]>
-    
-    </summary>
-    
-      <category term="Web" scheme="http://leeobarloon.github.io/tags/Web/"/>
-    
-      <category term="WebCrawler" scheme="http://leeobarloon.github.io/tags/WebCrawler/"/>
-    
-      <category term="python" scheme="http://leeobarloon.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="http://leeobarloon.github.io/categories/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[git step by step 3 - git简单操作]]></title>
     <link href="http://leeobarloon.github.io/2015/03/19/git%20step%20by%20step%2003/"/>
     <id>http://leeobarloon.github.io/2015/03/19/git step by step 03/</id>
@@ -1027,37 +977,42 @@ modified:   readme.md
   </entry>
   
   <entry>
-    <title><![CDATA[linux下面的简单页面配置]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/18/%E5%9C%A8linux%E4%B8%8A%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99/"/>
-    <id>http://leeobarloon.github.io/2015/03/18/在linux上配置网站/</id>
-    <published>2015-03-17T16:00:00.000Z</published>
-    <updated>2016-01-23T13:37:10.000Z</updated>
-    <content type="html"><![CDATA[<p>最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了</p>
+    <title><![CDATA[python网络爬虫01]]></title>
+    <link href="http://leeobarloon.github.io/2015/03/19/PythonWebRobot/"/>
+    <id>http://leeobarloon.github.io/2015/03/19/PythonWebRobot/</id>
+    <published>2015-03-18T16:00:00.000Z</published>
+    <updated>2016-01-23T13:38:49.000Z</updated>
+    <content type="html"><![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>
 <a id="more"></a>
-<p>但是，由于我忘了linxu上apache的 httpd.config文件放哪里了，所以就先用这个命令找一下：</p>
-<pre><code>find / -name httpd.config -print
-</code></pre><p>一下子就找到了，在我的系统上，这个配置文件在：<code>/etc/httpd/conf/</code> 下面:</p>
-<p>然后我们找到下面有一个文件 httpd.config, 用vim打开，找到 <code>VirtualHost</code>:<br>可以看到类似的配置：</p>
-<pre><code>&lt;VirtualBox ip:port&gt;
-    ...
-    DocumentRoot /xxx/xxx/xxx
-    ...
-&lt;/VirtualBox&gt;
-</code></pre><p>将DocumentRoot修改成你自己网站所在的路径</p>
-<p>然后重启apache：</p>
-<pre><code>service httpd restart
-</code></pre><p>然后就可以试试看喽</p>
+<p>在开始之前，我们先制定一个爬虫工具的目的，我们究竟要爬什么呢？我最近常去的网站就是<a href="http://huaban.com" target="_blank" rel="external">huaban.com</a>，我们就从花瓣上爬一些美女图片吧，哈哈</p>
+<p>在写爬虫之前，我们必须了解一下python爬虫的基本知识，显而易见，首先你必须要会用python，第二，你必须对HTTP协议有一定的了解，在python中，和HTTP相关的两个库就是urllib和urllib2，也可以稍微走一些了解</p>
+<p>##PYTHON<br>Python是一门很不错的语言，你既可以把它作为主要的开发语言，也可以作为辅助性的工具，走一些日常的批处理工作，对于我来说，目前我主要用python写了一个APP的服务端(基于Django框架)，我觉得比起java和java社区的Spring3框架，python更适合我个人，那么首先，介绍几各适合python入门的网站吧：</p>
+<ol>
+<li><a href="http://www.2cto.com/shouce/Pythonbbf/" target="_blank" rel="external">笨办法学python</a></li>
+<li><a href="http://learnpythonthehardway.org/" target="_blank" rel="external">learn python the hard way 笨办法学python英文版</a></li>
+<li><a href="/[A byte of Python](http://itlab.idcquan.com/linux/manual/python_chinese/">简明python教程</a></li>
+<li><a href="http://www.swaroopch.com/notes/python/" target="_blank" rel="external">A Byte of Python</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000" target="_blank" rel="external">廖雪峰python教程</a></li>
+</ol>
+<p>看看上面几个基本上就没什么太大问题了，当然，python的内容还是很深入的，需要更进一步了解，就需要阅读更多的内容，多逛逛几个知名论坛等等</p>
+<h2 id="urlib__u548C_urllib2"><a href="#urlib__u548C_urllib2" class="headerlink" title="urlib 和 urllib2"></a>urlib 和 urllib2</h2><p>这两个库是学习python 爬虫的最基本的两个库，最好也能够对它们有一定的了解和掌握</p>
+<p>urllib：比较简单，功能相对也比较弱，可以从指定的URL下载文件，或是对一些字符串进行编码解码以使他们成为特定的 URL串。</p>
+<p>urllib2：它有各种各样的Handler啊，Processor啊可以处理更复杂的问 题，比如网络认证，使用代理服务器，使用cookie等等。</p>
+<h2 id="python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F"><a href="#python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F" class="headerlink" title="python的正则表达式"></a>python的正则表达式</h2><p>有了正则表达式，就可以更有效率地从抓取的网页信息中提炼你需要的内容，这个可以看看下面这篇文章：<br><a href="http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="external">Python正则表达式</a></p>
+<p>##Scrapy<br>是一个python爬虫框架，最好在我们实现了最简单的python爬虫功能之后，再加以了解~</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了</p>]]>
+    <![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>]]>
     
     </summary>
     
       <category term="Web" scheme="http://leeobarloon.github.io/tags/Web/"/>
     
-      <category term="linux" scheme="http://leeobarloon.github.io/tags/linux/"/>
+      <category term="WebCrawler" scheme="http://leeobarloon.github.io/tags/WebCrawler/"/>
     
-      <category term="linux下的技术积累" scheme="http://leeobarloon.github.io/categories/linux%E4%B8%8B%E7%9A%84%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+      <category term="python" scheme="http://leeobarloon.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="http://leeobarloon.github.io/categories/python%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Web,linux," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux下面的简单页面配置">
-<meta property="og:url" content="http://leeobarloon.github.io/2015/03/18/在linux上配置网站/index.html">
+<meta property="og:title" content="机器学习实战-学习笔记03">
+<meta property="og:url" content="http://leeobarloon.github.io/2016/01/29/机器学习实战-学习笔记03/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了">
-<meta property="og:updated_time" content="2016-01-23T13:37:10.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-01-29T06:55:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux下面的简单页面配置">
-<meta name="twitter:description" content="最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了">
+<meta name="twitter:title" content="机器学习实战-学习笔记03">
+<meta name="twitter:description">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> linux下面的简单页面配置 | Leeo‘s Blog </title>
+  <title> 机器学习实战-学习笔记03 | Leeo‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,7 +216,7 @@
             
             
               
-                linux下面的简单页面配置
+                机器学习实战-学习笔记03
               
             
           </h1>
@@ -228,38 +228,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-18T00:00:00+08:00" content="2015-03-18">
-              2015-03-18
+            <time itemprop="dateCreated" datetime="2016-01-29T14:55:22+08:00" content="2016-01-29">
+              2016-01-29
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux下的技术积累/" itemprop="url" rel="index">
-                    <span itemprop="name">linux下的技术积累</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/18/在linux上配置网站/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/18/在linux上配置网站/" itemprop="commentsCount"></span>
+                <a href="/2016/01/29/机器学习实战-学习笔记03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/机器学习实战-学习笔记03/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,50 +261,27 @@
       
 
       
-        <p>最近公司的网站域名通过了，我们打算先随便弄一个网站上去，就先从网上找了一个模板下来，改吧改吧就放上去了</p>
-<a id="more"></a>
-<p>但是，由于我忘了linxu上apache的 httpd.config文件放哪里了，所以就先用这个命令找一下：</p>
-<pre><code>find / -name httpd.config -print
-</code></pre><p>一下子就找到了，在我的系统上，这个配置文件在：<code>/etc/httpd/conf/</code> 下面:</p>
-<p>然后我们找到下面有一个文件 httpd.config, 用vim打开，找到 <code>VirtualHost</code>:<br>可以看到类似的配置：</p>
-<pre><code>&lt;VirtualBox ip:port&gt;
-    ...
-    DocumentRoot /xxx/xxx/xxx
-    ...
-&lt;/VirtualBox&gt;
-</code></pre><p>将DocumentRoot修改成你自己网站所在的路径</p>
-<p>然后重启apache：</p>
-<pre><code>service httpd restart
-</code></pre><p>然后就可以试试看喽</p>
-
+        
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Web/" rel="tag">#Web</a>
-          
-            <a href="/tags/linux/" rel="tag">#linux</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/17/git step by step 02/" rel="next" title="git step by step 2 - git安装">
-                <i class="fa fa-chevron-left"></i> git step by step 2 - git安装
+              <a href="/2016/01/24/Matplotlib安装和使用简要说明/" rel="next" title="Matplotlib安装和使用简要说明">
+                <i class="fa fa-chevron-left"></i> Matplotlib安装和使用简要说明
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/03/19/git-step-by-step-04/" rel="prev" title="git step by step 4 - git reset 的命令介绍">
-                git step by step 4 - git reset 的命令介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/30/机器学习-课程进度-第一周/" rel="prev" title="机器学习-课程进度-第一周">
+                机器学习-课程进度-第一周 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -350,8 +308,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/03/18/在linux上配置网站/"
-           data-title="linux下面的简单页面配置" data-url="http://leeobarloon.github.io/2015/03/18/在linux上配置网站/">
+      <div class="ds-thread" data-thread-key="2016/01/29/机器学习实战-学习笔记03/"
+           data-title="机器学习实战-学习笔记03" data-url="http://leeobarloon.github.io/2016/01/29/机器学习实战-学习笔记03/">
       </div>
     
   </div>
