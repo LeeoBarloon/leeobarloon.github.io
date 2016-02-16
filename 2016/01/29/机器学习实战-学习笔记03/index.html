@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习,读书笔记," />
 
 
 
@@ -59,16 +59,35 @@
 
 
 
-<meta name="description">
+<meta name="description" content="机器学习 读书笔记03下面来学习一下机器学习中的另外一个常用的算法：决策树
+决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：
+
+是不是很像流程图？对，其实这就是一个简单的决策树
+下面我们来看看决策树算法的优缺点吧：
+
+优点: 计算复杂度不高，输出结果易于理解，对中间值的缺失不明感，可以处理不相关的特征数据缺点: 可能产生过度匹配问题使用数据类型: 数值型和标称型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习实战-学习笔记03">
 <meta property="og:url" content="http://leeobarloon.github.io/2016/01/29/机器学习实战-学习笔记03/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-01-29T06:55:22.000Z">
+<meta property="og:description" content="机器学习 读书笔记03下面来学习一下机器学习中的另外一个常用的算法：决策树
+决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：
+
+是不是很像流程图？对，其实这就是一个简单的决策树
+下面我们来看看决策树算法的优缺点吧：
+
+优点: 计算复杂度不高，输出结果易于理解，对中间值的缺失不明感，可以处理不相关的特征数据缺点: 可能产生过度匹配问题使用数据类型: 数值型和标称型">
+<meta property="og:image" content="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png">
+<meta property="og:updated_time" content="2016-02-16T14:23:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实战-学习笔记03">
-<meta name="twitter:description">
+<meta name="twitter:description" content="机器学习 读书笔记03下面来学习一下机器学习中的另外一个常用的算法：决策树
+决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：
+
+是不是很像流程图？对，其实这就是一个简单的决策树
+下面我们来看看决策树算法的优缺点吧：
+
+优点: 计算复杂度不高，输出结果易于理解，对中间值的缺失不明感，可以处理不相关的特征数据缺点: 可能产生过度匹配问题使用数据类型: 数值型和标称型">
 
 
 
@@ -261,11 +280,39 @@
       
 
       
-        
+        <h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink" title="机器学习 读书笔记03"></a>机器学习 读书笔记03</h2><p>下面来学习一下机器学习中的另外一个常用的算法：<code>决策树</code></p>
+<p>决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：</p>
+<p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png" alt="img_01"></p>
+<p>是不是很像流程图？对，其实这就是一个简单的决策树</p>
+<p>下面我们来看看决策树算法的优缺点吧：</p>
+<blockquote>
+<p>优点: 计算复杂度不高，输出结果易于理解，对中间值的缺失不明感，可以处理不相关的特征数据<br>缺点: 可能产生过度匹配问题<br>使用数据类型: 数值型和标称型</p>
+</blockquote>
+<p>决策树要解决的问题就是，按照一系列还没有分类的数据的特征，对其进行分类，那么，首先要解决的问题就是，当前数据集上哪个特征在划分数据分类的时候起到决定作用。为了找到决定性的特征，我们必须评估每个特征。</p>
+<p>将数据进行分类的伪代码如下：</p>
+<pre><code>createBranch()
+    if so return 类标签：
+    else
+        寻找到划分数据集的最好特征
+        划分数据集
+        创建分支节点
+            for 每个划分的子集
+                调用函数createBranch()并增加返回结果到分支节点中
+        return 分支节点
+</code></pre><p>可以看到，这是一个递归函数</p>
+
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+        </div>
       
 
       
@@ -354,7 +401,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -407,7 +454,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><span class="nav-number">1.</span> <span class="nav-text">机器学习 读书笔记03</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

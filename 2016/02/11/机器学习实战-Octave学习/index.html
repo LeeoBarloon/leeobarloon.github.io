@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="IOS,SWIFT," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="下面我们来看看swift中，如何定义和使用一个类">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift first try - Swift 的class">
-<meta property="og:url" content="http://leeobarloon.github.io/2015/03/27/Swift First Try 02/index.html">
+<meta property="og:title" content="机器学习实战-Octave学习">
+<meta property="og:url" content="http://leeobarloon.github.io/2016/02/11/机器学习实战-Octave学习/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="下面我们来看看swift中，如何定义和使用一个类">
-<meta property="og:updated_time" content="2016-01-23T15:06:21.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-02-11T14:39:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift first try - Swift 的class">
-<meta name="twitter:description" content="下面我们来看看swift中，如何定义和使用一个类">
+<meta name="twitter:title" content="机器学习实战-Octave学习">
+<meta name="twitter:description">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> Swift first try - Swift 的class | Leeo‘s Blog </title>
+  <title> 机器学习实战-Octave学习 | Leeo‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,7 +216,7 @@
             
             
               
-                Swift first try - Swift 的class
+                机器学习实战-Octave学习
               
             
           </h1>
@@ -228,38 +228,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-27T00:00:00+08:00" content="2015-03-27">
-              2015-03-27
+            <time itemprop="dateCreated" datetime="2016-02-11T22:39:56+08:00" content="2016-02-11">
+              2016-02-11
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Swift入门/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift入门</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/27/Swift First Try 02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/27/Swift First Try 02/" itemprop="commentsCount"></span>
+                <a href="/2016/02/11/机器学习实战-Octave学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/11/机器学习实战-Octave学习/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,75 +261,24 @@
       
 
       
-        <p>下面我们来看看swift中，如何定义和使用一个类<br><a id="more"></a></p>
-<p>其实很简单：</p>
-<pre><code>class MyTestClass {
-
-}
-</code></pre><p>这样子，一个名字为 <code>MyTestClass</code> 的类就被定义出来了</p>
-<p>下面，我们可以在这个类中添加一个构造方法，并且在构造方法中传入两个参数first和second</p>
-<pre><code>class MyTestClass {
-    init(first:Int, second:Double){
-    }
-}
-</code></pre><p>然后我们可以给这个类添加3个成员变量elem01，elem02和elem03，并且在构造方法中加入赋值的功能，你可以看到，构造方法就是以<code>init()</code>命名的方法，</p>
-<pre><code>class MyTestClass {
-
-    var elem01:Double
-    var elem02:Double
-    var elem03:Double
-    init(first: Double, second: Double){
-        elem01 = first
-        elem02 = second
-        elem03 = first / second
-    }
-}
-</code></pre><p>然后，我们可以在这个类中再添加一些成员方法，我们发现，首先，方法是以<code>func</code>开头的，另外，第一个方法<code>getElemDescription</code>没有返回值，而第二个方法有返回值，它用<code>-&gt;Double</code>表示其返回一个Double值。（<em>下面的代码，请放到上面那个类的大括号中间</em>）</p>
-<pre><code>func getElemDescription(){
-
-    println( &quot;Elem01=\(elem01) Elem02=\(elem02) Elem03=\(elem03)&quot;)
-
-}
-
-func getElem03()-&gt; Double{
-    return elem03
-}
-</code></pre><p>这样，我们就可以使用这个类了，我们先创建一个对象，然后调用它的两个方法：</p>
-<pre><code>let testObj = MyTestClass(first: 10.2, second: 123.2)
-
-testObj.getElemDescription()
-testObj.getElem03()
-</code></pre><p>这样，我们就初步了解了Swift类的一个创建和对象的使用情况~</p>
-
+        
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/IOS/" rel="tag">#IOS</a>
-          
-            <a href="/tags/SWIFT/" rel="tag">#SWIFT</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/27/Swift First Try/" rel="next" title="Swift first try - Swift 初探">
-                <i class="fa fa-chevron-left"></i> Swift first try - Swift 初探
+              <a href="/2016/01/30/机器学习-课程进度-第一周/" rel="next" title="机器学习-课程进度-第一周">
+                <i class="fa fa-chevron-left"></i> 机器学习-课程进度-第一周
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/30/CreateIOSViaPureCode/" rel="prev" title="利用纯代码构建IOS项目-01">
-                利用纯代码构建IOS项目-01 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -374,8 +304,8 @@ testObj.getElem03()
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/03/27/Swift First Try 02/"
-           data-title="Swift first try - Swift 的class" data-url="http://leeobarloon.github.io/2015/03/27/Swift First Try 02/">
+      <div class="ds-thread" data-thread-key="2016/02/11/机器学习实战-Octave学习/"
+           data-title="机器学习实战-Octave学习" data-url="http://leeobarloon.github.io/2016/02/11/机器学习实战-Octave学习/">
       </div>
     
   </div>

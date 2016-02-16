@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-01-30T14:38:06.000Z</updated>
+  <updated>2016-02-11T14:39:56.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[机器学习实战-Octave学习]]></title>
+    <link href="http://leeobarloon.github.io/2016/02/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-Octave%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://leeobarloon.github.io/2016/02/11/机器学习实战-Octave学习/</id>
+    <published>2016-02-11T14:39:56.000Z</published>
+    <updated>2016-02-11T14:39:56.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[机器学习-课程进度-第一周]]></title>
@@ -42,11 +55,35 @@
     <link href="http://leeobarloon.github.io/2016/01/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003/"/>
     <id>http://leeobarloon.github.io/2016/01/29/机器学习实战-学习笔记03/</id>
     <published>2016-01-29T06:55:22.000Z</published>
-    <updated>2016-01-29T06:55:22.000Z</updated>
-    <content type="html"></content>
+    <updated>2016-02-16T14:23:24.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink" title="机器学习 读书笔记03"></a>机器学习 读书笔记03</h2><p>下面来学习一下机器学习中的另外一个常用的算法：<code>决策树</code></p>
+<p>决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：</p>
+<p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png" alt="img_01"></p>
+<p>是不是很像流程图？对，其实这就是一个简单的决策树</p>
+<p>下面我们来看看决策树算法的优缺点吧：</p>
+<blockquote>
+<p>优点: 计算复杂度不高，输出结果易于理解，对中间值的缺失不明感，可以处理不相关的特征数据<br>缺点: 可能产生过度匹配问题<br>使用数据类型: 数值型和标称型</p>
+</blockquote>
+<p>决策树要解决的问题就是，按照一系列还没有分类的数据的特征，对其进行分类，那么，首先要解决的问题就是，当前数据集上哪个特征在划分数据分类的时候起到决定作用。为了找到决定性的特征，我们必须评估每个特征。</p>
+<p>将数据进行分类的伪代码如下：</p>
+<pre><code>createBranch()
+    if so return 类标签：
+    else
+        寻找到划分数据集的最好特征
+        划分数据集
+        创建分支节点
+            for 每个划分的子集
+                调用函数createBranch()并增加返回结果到分支节点中
+        return 分支节点
+</code></pre><p>可以看到，这是一个递归函数</p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink"]]>
     </summary>
+    
+      <category term="机器学习" scheme="http://leeobarloon.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="读书笔记" scheme="http://leeobarloon.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -973,46 +1010,6 @@ modified:   readme.md
       <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
     
       <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[python网络爬虫01]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/19/PythonWebRobot/"/>
-    <id>http://leeobarloon.github.io/2015/03/19/PythonWebRobot/</id>
-    <published>2015-03-18T16:00:00.000Z</published>
-    <updated>2016-01-23T13:38:49.000Z</updated>
-    <content type="html"><![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>
-<a id="more"></a>
-<p>在开始之前，我们先制定一个爬虫工具的目的，我们究竟要爬什么呢？我最近常去的网站就是<a href="http://huaban.com" target="_blank" rel="external">huaban.com</a>，我们就从花瓣上爬一些美女图片吧，哈哈</p>
-<p>在写爬虫之前，我们必须了解一下python爬虫的基本知识，显而易见，首先你必须要会用python，第二，你必须对HTTP协议有一定的了解，在python中，和HTTP相关的两个库就是urllib和urllib2，也可以稍微走一些了解</p>
-<p>##PYTHON<br>Python是一门很不错的语言，你既可以把它作为主要的开发语言，也可以作为辅助性的工具，走一些日常的批处理工作，对于我来说，目前我主要用python写了一个APP的服务端(基于Django框架)，我觉得比起java和java社区的Spring3框架，python更适合我个人，那么首先，介绍几各适合python入门的网站吧：</p>
-<ol>
-<li><a href="http://www.2cto.com/shouce/Pythonbbf/" target="_blank" rel="external">笨办法学python</a></li>
-<li><a href="http://learnpythonthehardway.org/" target="_blank" rel="external">learn python the hard way 笨办法学python英文版</a></li>
-<li><a href="/[A byte of Python](http://itlab.idcquan.com/linux/manual/python_chinese/">简明python教程</a></li>
-<li><a href="http://www.swaroopch.com/notes/python/" target="_blank" rel="external">A Byte of Python</a></li>
-<li><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000" target="_blank" rel="external">廖雪峰python教程</a></li>
-</ol>
-<p>看看上面几个基本上就没什么太大问题了，当然，python的内容还是很深入的，需要更进一步了解，就需要阅读更多的内容，多逛逛几个知名论坛等等</p>
-<h2 id="urlib__u548C_urllib2"><a href="#urlib__u548C_urllib2" class="headerlink" title="urlib 和 urllib2"></a>urlib 和 urllib2</h2><p>这两个库是学习python 爬虫的最基本的两个库，最好也能够对它们有一定的了解和掌握</p>
-<p>urllib：比较简单，功能相对也比较弱，可以从指定的URL下载文件，或是对一些字符串进行编码解码以使他们成为特定的 URL串。</p>
-<p>urllib2：它有各种各样的Handler啊，Processor啊可以处理更复杂的问 题，比如网络认证，使用代理服务器，使用cookie等等。</p>
-<h2 id="python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F"><a href="#python_u7684_u6B63_u5219_u8868_u8FBE_u5F0F" class="headerlink" title="python的正则表达式"></a>python的正则表达式</h2><p>有了正则表达式，就可以更有效率地从抓取的网页信息中提炼你需要的内容，这个可以看看下面这篇文章：<br><a href="http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="external">Python正则表达式</a></p>
-<p>##Scrapy<br>是一个python爬虫框架，最好在我们实现了最简单的python爬虫功能之后，再加以了解~</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近，一直在学习python和HTTP相关的一些知识，算是恶补之前一直没有太在意的内容，也早就听说python很适合写爬虫，那哥们儿也就凑凑热闹，写一个爬虫工具，爬爬看</p>]]>
-    
-    </summary>
-    
-      <category term="Web" scheme="http://leeobarloon.github.io/tags/Web/"/>
-    
-      <category term="WebCrawler" scheme="http://leeobarloon.github.io/tags/WebCrawler/"/>
-    
-      <category term="python" scheme="http://leeobarloon.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="http://leeobarloon.github.io/categories/python%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
