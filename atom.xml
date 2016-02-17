@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-02-16T14:29:15.000Z</updated>
+  <updated>2016-02-17T07:04:13.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://leeobarloon.github.io/2016/02/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003/"/>
     <id>http://leeobarloon.github.io/2016/02/16/机器学习实战-学习笔记03/</id>
     <published>2016-02-16T06:55:22.000Z</published>
-    <updated>2016-02-16T14:29:15.000Z</updated>
+    <updated>2016-02-17T07:04:13.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink" title="机器学习 读书笔记03"></a>机器学习 读书笔记03</h2><p>下面来学习一下机器学习中的另外一个常用的算法：<code>决策树</code></p>
 <p>决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：</p>
 <p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png" alt="img_01"></p>
@@ -40,7 +40,101 @@
                 调用函数createBranch()并增加返回结果到分支节点中
         return 分支节点
 </code></pre><p>可以看到，这是一个递归函数</p>
-]]></content>
+<p>在划分数据到时候，书中采取的是ID3算法，感兴趣的可以点此进行<a href="https://zh.wikipedia.org/zh-tw/ID3%E7%AE%97%E6%B3%95" target="_blank" rel="external">查看</a></p>
+<h3 id="u8BA1_u7B97_u4FE1_u606F_u589E_u76CA_u548C_u71B5"><a href="#u8BA1_u7B97_u4FE1_u606F_u589E_u76CA_u548C_u71B5" class="headerlink" title="计算信息增益和熵"></a>计算信息增益和熵</h3><p>下面我们先来看两个定义:</p>
+<blockquote>
+<p>信息增益（information gain) 和 熵(entropy)</p>
+</blockquote>
+<p>好吧，我们先不用弄明白这两个概念到底是什么，先来看两个公式吧，然后通过程序来加以了解</p>
+<ol>
+<li><p>如果待分类的事务可能划分在多个分类中，则符号Xi的信息期望值为：</p>
+<p> <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large l(x_i)=-log_2p(x_i)" style="border:none;"></p>
+</li>
+<li><p>计算熵的，我们就需要计算所有类别所有可能值包含的信息期望值：</p>
+<p> <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)" style="border:none;"></p>
+</li>
+</ol>
+<p>有了公式，我们就可以写代码啦，下面这段代码就是计算数据接的香农熵的代码：</p>
+<pre><code>from math import log
+
+def calc_channon_ent(data_set):
+    &quot;&quot;&quot;
+    计算data_set的熵
+    &quot;&quot;&quot;
+    num_entries = len(data_set)
+    label_counts = {}
+    for feat_vec in data_set:
+        current_label = feat_vec[-1]  # 最后一个数据
+        if current_label not in label_counts.keys():
+            label_counts[current_label] = 0
+        label_counts[current_label] += 1
+    shannon_ent = 0.0
+    for key in label_counts:
+        prob = float(label_counts[key])/num_entries # 概率计算
+        shannon_ent -= prob * log(prob, 2)  # 熵计算
+
+    return shannon_ent
+</code></pre><p>根据上述公式，我们就可以获得一个数据集合的熵，可以看到，我们使用所有类标签的发生概率计算该类别的概率。然后用这个概率得到了熵。</p>
+<p>测试一下，我们可以自己先创造一些测试数据：</p>
+<pre><code>def create_data_set():
+    data_set = [
+                [1, 1, &apos;yes&apos;],
+                [1, 1, &apos;yes&apos;],
+                [1, 0, &apos;no&apos;],
+                [0, 1, &apos;no&apos;],
+                [0, 1, &apos;no&apos;]]
+    labels = [&apos;no surfacing&apos;, &apos;flippers&apos;]
+    return data_set, labels
+</code></pre><p>然后，可以看看该集合的熵是多少了        </p>
+<pre><code>if __name__ == &apos;__main__&apos;:
+    data_set, labels = create_data_set()
+    shannon_ent = calc_channon_ent(data_set)
+    print(shannon_ent)
+</code></pre><p>获得的结果是：</p>
+<pre><code>&gt;&gt;0.970950594455
+</code></pre><p>你可以随意修改上述测试数据，看一看熵随之变化的规律，我们会发现，如果混入的类型越高，则熵越大，在百度百科中，对熵有这样一段描述：</p>
+<blockquote>
+<p>熵是一个系统中”无秩序”的程度，也表征生命活动过程质量的一种度量</p>
+</blockquote>
+<p>我们的熵计算从某种意义上，符合该定义~</p>
+<h3 id="u5212_u5206_u6570_u636E_u96C6"><a href="#u5212_u5206_u6570_u636E_u96C6" class="headerlink" title="划分数据集"></a>划分数据集</h3><p>我们学会了如何度量数据集合的无序程度，那么我们就来学习如何划分数据集。我们将对每个特征划分数据集合的结果计算一次熵，然后判断按照哪个特征划分数据是最好的划分方式~。</p>
+<p>下面先来看一段代码：</p>
+<pre><code>def split_data_set(data_set, axis, value):
+    ret_data_set = []  # 创建新的list对象
+
+    # 抽取符合要求的元素
+    for feat_vec in data_set:
+        if feat_vec[axis] == value:
+            reduced_feat_vec = feat_vec[:axis]
+            reduced_feat_vec.extend(feat_vec[axis+1:])
+            ret_data_set.append(reduced_feat_vec)
+    return ret_data_set
+</code></pre><p>可以看出，该方法将index=axis的特征值为value的那些特征向量提取出来</p>
+<p>接下来，我们就将<code>划分数据</code>和<code>计算熵</code>这两个算法加以结合，来找到最好的划分方法：</p>
+<pre><code>def choose_best_feature_to_split(data_set):
+    num_features = len(data_set[0])-1
+
+    base_entropy = calc_channon_ent(data_set)
+
+    best_info_gain = 0.0;
+    best_feature = -1;
+
+    for i in range(num_features):
+        feat_list = [example[i] for example in data_set]
+        unique_values = set(feat_list)
+        new_entropy = 0.0
+        for value in unique_values:
+            sub_data_set = split_data_set(data_set, i, value)
+            prob = len(sub_data_set)/float(len(data_set))
+            new_entropy += prob * calc_channon_ent(sub_data_set)
+        info_gain = base_entropy - new_entropy  # 信息增益
+        if info_gain &gt; best_info_gain:
+            best_info_gain = info_gain
+            best_feature = i
+    return best_feature
+</code></pre><p>该方法可以获得最好的划分方式，使得按照该特征进行划分的信息增益最大，也就是说，这样使得信息无序度变得最小，使得划分的数据更加有序（好牛B的样子…)</p>
+<p>经过测试，我们发现 index=0的特征值可以使得划分最为有序~</p>
+<h3 id="u6784_u5EFA_u51B3_u7B56_u6811"><a href="#u6784_u5EFA_u51B3_u7B56_u6811" class="headerlink" title="构建决策树"></a>构建决策树</h3>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink"]]>
     </summary>
