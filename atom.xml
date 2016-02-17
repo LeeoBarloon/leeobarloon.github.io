@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-02-17T08:17:57.000Z</updated>
+  <updated>2016-02-17T08:20:17.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://leeobarloon.github.io/2016/02/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003/"/>
     <id>http://leeobarloon.github.io/2016/02/16/机器学习实战-学习笔记03/</id>
     <published>2016-02-16T06:55:22.000Z</published>
-    <updated>2016-02-17T08:17:57.000Z</updated>
+    <updated>2016-02-17T08:20:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink" title="机器学习 读书笔记03"></a>机器学习 读书笔记03</h2><p>下面来学习一下机器学习中的另外一个常用的算法：<code>决策树</code></p>
 <p>决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：</p>
 <p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png" alt="img_01"></p>
@@ -136,13 +136,13 @@ def calc_channon_ent(data_set):
 <p>经过测试，我们发现 index=0的特征值可以使得划分最为有序~</p>
 <h3 id="u6784_u5EFA_u51B3_u7B56_u6811"><a href="#u6784_u5EFA_u51B3_u7B56_u6811" class="headerlink" title="构建决策树"></a>构建决策树</h3><p>下面还是先来看代码：</p>
 <pre><code>def majority_count(class_list):
-class_count = {}
-for vote in class_list:
-    if vote not in class_count.keys():
-        class_count[vote] = 0
-    class_count[vote] += 1
-sorted_class_count = sorted(class_count.iteritems(), key=operator.itemgetter(1), reverse=True)
-return sorted_class_count[0][0]
+    class_count = {}
+    for vote in class_list:
+        if vote not in class_count.keys():
+            class_count[vote] = 0
+        class_count[vote] += 1
+    sorted_class_count = sorted(class_count.iteritems(), key=operator.itemgetter(1), reverse=True)
+    return sorted_class_count[0][0]
 
 
 def create_tree(data_set, labels):
