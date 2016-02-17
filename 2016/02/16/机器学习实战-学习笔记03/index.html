@@ -80,7 +80,7 @@
 <meta property="og:image" content="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png">
 <meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=\Large l(x_i)=-log_2p(x_i)">
 <meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=\Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)">
-<meta property="og:updated_time" content="2016-02-17T07:04:13.000Z">
+<meta property="og:updated_time" content="2016-02-17T08:17:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实战-学习笔记03">
 <meta name="twitter:description" content="机器学习 读书笔记03下面来学习一下机器学习中的另外一个常用的算法：决策树
@@ -396,7 +396,48 @@ def calc_channon_ent(data_set):
     return best_feature
 </code></pre><p>该方法可以获得最好的划分方式，使得按照该特征进行划分的信息增益最大，也就是说，这样使得信息无序度变得最小，使得划分的数据更加有序（好牛B的样子…)</p>
 <p>经过测试，我们发现 index=0的特征值可以使得划分最为有序~</p>
-<h3 id="u6784_u5EFA_u51B3_u7B56_u6811"><a href="#u6784_u5EFA_u51B3_u7B56_u6811" class="headerlink" title="构建决策树"></a>构建决策树</h3>
+<h3 id="u6784_u5EFA_u51B3_u7B56_u6811"><a href="#u6784_u5EFA_u51B3_u7B56_u6811" class="headerlink" title="构建决策树"></a>构建决策树</h3><p>下面还是先来看代码：</p>
+<pre><code>def majority_count(class_list):
+class_count = {}
+for vote in class_list:
+    if vote not in class_count.keys():
+        class_count[vote] = 0
+    class_count[vote] += 1
+sorted_class_count = sorted(class_count.iteritems(), key=operator.itemgetter(1), reverse=True)
+return sorted_class_count[0][0]
+
+
+def create_tree(data_set, labels):
+    class_list = [example[-1] for example in data_set]
+    &quot;&quot;&quot;
+
+    构建树,有两个结束条件:
+    1. 程序遍历完所有划分数据的属性
+    2. 每个分支下的所有实例都具有相同的分类
+
+    &quot;&quot;&quot;
+
+    # 判断分类是否相同
+    if class_list.count(class_list[0]) == len(class_list):
+        return class_list[0]
+
+    # 判断是否遍历完所有的属性
+    if len(data_set[0]) == 1:
+        return majority_count(class_list)
+
+    best_feat = choose_best_feature_to_split(data_set)
+    best_feat_label = labels[best_feat]
+    my_tree = {best_feat_label: {}}
+    del(labels[best_feat])
+    feat_values = [example[best_feat] for example in data_set]
+    unique_vals = set(feat_values)
+    for value in unique_vals:
+        sub_Labels = labels[:]
+        my_tree[best_feat_label][value] = create_tree(split_data_set(data_set, best_feat, value), sub_Labels)
+    return my_tree
+</code></pre><p>最终，终于得到了决策树：</p>
+<pre><code>{&apos;no surfacing&apos;: {0: &apos;no&apos;, 1: {&apos;flippers&apos;: {0: &apos;no&apos;, 1: &apos;yes&apos;}}}}
+</code></pre>
       
     </div>
 

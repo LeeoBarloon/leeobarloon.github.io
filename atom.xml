@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-02-17T07:04:13.000Z</updated>
+  <updated>2016-02-17T08:17:57.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://leeobarloon.github.io/2016/02/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003/"/>
     <id>http://leeobarloon.github.io/2016/02/16/机器学习实战-学习笔记03/</id>
     <published>2016-02-16T06:55:22.000Z</published>
-    <updated>2016-02-17T07:04:13.000Z</updated>
+    <updated>2016-02-17T08:17:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink" title="机器学习 读书笔记03"></a>机器学习 读书笔记03</h2><p>下面来学习一下机器学习中的另外一个常用的算法：<code>决策树</code></p>
 <p>决策树，这个名字看上去很高大上，但其实程序员应该很很熟悉这个概念，看下面这个图：</p>
 <p><img src="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png" alt="img_01"></p>
@@ -134,7 +134,48 @@ def calc_channon_ent(data_set):
     return best_feature
 </code></pre><p>该方法可以获得最好的划分方式，使得按照该特征进行划分的信息增益最大，也就是说，这样使得信息无序度变得最小，使得划分的数据更加有序（好牛B的样子…)</p>
 <p>经过测试，我们发现 index=0的特征值可以使得划分最为有序~</p>
-<h3 id="u6784_u5EFA_u51B3_u7B56_u6811"><a href="#u6784_u5EFA_u51B3_u7B56_u6811" class="headerlink" title="构建决策树"></a>构建决策树</h3>]]></content>
+<h3 id="u6784_u5EFA_u51B3_u7B56_u6811"><a href="#u6784_u5EFA_u51B3_u7B56_u6811" class="headerlink" title="构建决策树"></a>构建决策树</h3><p>下面还是先来看代码：</p>
+<pre><code>def majority_count(class_list):
+class_count = {}
+for vote in class_list:
+    if vote not in class_count.keys():
+        class_count[vote] = 0
+    class_count[vote] += 1
+sorted_class_count = sorted(class_count.iteritems(), key=operator.itemgetter(1), reverse=True)
+return sorted_class_count[0][0]
+
+
+def create_tree(data_set, labels):
+    class_list = [example[-1] for example in data_set]
+    &quot;&quot;&quot;
+
+    构建树,有两个结束条件:
+    1. 程序遍历完所有划分数据的属性
+    2. 每个分支下的所有实例都具有相同的分类
+
+    &quot;&quot;&quot;
+
+    # 判断分类是否相同
+    if class_list.count(class_list[0]) == len(class_list):
+        return class_list[0]
+
+    # 判断是否遍历完所有的属性
+    if len(data_set[0]) == 1:
+        return majority_count(class_list)
+
+    best_feat = choose_best_feature_to_split(data_set)
+    best_feat_label = labels[best_feat]
+    my_tree = {best_feat_label: {}}
+    del(labels[best_feat])
+    feat_values = [example[best_feat] for example in data_set]
+    unique_vals = set(feat_values)
+    for value in unique_vals:
+        sub_Labels = labels[:]
+        my_tree[best_feat_label][value] = create_tree(split_data_set(data_set, best_feat, value), sub_Labels)
+    return my_tree
+</code></pre><p>最终，终于得到了决策树：</p>
+<pre><code>{&apos;no surfacing&apos;: {0: &apos;no&apos;, 1: {&apos;flippers&apos;: {0: &apos;no&apos;, 1: &apos;yes&apos;}}}}
+</code></pre>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003"><a href="#u673A_u5668_u5B66_u4E60__u8BFB_u4E66_u7B14_u8BB003" class="headerlink"]]>
     </summary>
