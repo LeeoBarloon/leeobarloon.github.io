@@ -224,6 +224,157 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/17/机器学习实战-学习笔记04/" itemprop="url">
+                  机器学习实战-学习笔记04
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T19:45:24+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/机器学习实战-学习笔记04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/机器学习实战-学习笔记04/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004"><a href="#u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004" class="headerlink" title="机器学习实战-学习笔记04"></a>机器学习实战-学习笔记04</h2><p>前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类</p>
+<blockquote>
+<p>朴素贝叶斯分类</p>
+</blockquote>
+<p>之所以称之为<code>朴素</code>，是因为整个过程只做最原始，最简单的假设</p>
+<p>朴素贝叶斯分类的优缺点如下：</p>
+<blockquote>
+<p>优点: 在数据较少的情况下仍然有效，可以处理多类别问题<br>缺点: 对于输入数据的准备方式比较敏感<br>使用数据类型: 标称型数据</p>
+</blockquote>
+<p>其实利用概率来进行分类的原理说起来也很简单，比如：</p>
+<p>如果我们有两个类别，C1和C2，那么我们来判断某个数据点（x,y)的类型到底为那个的依据就是该数据点是类型C1或者C2的概率那个更大，即：<br>    如果 $P_1(x,y)$和$P_2(x,y)$分别表示(X,Y)是C1和C2的概率<br>    那么：</p>
+<pre><code>* 如果$P_1(x,y)$ &gt; $P_2(x,y)$，那么（X,Y)就属于C1
+* 如果$P_2(x,y)$ &gt; $P_1(x,y)$，那么（X,Y)就属于C2
+</code></pre><p>下面，我们要引入<code>条件概率</code>的概念，如果不熟悉的，可以查看一下其<a href="http://baike.baidu.com/link?url=vuSyDANLl24kp4yiklGDUcayxPCWA3HlRPzTs3EEVqoOqXlnnBGkHsHdOXXQoWom2wF-C4tivgQJr5YJR0POz_" target="_blank" rel="external">概念</a></p>
+<p>上文的$P_i(x,y)$，换成条件概率的表达就是：$P(c_i|x,y)$，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
+<p>$P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}$</p>
+<p>下面，我们就看一下代码如何实现：</p>
+<pre><code># -*- encoding=UTF-8
+
+
+def load_data_set():
+    posting_list = [[&apos;my&apos;, &apos;dog&apos;, &apos;has&apos;, &apos;flea&apos;, &apos;problems&apos;, &apos;help&apos;, &apos;please&apos;],
+                    [&apos;maybe&apos;, &apos;not&apos;, &apos;take&apos;, &apos;him&apos;, &apos;to&apos;, &apos;dog&apos;, &apos;park&apos;, &apos;stupid&apos;],
+                    [&apos;my&apos;, &apos;dalmation&apos;, &apos;is&apos;, &apos;so&apos;, &apos;cute&apos;, &apos;I&apos;, &apos;love&apos;, &apos;him&apos;],
+                    [&apos;stop&apos;, &apos;posting&apos;, &apos;stupid&apos;, &apos;worthless&apos;, &apos;garbage&apos;],
+                    [&apos;mr&apos;, &apos;licks&apos;, &apos;ate&apos;, &apos;my&apos;, &apos;steak&apos;, &apos;how&apos;, &apos;to&apos;, &apos;stop&apos;, &apos;him&apos;],
+                    [&apos;quit&apos;, &apos;buying&apos;, &apos;worthless&apos;, &apos;dog&apos;, &apos;food&apos;, &apos;stupid&apos;]]
+    class_vec = [0, 1, 0, 1, 0, 1];
+    return posting_list, class_vec
+
+
+def create_vocal_list(data_set):
+    &quot;&quot;&quot;
+    将所有输入的字符,合并到一个set中,用于消除重复的字符,并返回一个list
+
+    :param data_set:
+    :return:
+    &quot;&quot;&quot;
+    vocab_set = set([])
+    for document in data_set:
+        vocab_set = vocab_set | set(document)
+    return list(vocab_set)
+
+
+def set_of_words_2_vec(vocab_list, input_set):
+    &quot;&quot;&quot;
+    如果vocab_list 含有 input_set中的单词,则将其所在的index设置为1
+
+    :param vocab_list:
+    :param input_set:
+    :return:
+    &quot;&quot;&quot;
+    return_vec = [0] * len(vocab_list)
+    for word in input_set:
+        if word in vocab_list:
+            return_vec[vocab_list.index(word)] = 1
+        else:
+            print &quot;the word: %s is not in my Vocabulary!&quot; % word
+    return return_vec
+</code></pre><p>按照上述方法，我们就可以将一组单词变成词向量了，下面我们就要利用之前提到的朴素贝叶斯算法，来获得某个单词属于哪个类型的概率是多少：</p>
+<p>$P(c_i|\textbf{w})$</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/16/机器学习实战-学习笔记03/" itemprop="url">
                   机器学习实战-学习笔记03
                 </a>
@@ -1598,96 +1749,6 @@ ax.scatter(returnMat[:, 1], returnMat[:, 2],
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/20/first-hexo/" itemprop="url">
-                  first hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-20T15:58:55+08:00" content="2016-01-20">
-              2016-01-20
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/20/first-hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/20/first-hexo/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="This_is_a_test_Blog"><a href="#This_is_a_test_Blog" class="headerlink" title="This is a test Blog"></a>This is a test Blog</h2>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1734,7 +1795,7 @@ ax.scatter(returnMat[:, 1], returnMat[:, 2],
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1748,7 +1809,7 @@ ax.scatter(returnMat[:, 1], returnMat[:, 2],
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://leeobarloon.github.io/"/>
-  <updated>2016-02-17T08:20:17.000Z</updated>
+  <updated>2016-02-18T08:25:46.000Z</updated>
   <id>http://leeobarloon.github.io/</id>
   
   <author>
@@ -13,6 +13,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[机器学习实战-学习笔记04]]></title>
+    <link href="http://leeobarloon.github.io/2016/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004/"/>
+    <id>http://leeobarloon.github.io/2016/02/17/机器学习实战-学习笔记04/</id>
+    <published>2016-02-17T11:45:24.000Z</published>
+    <updated>2016-02-18T08:25:46.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004"><a href="#u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004" class="headerlink" title="机器学习实战-学习笔记04"></a>机器学习实战-学习笔记04</h2><p>前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类</p>
+<blockquote>
+<p>朴素贝叶斯分类</p>
+</blockquote>
+<p>之所以称之为<code>朴素</code>，是因为整个过程只做最原始，最简单的假设</p>
+<p>朴素贝叶斯分类的优缺点如下：</p>
+<blockquote>
+<p>优点: 在数据较少的情况下仍然有效，可以处理多类别问题<br>缺点: 对于输入数据的准备方式比较敏感<br>使用数据类型: 标称型数据</p>
+</blockquote>
+<p>其实利用概率来进行分类的原理说起来也很简单，比如：</p>
+<p>如果我们有两个类别，C1和C2，那么我们来判断某个数据点（x,y)的类型到底为那个的依据就是该数据点是类型C1或者C2的概率那个更大，即：<br>    如果 $P_1(x,y)$和$P_2(x,y)$分别表示(X,Y)是C1和C2的概率<br>    那么：</p>
+<pre><code>* 如果$P_1(x,y)$ &gt; $P_2(x,y)$，那么（X,Y)就属于C1
+* 如果$P_2(x,y)$ &gt; $P_1(x,y)$，那么（X,Y)就属于C2
+</code></pre><p>下面，我们要引入<code>条件概率</code>的概念，如果不熟悉的，可以查看一下其<a href="http://baike.baidu.com/link?url=vuSyDANLl24kp4yiklGDUcayxPCWA3HlRPzTs3EEVqoOqXlnnBGkHsHdOXXQoWom2wF-C4tivgQJr5YJR0POz_" target="_blank" rel="external">概念</a></p>
+<p>上文的$P_i(x,y)$，换成条件概率的表达就是：$P(c_i|x,y)$，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
+<p>$P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}$</p>
+<p>下面，我们就看一下代码如何实现：</p>
+<pre><code># -*- encoding=UTF-8
+
+
+def load_data_set():
+    posting_list = [[&apos;my&apos;, &apos;dog&apos;, &apos;has&apos;, &apos;flea&apos;, &apos;problems&apos;, &apos;help&apos;, &apos;please&apos;],
+                    [&apos;maybe&apos;, &apos;not&apos;, &apos;take&apos;, &apos;him&apos;, &apos;to&apos;, &apos;dog&apos;, &apos;park&apos;, &apos;stupid&apos;],
+                    [&apos;my&apos;, &apos;dalmation&apos;, &apos;is&apos;, &apos;so&apos;, &apos;cute&apos;, &apos;I&apos;, &apos;love&apos;, &apos;him&apos;],
+                    [&apos;stop&apos;, &apos;posting&apos;, &apos;stupid&apos;, &apos;worthless&apos;, &apos;garbage&apos;],
+                    [&apos;mr&apos;, &apos;licks&apos;, &apos;ate&apos;, &apos;my&apos;, &apos;steak&apos;, &apos;how&apos;, &apos;to&apos;, &apos;stop&apos;, &apos;him&apos;],
+                    [&apos;quit&apos;, &apos;buying&apos;, &apos;worthless&apos;, &apos;dog&apos;, &apos;food&apos;, &apos;stupid&apos;]]
+    class_vec = [0, 1, 0, 1, 0, 1];
+    return posting_list, class_vec
+
+
+def create_vocal_list(data_set):
+    &quot;&quot;&quot;
+    将所有输入的字符,合并到一个set中,用于消除重复的字符,并返回一个list
+
+    :param data_set:
+    :return:
+    &quot;&quot;&quot;
+    vocab_set = set([])
+    for document in data_set:
+        vocab_set = vocab_set | set(document)
+    return list(vocab_set)
+
+
+def set_of_words_2_vec(vocab_list, input_set):
+    &quot;&quot;&quot;
+    如果vocab_list 含有 input_set中的单词,则将其所在的index设置为1
+
+    :param vocab_list:
+    :param input_set:
+    :return:
+    &quot;&quot;&quot;
+    return_vec = [0] * len(vocab_list)
+    for word in input_set:
+        if word in vocab_list:
+            return_vec[vocab_list.index(word)] = 1
+        else:
+            print &quot;the word: %s is not in my Vocabulary!&quot; % word
+    return return_vec
+</code></pre><p>按照上述方法，我们就可以将一组单词变成词向量了，下面我们就要利用之前提到的朴素贝叶斯算法，来获得某个单词属于哪个类型的概率是多少：</p>
+<p>$P(c_i|\textbf{w})$</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004"><a href="#u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8B]]>
+    </summary>
+    
+      <category term="机器学习，读书笔记" scheme="http://leeobarloon.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[机器学习实战-学习笔记03]]></title>
@@ -767,50 +843,6 @@ ax.scatter(returnMat[:, 1], returnMat[:, 2],
   </entry>
   
   <entry>
-    <title><![CDATA[利用纯代码构建IOS项目-02]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/"/>
-    <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/</id>
-    <published>2015-03-29T16:00:00.000Z</published>
-    <updated>2016-01-23T15:07:08.000Z</updated>
-    <content type="html"><![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>
-<a id="more"></a>
-<p>下文就是AFNetworking在自己的github上的介绍：</p>
-<blockquote>
-<p>AFNetworking is a delightful networking library for iOS and Mac OS X. It’s built on top of the Foundation URL Loading System, extending the powerful high-level networking abstractions built into Cocoa. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use.</p>
-</blockquote>
-<p>下面，我们就来试着使用以下这个大名鼎鼎的框架吧~</p>
-<p>首先安装<a href="http://cocoapods.org/" target="_blank" rel="external">CocoaPods</a>，CoCoaPods是一个Obj-c的依赖管理工具，就类似于Maven之与Java一样。<br>我们可以通过命令行来安装：</p>
-<pre><code>$ sudo gem install cocoapods
-$ pod setup 
-</code></pre><p>然后，移动到我们的项目目录，然后输入如下命令：</p>
-<pre><code>$ touch Podfile
-$ open -a Xcode Podfile
-</code></pre><p>上述两个命令的功能就是，先创建了一个Podfile文件，然后用xcode打开了，下面，我们就在podfile中添加一些内容：</p>
-<pre><code>source &apos;https://github.com/CocoaPods/Specs.git&apos;
-platform :ios, &apos;7.0&apos;
-pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
-</code></pre><p>跟AFNetworking相关的依赖信息就写好了，下面我们就来安装上述依赖库：</p>
-<pre><code>$ pod install
-</code></pre><p>如果上述安装很慢的话，可以考虑下述命令，因为有可能pod会更新一下gem库，你知道，伟大的墙会搞死你</p>
-<pre><code>$ pod install --no-repo-update
-</code></pre><p>注意，以后就要用xcworkspace来打开项目了！</p>
-<pre><code>$ open &lt;your Application name&gt;.xcworkspace
-</code></pre><p>好了，接下来就可以使用NFNetworking了~，只需要在用到的地方<code>include</code>需要的库即可~</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>]]>
-    
-    </summary>
-    
-      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
-    
-      <category term="Objc" scheme="http://leeobarloon.github.io/tags/Objc/"/>
-    
-      <category term="IOS开发" scheme="http://leeobarloon.github.io/categories/IOS%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[github上的ios代码]]></title>
     <link href="http://leeobarloon.github.io/2015/03/30/IOS%20Github%20Repos/"/>
     <id>http://leeobarloon.github.io/2015/03/30/IOS Github Repos/</id>
@@ -866,6 +898,50 @@ pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
 ]]></content>
     <summary type="html">
     <![CDATA[<p>辗转反侧之后，还是决定用纯代码的方式来构建IOS的项目了，至少这种方式我本人还是比较习惯的，虽然我更习惯用所见即所得的nib或者stroyboard的方式来构建，但是我个人觉得stroyboard的方式有一些令人难以理解，并且对项目未来的可维护性方面，还是劣于纯代码开发的方式，那还是笨鸟先飞，就用敲代码的方式来写IOS客户端吧~</p>]]>
+    
+    </summary>
+    
+      <category term="IOS" scheme="http://leeobarloon.github.io/tags/IOS/"/>
+    
+      <category term="Objc" scheme="http://leeobarloon.github.io/tags/Objc/"/>
+    
+      <category term="IOS开发" scheme="http://leeobarloon.github.io/categories/IOS%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[利用纯代码构建IOS项目-02]]></title>
+    <link href="http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/"/>
+    <id>http://leeobarloon.github.io/2015/03/30/CreateIOSViaPureCode02/</id>
+    <published>2015-03-29T16:00:00.000Z</published>
+    <updated>2016-01-23T15:07:08.000Z</updated>
+    <content type="html"><![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>
+<a id="more"></a>
+<p>下文就是AFNetworking在自己的github上的介绍：</p>
+<blockquote>
+<p>AFNetworking is a delightful networking library for iOS and Mac OS X. It’s built on top of the Foundation URL Loading System, extending the powerful high-level networking abstractions built into Cocoa. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use.</p>
+</blockquote>
+<p>下面，我们就来试着使用以下这个大名鼎鼎的框架吧~</p>
+<p>首先安装<a href="http://cocoapods.org/" target="_blank" rel="external">CocoaPods</a>，CoCoaPods是一个Obj-c的依赖管理工具，就类似于Maven之与Java一样。<br>我们可以通过命令行来安装：</p>
+<pre><code>$ sudo gem install cocoapods
+$ pod setup 
+</code></pre><p>然后，移动到我们的项目目录，然后输入如下命令：</p>
+<pre><code>$ touch Podfile
+$ open -a Xcode Podfile
+</code></pre><p>上述两个命令的功能就是，先创建了一个Podfile文件，然后用xcode打开了，下面，我们就在podfile中添加一些内容：</p>
+<pre><code>source &apos;https://github.com/CocoaPods/Specs.git&apos;
+platform :ios, &apos;7.0&apos;
+pod &apos;AFNetworking&apos;, &apos;~&gt; 2.5&apos;
+</code></pre><p>跟AFNetworking相关的依赖信息就写好了，下面我们就来安装上述依赖库：</p>
+<pre><code>$ pod install
+</code></pre><p>如果上述安装很慢的话，可以考虑下述命令，因为有可能pod会更新一下gem库，你知道，伟大的墙会搞死你</p>
+<pre><code>$ pod install --no-repo-update
+</code></pre><p>注意，以后就要用xcworkspace来打开项目了！</p>
+<pre><code>$ open &lt;your Application name&gt;.xcworkspace
+</code></pre><p>好了，接下来就可以使用NFNetworking了~，只需要在用到的地方<code>include</code>需要的库即可~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>目前IOS APP中最常见的应该就是基于Web的应用，而IOS中web框架也是相当多，目前非常流行的一个就是<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>，本文就先介绍一下，如何在IOS上文所说的纯代码的开发环境中，加入AFNetworking库</p>]]>
     
     </summary>
     
@@ -1086,65 +1162,6 @@ modified:   readme.md
     </summary>
     
       <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[git step by step 3 - git简单操作]]></title>
-    <link href="http://leeobarloon.github.io/2015/03/19/git%20step%20by%20step%2003/"/>
-    <id>http://leeobarloon.github.io/2015/03/19/git step by step 03/</id>
-    <published>2015-03-18T16:00:00.000Z</published>
-    <updated>2016-01-23T13:37:35.000Z</updated>
-    <content type="html"><![CDATA[<p>接上文<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/17/git%20step%20by%20step%2002/" target="_blank" rel="external">git step by step2</a></p>
-<a id="more"></a>
-<p>我们已经在我们的版本控制库中添加了readme.md文件，我们现在就来编辑一下它，将其修改为：</p>
-<pre><code>#This is a test
-Hello GitHub
-git is a great tool for coder...
-</code></pre><p>然后我们用<code>git status</code>命令查看一下</p>
-<pre><code>$ git status
-
-# On branch master
-# Changes not staged for commit:
-# ( use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-# (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-
-# modified:   readme.md
-
-# no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>从提示可以看出，该文档的内容已近被修改，git给我们两个选择，一个就是用git add 将此次修改提交到版本库，第二个就是用checkout – 恢复此次修改，我们可以试一下第二种</p>
-<pre><code>git checkout -- readme.md
-</code></pre><p>然后打开 readme.md，我们发现内容已近变成了之前的了…好把，那我们再重复一下上面的动作，修改文件，进行查看，然后我们可以用 <code>git diff</code>查看一下文件发生了什么变化.</p>
-<pre><code>diff --git a/readme.md b/readme.md
-index 76d2bc6..45e0d75 100644
---- a/readme.md
-+++ b/readme.md
-@@ -1,3 +1,3 @@
- #This is a test
--
--Hello Git Hub!
-+Hello GitHub
-+git is a great tool for coder...
-</code></pre><p>可以看出，我们修改了 Hello Git Hub！这一行，并添加了 git is a …这一行</p>
-<p>下面，我们就用<code>git add</code>将该文件提交到仓库吧</p>
-<pre><code>git add readme.md
-</code></pre><p>在commit之前，我们再用git status查看一下吧（注意git status是一个经常会用到的命令）</p>
-<pre><code>On branch master
-Changes to be committed:
-    (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-
-modified:   readme.md
-</code></pre><p>下面，就用git commit -m “xxxxx”</p>
-<p>OK啦，这样就算最简单的git的使用喽</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>接上文<a href="http://comicoder.github.io/git%20step%20by%20step/2015/03/17/git%20step%20by%20step%2002/">git step by step2</a></p>]]>
-    
-    </summary>
-    
-      <category term="git" scheme="http://leeobarloon.github.io/tags/git/"/>
-    
-      <category term="git step by step" scheme="http://leeobarloon.github.io/categories/git-step-by-step/"/>
     
   </entry>
   

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习，读书笔记," />
 
 
 
@@ -59,43 +59,43 @@
 
 
 
-<meta name="description" content="HEXO 创建Blog决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架
-##HEXO介绍hexo是一个目前比较流行的博客框架主要有如下几个优点：
+<meta name="description" content="机器学习实战-学习笔记04前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类
 
-生成快速
-支持 Markdown
-一键部署
-插件丰富
+朴素贝叶斯分类
 
-##安装前提安装HEXO前，必须保证您的机器上已经有：gitnode.js
-安装Hexo与建站install1$ npm install">
+之所以称之为朴素，是因为整个过程只做最原始，最简单的假设
+朴素贝叶斯分类的优缺点如下：
+
+优点: 在数据较少的情况下仍然有效，可以处理多类别问题缺点: 对于输入数据的准备方式比较敏感使用数据类型: 标称型数据
+
+其实利用概率来进行分类的原理说起来也很简单，比如：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CreateHexo">
-<meta property="og:url" content="http://leeobarloon.github.io/2016/01/22/CreateHexo/index.html">
+<meta property="og:title" content="机器学习实战-学习笔记04">
+<meta property="og:url" content="http://leeobarloon.github.io/2016/02/17/机器学习实战-学习笔记04/index.html">
 <meta property="og:site_name" content="Leeo‘s Blog">
-<meta property="og:description" content="HEXO 创建Blog决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架
-##HEXO介绍hexo是一个目前比较流行的博客框架主要有如下几个优点：
+<meta property="og:description" content="机器学习实战-学习笔记04前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类
 
-生成快速
-支持 Markdown
-一键部署
-插件丰富
+朴素贝叶斯分类
 
-##安装前提安装HEXO前，必须保证您的机器上已经有：gitnode.js
-安装Hexo与建站install1$ npm install">
-<meta property="og:updated_time" content="2016-01-22T03:18:22.000Z">
+之所以称之为朴素，是因为整个过程只做最原始，最简单的假设
+朴素贝叶斯分类的优缺点如下：
+
+优点: 在数据较少的情况下仍然有效，可以处理多类别问题缺点: 对于输入数据的准备方式比较敏感使用数据类型: 标称型数据
+
+其实利用概率来进行分类的原理说起来也很简单，比如：">
+<meta property="og:updated_time" content="2016-02-18T08:25:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CreateHexo">
-<meta name="twitter:description" content="HEXO 创建Blog决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架
-##HEXO介绍hexo是一个目前比较流行的博客框架主要有如下几个优点：
+<meta name="twitter:title" content="机器学习实战-学习笔记04">
+<meta name="twitter:description" content="机器学习实战-学习笔记04前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类
 
-生成快速
-支持 Markdown
-一键部署
-插件丰富
+朴素贝叶斯分类
 
-##安装前提安装HEXO前，必须保证您的机器上已经有：gitnode.js
-安装Hexo与建站install1$ npm install">
+之所以称之为朴素，是因为整个过程只做最原始，最简单的假设
+朴素贝叶斯分类的优缺点如下：
+
+优点: 在数据较少的情况下仍然有效，可以处理多类别问题缺点: 对于输入数据的准备方式比较敏感使用数据类型: 标称型数据
+
+其实利用概率来进行分类的原理说起来也很简单，比如：">
 
 
 
@@ -113,7 +113,7 @@
   };
 </script>
 
-  <title> CreateHexo | Leeo‘s Blog </title>
+  <title> 机器学习实战-学习笔记04 | Leeo‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +243,7 @@
             
             
               
-                CreateHexo
+                机器学习实战-学习笔记04
               
             
           </h1>
@@ -255,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-22T11:18:01+08:00" content="2016-01-22">
-              2016-01-22
+            <time itemprop="dateCreated" datetime="2016-02-17T19:45:24+08:00" content="2016-02-17">
+              2016-02-17
             </time>
           </span>
 
@@ -266,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/22/CreateHexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/CreateHexo/" itemprop="commentsCount"></span>
+                <a href="/2016/02/17/机器学习实战-学习笔记04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/机器学习实战-学习笔记04/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -288,43 +288,91 @@
       
 
       
-        <h1 id="HEXO__u521B_u5EFABlog"><a href="#HEXO__u521B_u5EFABlog" class="headerlink" title="HEXO 创建Blog"></a>HEXO 创建Blog</h1><p>决定又重新开始写blog，以前用jekyll，但这次想换成hexo，它是基于node.js的blog模板框架</p>
-<p>##HEXO介绍<br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">hexo</a>是一个目前比较流行的博客框架<br>主要有如下几个优点：</p>
-<ul>
-<li>生成快速</li>
-<li>支持 Markdown</li>
-<li>一键部署</li>
-<li>插件丰富</li>
-</ul>
-<p>##安装前提<br>安装HEXO前，必须保证您的机器上已经有：<br><a href="http://git-scm.com/" target="_blank" rel="external">git</a><br><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></p>
-<h2 id="u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9"><a href="#u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9" class="headerlink" title="安装Hexo与建站"></a>安装Hexo与建站</h2><h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &#60;fold&#62;&#10;$ cd &#60;fold&#62;&#10;$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="start"><a href="#start" class="headerlink" title="start"></a>start</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server&#10;or&#10;$ hexo s</span><br></pre></td></tr></table></figure>
-<p>就可以看到如下结果:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>说明启动成功</p>
+        <h2 id="u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004"><a href="#u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004" class="headerlink" title="机器学习实战-学习笔记04"></a>机器学习实战-学习笔记04</h2><p>前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类</p>
+<blockquote>
+<p>朴素贝叶斯分类</p>
+</blockquote>
+<p>之所以称之为<code>朴素</code>，是因为整个过程只做最原始，最简单的假设</p>
+<p>朴素贝叶斯分类的优缺点如下：</p>
+<blockquote>
+<p>优点: 在数据较少的情况下仍然有效，可以处理多类别问题<br>缺点: 对于输入数据的准备方式比较敏感<br>使用数据类型: 标称型数据</p>
+</blockquote>
+<p>其实利用概率来进行分类的原理说起来也很简单，比如：</p>
+<p>如果我们有两个类别，C1和C2，那么我们来判断某个数据点（x,y)的类型到底为那个的依据就是该数据点是类型C1或者C2的概率那个更大，即：<br>    如果 $P_1(x,y)$和$P_2(x,y)$分别表示(X,Y)是C1和C2的概率<br>    那么：</p>
+<pre><code>* 如果$P_1(x,y)$ &gt; $P_2(x,y)$，那么（X,Y)就属于C1
+* 如果$P_2(x,y)$ &gt; $P_1(x,y)$，那么（X,Y)就属于C2
+</code></pre><p>下面，我们要引入<code>条件概率</code>的概念，如果不熟悉的，可以查看一下其<a href="http://baike.baidu.com/link?url=vuSyDANLl24kp4yiklGDUcayxPCWA3HlRPzTs3EEVqoOqXlnnBGkHsHdOXXQoWom2wF-C4tivgQJr5YJR0POz_" target="_blank" rel="external">概念</a></p>
+<p>上文的$P_i(x,y)$，换成条件概率的表达就是：$P(c_i|x,y)$，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
+<p>$P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}$</p>
+<p>下面，我们就看一下代码如何实现：</p>
+<pre><code># -*- encoding=UTF-8
+
+
+def load_data_set():
+    posting_list = [[&apos;my&apos;, &apos;dog&apos;, &apos;has&apos;, &apos;flea&apos;, &apos;problems&apos;, &apos;help&apos;, &apos;please&apos;],
+                    [&apos;maybe&apos;, &apos;not&apos;, &apos;take&apos;, &apos;him&apos;, &apos;to&apos;, &apos;dog&apos;, &apos;park&apos;, &apos;stupid&apos;],
+                    [&apos;my&apos;, &apos;dalmation&apos;, &apos;is&apos;, &apos;so&apos;, &apos;cute&apos;, &apos;I&apos;, &apos;love&apos;, &apos;him&apos;],
+                    [&apos;stop&apos;, &apos;posting&apos;, &apos;stupid&apos;, &apos;worthless&apos;, &apos;garbage&apos;],
+                    [&apos;mr&apos;, &apos;licks&apos;, &apos;ate&apos;, &apos;my&apos;, &apos;steak&apos;, &apos;how&apos;, &apos;to&apos;, &apos;stop&apos;, &apos;him&apos;],
+                    [&apos;quit&apos;, &apos;buying&apos;, &apos;worthless&apos;, &apos;dog&apos;, &apos;food&apos;, &apos;stupid&apos;]]
+    class_vec = [0, 1, 0, 1, 0, 1];
+    return posting_list, class_vec
+
+
+def create_vocal_list(data_set):
+    &quot;&quot;&quot;
+    将所有输入的字符,合并到一个set中,用于消除重复的字符,并返回一个list
+
+    :param data_set:
+    :return:
+    &quot;&quot;&quot;
+    vocab_set = set([])
+    for document in data_set:
+        vocab_set = vocab_set | set(document)
+    return list(vocab_set)
+
+
+def set_of_words_2_vec(vocab_list, input_set):
+    &quot;&quot;&quot;
+    如果vocab_list 含有 input_set中的单词,则将其所在的index设置为1
+
+    :param vocab_list:
+    :param input_set:
+    :return:
+    &quot;&quot;&quot;
+    return_vec = [0] * len(vocab_list)
+    for word in input_set:
+        if word in vocab_list:
+            return_vec[vocab_list.index(word)] = 1
+        else:
+            print &quot;the word: %s is not in my Vocabulary!&quot; % word
+    return return_vec
+</code></pre><p>按照上述方法，我们就可以将一组单词变成词向量了，下面我们就要利用之前提到的朴素贝叶斯算法，来获得某个单词属于哪个类型的概率是多少：</p>
+<p>$P(c_i|\textbf{w})$</p>
 
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习，读书笔记/" rel="tag">#机器学习，读书笔记</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/20/first-hexo/" rel="next" title="first hexo">
-                <i class="fa fa-chevron-left"></i> first hexo
+              <a href="/2016/02/16/机器学习实战-学习笔记03/" rel="next" title="机器学习实战-学习笔记03">
+                <i class="fa fa-chevron-left"></i> 机器学习实战-学习笔记03
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/23/ComputerLearningConcept/" rel="prev" title="Computer Learning Concept">
-                Computer Learning Concept <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -350,8 +398,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/22/CreateHexo/"
-           data-title="CreateHexo" data-url="http://leeobarloon.github.io/2016/01/22/CreateHexo/">
+      <div class="ds-thread" data-thread-key="2016/02/17/机器学习实战-学习笔记04/"
+           data-title="机器学习实战-学习笔记04" data-url="http://leeobarloon.github.io/2016/02/17/机器学习实战-学习笔记04/">
       </div>
     
   </div>
@@ -449,7 +497,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HEXO__u521B_u5EFABlog"><span class="nav-number">1.</span> <span class="nav-text">HEXO 创建Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5Hexo_u4E0E_u5EFA_u7AD9"><span class="nav-number">1.1.</span> <span class="nav-text">安装Hexo与建站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install"><span class="nav-number">1.1.1.</span> <span class="nav-text">install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setup"><span class="nav-number">1.1.2.</span> <span class="nav-text">setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#start"><span class="nav-number">1.1.3.</span> <span class="nav-text">start</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u673A_u5668_u5B66_u4E60_u5B9E_u6218-_u5B66_u4E60_u7B14_u8BB004"><span class="nav-number">1.</span> <span class="nav-text">机器学习实战-学习笔记04</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
