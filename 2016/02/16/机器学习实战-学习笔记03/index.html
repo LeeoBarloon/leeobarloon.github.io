@@ -78,9 +78,9 @@
 
 优点: 计算复杂度不高，输出结果易于理解，对中间值的缺失不明感，可以处理不相关的特征数据缺点: 可能产生过度匹配问题使用数据类型: 数值型和标称型">
 <meta property="og:image" content="http://ceobf.img47.wal8.com/img47/536775_20160129105532/145563108783.png">
-<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=\Large l(x_i)=-log_2p(x_i)">
-<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=\Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)">
-<meta property="og:updated_time" content="2016-02-17T08:20:17.000Z">
+<meta property="og:image" content="http://www.forkosh.com/mathtex.cgi? \Large l(x_i)=-log_2p(x_i)">
+<meta property="og:image" content="http://www.forkosh.com/mathtex.cgi? \Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)">
+<meta property="og:updated_time" content="2016-02-18T08:47:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实战-学习笔记03">
 <meta name="twitter:description" content="机器学习 读书笔记03下面来学习一下机器学习中的另外一个常用的算法：决策树
@@ -310,10 +310,10 @@
 <p>好吧，我们先不用弄明白这两个概念到底是什么，先来看两个公式吧，然后通过程序来加以了解</p>
 <ol>
 <li><p>如果待分类的事务可能划分在多个分类中，则符号Xi的信息期望值为：</p>
-<p> <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large l(x_i)=-log_2p(x_i)" style="border:none;"></p>
+<p> <img src="http://www.forkosh.com/mathtex.cgi? \Large l(x_i)=-log_2p(x_i)"></p>
 </li>
 <li><p>计算熵的，我们就需要计算所有类别所有可能值包含的信息期望值：</p>
-<p> <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)" style="border:none;"></p>
+<p> <img src="http://www.forkosh.com/mathtex.cgi? \Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)"></p>
 </li>
 </ol>
 <p>有了公式，我们就可以写代码啦，下面这段代码就是计算数据接的香农熵的代码：</p>

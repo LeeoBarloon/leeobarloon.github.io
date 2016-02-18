@@ -284,11 +284,11 @@
 </blockquote>
 <p>其实利用概率来进行分类的原理说起来也很简单，比如：</p>
 <p>如果我们有两个类别，C1和C2，那么我们来判断某个数据点（x,y)的类型到底为那个的依据就是该数据点是类型C1或者C2的概率那个更大，即：<br>    如果 $P_1(x,y)$和$P_2(x,y)$分别表示(X,Y)是C1和C2的概率<br>    那么：</p>
-<pre><code>* 如果$P_1(x,y)$ &gt; $P_2(x,y)$，那么（X,Y)就属于C1
-* 如果$P_2(x,y)$ &gt; $P_1(x,y)$，那么（X,Y)就属于C2
+<pre><code>* 如果&lt;img src=&quot;http://www.forkosh.com/mathtex.cgi? P_1(x,y) \textgreater P_2(x,y)&quot;&gt;那么（X,Y)就属于C1
+* 如果&lt;img src=&quot;http://www.forkosh.com/mathtex.cgi? P_2(x,y) \textgreater P_1(x,y)&quot;&gt;那么（X,Y)就属于C2
 </code></pre><p>下面，我们要引入<code>条件概率</code>的概念，如果不熟悉的，可以查看一下其<a href="http://baike.baidu.com/link?url=vuSyDANLl24kp4yiklGDUcayxPCWA3HlRPzTs3EEVqoOqXlnnBGkHsHdOXXQoWom2wF-C4tivgQJr5YJR0POz_" target="_blank" rel="external">概念</a></p>
-<p>上文的$P_i(x,y)$，换成条件概率的表达就是：$P(c_i|x,y)$，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
-<p>$P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}$</p>
+<p>上文的<img src="http://www.forkosh.com/mathtex.cgi? P_i(x,y)">，换成条件概率的表达就是：<img src="http://www.forkosh.com/mathtex.cgi? P(c_i|x,y)">，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
+<p><img src="http://www.forkosh.com/mathtex.cgi? \Large P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}"></p>
 <p>下面，我们就看一下代码如何实现：</p>
 <pre><code># -*- encoding=UTF-8
 
@@ -333,7 +333,7 @@ def set_of_words_2_vec(vocab_list, input_set):
             print &quot;the word: %s is not in my Vocabulary!&quot; % word
     return return_vec
 </code></pre><p>按照上述方法，我们就可以将一组单词变成词向量了，下面我们就要利用之前提到的朴素贝叶斯算法，来获得某个单词属于哪个类型的概率是多少：</p>
-<p>$P(c_i|\textbf{w})$</p>
+<p><img src="http://www.forkosh.com/mathtex.cgi? \Large P(c_i|\textbf{w})=\frac{P(\textbf{w}|c_i)P(c_i)}{P(\textbf{w})}"></p>
 
           
         
@@ -452,10 +452,10 @@ def set_of_words_2_vec(vocab_list, input_set):
 <p>好吧，我们先不用弄明白这两个概念到底是什么，先来看两个公式吧，然后通过程序来加以了解</p>
 <ol>
 <li><p>如果待分类的事务可能划分在多个分类中，则符号Xi的信息期望值为：</p>
-<p> <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large l(x_i)=-log_2p(x_i)" style="border:none;"></p>
+<p> <img src="http://www.forkosh.com/mathtex.cgi? \Large l(x_i)=-log_2p(x_i)"></p>
 </li>
 <li><p>计算熵的，我们就需要计算所有类别所有可能值包含的信息期望值：</p>
-<p> <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)" style="border:none;"></p>
+<p> <img src="http://www.forkosh.com/mathtex.cgi? \Large H=\sum_{i=1}^{n}p(x_i)log_2p(x_i)"></p>
 </li>
 </ol>
 <p>有了公式，我们就可以写代码啦，下面这段代码就是计算数据接的香农熵的代码：</p>

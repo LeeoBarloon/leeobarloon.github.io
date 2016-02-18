@@ -83,7 +83,11 @@
 优点: 在数据较少的情况下仍然有效，可以处理多类别问题缺点: 对于输入数据的准备方式比较敏感使用数据类型: 标称型数据
 
 其实利用概率来进行分类的原理说起来也很简单，比如：">
-<meta property="og:updated_time" content="2016-02-18T08:27:15.000Z">
+<meta property="og:image" content="http://www.forkosh.com/mathtex.cgi? P_i(x,y)">
+<meta property="og:image" content="http://www.forkosh.com/mathtex.cgi? P(c_i|x,y)">
+<meta property="og:image" content="http://www.forkosh.com/mathtex.cgi? \Large P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}">
+<meta property="og:image" content="http://www.forkosh.com/mathtex.cgi? \Large P(c_i|\textbf{w})=\frac{P(\textbf{w}|c_i)P(c_i)}{P(\textbf{w})}">
+<meta property="og:updated_time" content="2016-02-18T08:52:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实战-学习笔记04">
 <meta name="twitter:description" content="机器学习实战-学习笔记04前两次读书笔记中分别介绍了两种分类方法，下面，我们利用概率论的一些知识，来对数据进行分类
@@ -299,11 +303,11 @@
 </blockquote>
 <p>其实利用概率来进行分类的原理说起来也很简单，比如：</p>
 <p>如果我们有两个类别，C1和C2，那么我们来判断某个数据点（x,y)的类型到底为那个的依据就是该数据点是类型C1或者C2的概率那个更大，即：<br>    如果 $P_1(x,y)$和$P_2(x,y)$分别表示(X,Y)是C1和C2的概率<br>    那么：</p>
-<pre><code>* 如果$P_1(x,y)$ &gt; $P_2(x,y)$，那么（X,Y)就属于C1
-* 如果$P_2(x,y)$ &gt; $P_1(x,y)$，那么（X,Y)就属于C2
+<pre><code>* 如果&lt;img src=&quot;http://www.forkosh.com/mathtex.cgi? P_1(x,y) \textgreater P_2(x,y)&quot;&gt;那么（X,Y)就属于C1
+* 如果&lt;img src=&quot;http://www.forkosh.com/mathtex.cgi? P_2(x,y) \textgreater P_1(x,y)&quot;&gt;那么（X,Y)就属于C2
 </code></pre><p>下面，我们要引入<code>条件概率</code>的概念，如果不熟悉的，可以查看一下其<a href="http://baike.baidu.com/link?url=vuSyDANLl24kp4yiklGDUcayxPCWA3HlRPzTs3EEVqoOqXlnnBGkHsHdOXXQoWom2wF-C4tivgQJr5YJR0POz_" target="_blank" rel="external">概念</a></p>
-<p>上文的$P_i(x,y)$，换成条件概率的表达就是：$P(c_i|x,y)$，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
-<p>$P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}$</p>
+<p>上文的<img src="http://www.forkosh.com/mathtex.cgi? P_i(x,y)">，换成条件概率的表达就是：<img src="http://www.forkosh.com/mathtex.cgi? P(c_i|x,y)">，表示给定的（x,y)点，那么其属于$c_i$的概率是多少，根据贝叶斯公式得到：</p>
+<p><img src="http://www.forkosh.com/mathtex.cgi? \Large P(c_i|x,y)=\frac{P(x,y|c_i)P(c_i)}{P(x,y)}"></p>
 <p>下面，我们就看一下代码如何实现：</p>
 <pre><code># -*- encoding=UTF-8
 
@@ -348,7 +352,7 @@ def set_of_words_2_vec(vocab_list, input_set):
             print &quot;the word: %s is not in my Vocabulary!&quot; % word
     return return_vec
 </code></pre><p>按照上述方法，我们就可以将一组单词变成词向量了，下面我们就要利用之前提到的朴素贝叶斯算法，来获得某个单词属于哪个类型的概率是多少：</p>
-<p>$P(c_i|\textbf{w})$</p>
+<p><img src="http://www.forkosh.com/mathtex.cgi? \Large P(c_i|\textbf{w})=\frac{P(\textbf{w}|c_i)P(c_i)}{P(\textbf{w})}"></p>
 
       
     </div>
